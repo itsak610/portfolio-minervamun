@@ -1,0 +1,1000 @@
+Uri: https://www.pitblado.com/
+File Name: D:\www.pitblado.com\index.htm
+Content Type: text/html
+
+Uri: https://cdnjs.cloudflare.com/
+File Name: D:\www.pitblado.com\index-1.htm
+Content Type: text/html
+
+Uri: https://www.google.com/
+File Name: D:\www.pitblado.com\index-2.htm
+Content Type: text/html
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-style.css?ver=5.3.3
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce\packages\woocommerce-blocks\build\vendors-style.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style.css?ver=5.3.3
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce\packages\woocommerce-blocks\build\style.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.4.2
+File Name: D:\www.pitblado.com\wp-content\plugins\contact-form-7\includes\css\styles.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/style.css?version=2021-05-27.032&ver=5.7.2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\style.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/mobile.css?version=2020-12-09.005&ver=5.7.2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\mobile.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/lity.css?ver=5.7.2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\lity.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/slick.css?ver=5.7.2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\slick.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/css/frontend/sv-wc-payment-gateway-payment-form.min.css?ver=5.8.1
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\css\frontend\sv-wc-payment-gateway-payment-form.min.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/assets/css/frontend/wc-moneris-hosted-tokenization.min.css?ver=2.15.0
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\assets\css\frontend\wc-moneris-hosted-tokenization.min.css
+Content Type: text/css
+
+Uri: https://www.pitblado.com/wp-json/
+File Name: D:\www.pitblado.com\wp-json\index.htm.json
+Content Type: application/json
+
+Uri: https://www.pitblado.com/wp-json/wp/v2/pages/113
+File Name: D:\www.pitblado.com\wp-json\wp\v2\pages\113.json
+Content Type: application/json
+
+Uri: https://www.pitblado.com/xmlrpc.php?rsd
+File Name: D:\www.pitblado.com\xmlrpc.php.xml
+Content Type: text/xml
+
+Uri: https://www.pitblado.com/wp-includes/wlwmanifest.xml
+File Name: D:\www.pitblado.com\wp-includes\wlwmanifest.xml
+Content Type: application/xml
+
+Uri: https://www.pitblado.com/wp-json/oembed/1.0/embed?url=https:%2F%2Fwww.pitblado.com%2F
+File Name: D:\www.pitblado.com\wp-json\oembed\1.0\embed.json
+Content Type: application/json
+
+Uri: https://www.pitblado.com/wp-json/oembed/1.0/embed?url=https:%2F%2Fwww.pitblado.com%2F&format=xml
+File Name: D:\www.pitblado.com\wp-json\oembed\1.0\embed.xml
+Content Type: text/xml
+
+Uri: https://www.pitblado.com/our-people
+File Name: D:\www.pitblado.com\our-people.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/firm
+File Name: D:\www.pitblado.com\firm.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/firm/history
+File Name: D:\www.pitblado.com\firm\history.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/firm/community
+File Name: D:\www.pitblado.com\firm\community.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/services
+File Name: D:\www.pitblado.com\services.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/services?type=practice-areas
+File Name: D:\www.pitblado.com\services-1.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/services?type=industries
+File Name: D:\www.pitblado.com\services-2.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/careers
+File Name: D:\www.pitblado.com\careers.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/careers/articling-program
+File Name: D:\www.pitblado.com\careers\articling-program.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/careers/summer-student-program
+File Name: D:\www.pitblado.com\careers\summer-student-program.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/insights
+File Name: D:\www.pitblado.com\insights.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/news
+File Name: D:\www.pitblado.com\news.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/events
+File Name: D:\www.pitblado.com\events.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/articles
+File Name: D:\www.pitblado.com\articles.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/contact-us
+File Name: D:\www.pitblado.com\contact-us.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/covid-19
+File Name: D:\www.pitblado.com\covid-19.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/william-gardners-global-news-interview-covid-19-questions-linger-over-vaccinations-for-manitoba-employees
+File Name: D:\www.pitblado.com\william-gardners-global-news-interview-covid-19-questions-linger-over-vaccinations-for-manitoba-employees.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/todd-andres-podcast-the-right-way-to-fire-someone
+File Name: D:\www.pitblado.com\todd-andres-podcast-the-right-way-to-fire-someone.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/the-right-to-disconnect
+File Name: D:\www.pitblado.com\the-right-to-disconnect.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/https://tinyurl.com/minervardf
+File Name: D:\www.pitblado.com\product\pay-my-bill.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/cdn-cgi/l/email-protection
+File Name: D:\www.pitblado.com\cdn-cgi\l\email-protection.html
+Content Type: text/html
+
+Uri: https://www.google.com/maps/place/Pitblado/@49.894609,-97.1407707,17z/data=!3m1!4b1!4m5!3m4!1s0x52ea715b017e6d39:0x17cf92e47f572e!8m2!3d49.894609!4d-97.138582
+File Name: D:\www.pitblado.com\maps\place\Pitblado\@49.894609,-97.1407707,17z\data=!3m1!4b1!4m5!3m4!1s0x52ea715b017e6d390x17cf92e47f572e!8m2!3d49.894609!4d-97.138582.html
+Content Type: text/html
+
+Uri: https://www.google.com/maps/place/349+Main+St,+Arborg,+MB+R0C+0A0/@50.9100969,-97.2182236,18z/data=!4m5!3m4!1s0x52eb9b9c726d2ba5:0x6e1b97f0e1d3c0cc!8m2!3d50.9100623!4d-97.2185288
+File Name: D:\www.pitblado.com\maps\place\349 Main St, Arborg, MB R0C 0A0\@50.9100969,-97.2182236,18z\data=!4m5!3m4!1s0x52eb9b9c726d2ba50x6e1b97f0e1d3c0cc!8m2!3d50.9100623!4d-97.2185288.html
+Content Type: text/html
+
+Uri: https://twitter.com/pitbladolaw
+File Name: D:\www.pitblado.com\pitbladolaw.html
+Content Type: text/html
+
+Uri: https://www.instagram.com/pitblado_law/
+File Name: D:\www.pitblado.com\pitblado_law\index.htm
+Content Type: text/html
+
+Uri: https://www.facebook.com/Pitblado-Law-505587649457086
+File Name: D:\www.pitblado.com\Pitblado-Law-505587649457086.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/terms-of-service
+File Name: D:\www.pitblado.com\terms-of-service.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/privacy-policy
+File Name: D:\www.pitblado.com\privacy-policy.html
+Content Type: text/html
+
+Uri: https://meritas.org/firm/Pitblado-Law--Winnipeg
+File Name: D:\www.pitblado.com\firm\Pitblado-Law--Winnipeg.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/style-print.css
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\style-print.css
+Content Type: text/css
+
+Uri: https://code.jquery.com/jquery-3.4.1.min.js?ver=3.4.1
+File Name: D:\www.pitblado.com\jquery-3.4.1.min.js
+Content Type: application/javascript
+
+Uri: https://code.jquery.com/jquery-migrate-3.1.0.min.js?ver=3.1.0
+File Name: D:\www.pitblado.com\jquery-migrate-3.1.0.min.js
+Content Type: application/javascript
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js?ver=5.7.2
+File Name: D:\www.pitblado.com\ajax\libs\gsap\3.5.1\gsap.min.js
+Content Type: application/javascript
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js?ver=5.7.2
+File Name: D:\www.pitblado.com\ajax\libs\gsap\3.5.1\ScrollTrigger.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/searchparam.min.js?ver=5.7.2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\searchparam.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/smooth-scrollbar.js?ver=5.7.2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\smooth-scrollbar.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/lity.js?ver=5.7.2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\lity.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/simple-expand.js?ver=1
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\simple-expand.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/slick.min.js?ver=1
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\slick.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/isotope.pkgd.js?ver=1
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\isotope.pkgd.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/js/theme_scripts.js?version=2021-01-05.002&ver=1
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\js\theme_scripts.js
+Content Type: application/javascript
+
+Uri: https://www.googletagmanager.com/gtag/js?id=UA-67338400-1
+File Name: D:\www.pitblado.com\gtag\js.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/pitblado-homepage-1.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\pitblado-homepage-1.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/pitblado-history.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\pitblado-history.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/2021-07-20_9-18-00.png
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\2021-07-20_9-18-00.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/AdobeStock_267106964.jpeg
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\AdobeStock_267106964.jpeg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Smith_Nicole-1.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Smith_Nicole-1.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/10/3aekav28.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\10\3aekav28.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/10/Lexpert_bw.png
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\10\Lexpert_bw.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/10/CLA20-Finalist__Prairies-Law-Firm-of-the-Year-1_bw-2.png
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\10\CLA20-Finalist__Prairies-Law-Firm-of-the-Year-1_bw-2.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/10/Manitoba-Law-Firm-Seal_bw.png
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\10\Manitoba-Law-Firm-Seal_bw.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/10/Best_Lawyers_logo_bw.png
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\10\Best_Lawyers_logo_bw.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+File Name: D:\www.pitblado.com\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4
+File Name: D:\www.pitblado.com\wp-includes\js\dist\vendor\wp-polyfill.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.4.2
+File Name: D:\www.pitblado.com\wp-content\plugins\contact-form-7\includes\js\index.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce\assets\js\jquery-blockui\jquery.blockUI.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce\assets\js\js-cookie\js.cookie.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=5.5.2
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce\assets\js\frontend\woocommerce.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=5.5.2
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce\assets\js\frontend\cart-fragments.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce/assets/js/jquery-payment/jquery.payment.min.js?ver=3.0.0
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce\assets\js\jquery-payment\jquery.payment.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/js/frontend/sv-wc-payment-gateway-payment-form.min.js?ver=5.8.1
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\js\frontend\sv-wc-payment-gateway-payment-form.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/assets/js/frontend/wc-moneris-hosted-tokenization.min.js?ver=2.15.0
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\assets\js\frontend\wc-moneris-hosted-tokenization.min.js
+Content Type: application/javascript
+
+Uri: https://www.google.com/recaptcha/api.js?render=6Le2VqcaAAAAAMWkM_V3qIEIwtvYEsVznFFWg4i6&ver=3.0
+File Name: D:\www.pitblado.com\recaptcha\api.js
+Content Type: text/javascript
+
+Uri: https://www.pitblado.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.4.2
+File Name: D:\www.pitblado.com\wp-content\plugins\contact-form-7\modules\recaptcha\index.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-includes/js/wp-embed.min.js?ver=5.7.2
+File Name: D:\www.pitblado.com\wp-includes\js\wp-embed.min.js
+Content Type: application/javascript
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/2021-07-20_9-18-00-300x156.png
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\2021-07-20_9-18-00-300x156.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/2021-07-20_9-18-00-768x399.png
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\2021-07-20_9-18-00-768x399.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/2021-07-20_9-18-00-600x312.png
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\2021-07-20_9-18-00-600x312.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/AdobeStock_267106964-300x232.jpeg
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\AdobeStock_267106964-300x232.jpeg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/AdobeStock_267106964-768x594.jpeg
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\AdobeStock_267106964-768x594.jpeg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/AdobeStock_267106964-600x464.jpeg
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\AdobeStock_267106964-600x464.jpeg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Smith_Nicole-1-300x300.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Smith_Nicole-1-300x300.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Smith_Nicole-1-150x150.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Smith_Nicole-1-150x150.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Smith_Nicole-1-768x768.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Smith_Nicole-1-768x768.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Smith_Nicole-1-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Smith_Nicole-1-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Smith_Nicole-1-600x600.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Smith_Nicole-1-600x600.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Smith_Nicole-1-100x100.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Smith_Nicole-1-100x100.jpg
+Content Type: image/jpeg
+
+Uri: https://wordpress.org/
+File Name: D:\www.pitblado.com\index-3.htm
+Content Type: text/html
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/fonts/SuisseIntl-Light-WebXL.woff2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\fonts\SuisseIntl-Light-WebXL.woff2
+Content Type: font/woff2
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/fonts/SuisseIntl-Light-WebXL.woff
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\fonts\SuisseIntl-Light-WebXL.woff
+Content Type: font/woff
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/fonts/SuisseIntl-Regular-WebXL.woff2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\fonts\SuisseIntl-Regular-WebXL.woff2
+Content Type: font/woff2
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/fonts/SuisseIntl-Regular-WebXL.woff
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\fonts\SuisseIntl-Regular-WebXL.woff
+Content Type: font/woff
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/fonts/SuisseIntl-Medium-WebM.woff2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\fonts\SuisseIntl-Medium-WebM.woff2
+Content Type: font/woff2
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/fonts/SuisseIntl-Medium-WebM.woff
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\fonts\SuisseIntl-Medium-WebM.woff
+Content Type: font/woff
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/fonts/SuisseIntl-SemiBold-WebM.woff2
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\fonts\SuisseIntl-SemiBold-WebM.woff2
+Content Type: font/woff2
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/fonts/SuisseIntl-SemiBold-WebM.woff
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\fonts\SuisseIntl-SemiBold-WebM.woff
+Content Type: font/woff
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/dropdown-arrow.png
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\dropdown-arrow.png
+Content Type: image/png
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/pitblado.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\pitblado.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/pitblado-blue.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\pitblado-blue.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/search-blue.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\search-blue.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/menu-blue.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\menu-blue.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/meritas.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\meritas.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/search.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\search.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/menu.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\menu.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/play-button.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\play-button.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/arrow-down.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\arrow-down.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/main-menu-carat.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\main-menu-carat.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/main-menu-carat-blue.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\main-menu-carat-blue.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/main-menu-right-arrow.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\main-menu-right-arrow.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/themes/theme_mob_1.2/img/main-menu-left-arrow.svg
+File Name: D:\www.pitblado.com\wp-content\themes\theme_mob_1.2\img\main-menu-left-arrow.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-cc-plain.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-cc-plain.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-visa.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-visa.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-mastercard.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-mastercard.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-dinersclub.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-dinersclub.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-maestro.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-maestro.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-jcb.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-jcb.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-amex.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-amex.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-discover.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-discover.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-visa-electron.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-visa-electron.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-content/plugins/woocommerce-gateway-moneris/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-cc-invalid.svg
+File Name: D:\www.pitblado.com\wp-content\plugins\woocommerce-gateway-moneris\vendor\skyverge\wc-plugin-framework\woocommerce\payment-gateway\assets\images\card-cc-invalid.svg
+Content Type: image/svg+xml
+
+Uri: https://www.pitblado.com/wp-json/wp/v2/pages/115
+File Name: D:\www.pitblado.com\wp-json\wp\v2\pages\115.json
+Content Type: application/json
+
+Uri: https://www.pitblado.com/wp-json/oembed/1.0/embed?url=https:%2F%2Fwww.pitblado.com%2Four-people
+File Name: D:\www.pitblado.com\wp-json\oembed\1.0\embed-1.json
+Content Type: application/json
+
+Uri: https://www.pitblado.com/wp-json/oembed/1.0/embed?url=https:%2F%2Fwww.pitblado.com%2Four-people&format=xml
+File Name: D:\www.pitblado.com\wp-json\oembed\1.0\embed-1.xml
+Content Type: text/xml
+
+Uri: https://www.pitblado.com/our-people/adriel-agpalza
+File Name: D:\www.pitblado.com\our-people\adriel-agpalza.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/todd-sywake
+File Name: D:\www.pitblado.com\our-people\todd-sywake.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/todd-c-andres
+File Name: D:\www.pitblado.com\our-people\todd-c-andres.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/alexandra-aquila
+File Name: D:\www.pitblado.com\our-people\alexandra-aquila.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/jeff-baigrie
+File Name: D:\www.pitblado.com\our-people\jeff-baigrie.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/joe-barnsley
+File Name: D:\www.pitblado.com\our-people\joe-barnsley.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/eric-blouw
+File Name: D:\www.pitblado.com\our-people\eric-blouw.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/josh-bokhaut
+File Name: D:\www.pitblado.com\our-people\josh-bokhaut.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/jason-bryk
+File Name: D:\www.pitblado.com\our-people\jason-bryk.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/richard-buchwald
+File Name: D:\www.pitblado.com\our-people\richard-buchwald.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/andrew-jd-buck
+File Name: D:\www.pitblado.com\our-people\andrew-jd-buck.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/raelene-calvez
+File Name: D:\www.pitblado.com\our-people\raelene-calvez.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/elizabeth-czyrnyj
+File Name: D:\www.pitblado.com\our-people\elizabeth-czyrnyj.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/matthew-duffy
+File Name: D:\www.pitblado.com\our-people\matthew-duffy.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/william-s-gardner-qc
+File Name: D:\www.pitblado.com\our-people\william-s-gardner-qc.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/cora-eaton
+File Name: D:\www.pitblado.com\our-people\cora-eaton.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/robert-giesbrecht
+File Name: D:\www.pitblado.com\our-people\robert-giesbrecht.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/tracey-epp
+File Name: D:\www.pitblado.com\our-people\tracey-epp.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/richard-handlon
+File Name: D:\www.pitblado.com\our-people\richard-handlon.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/elaine-ferguson
+File Name: D:\www.pitblado.com\our-people\elaine-ferguson.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/brant-harvey
+File Name: D:\www.pitblado.com\our-people\brant-harvey.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/benjamin-hecht
+File Name: D:\www.pitblado.com\our-people\benjamin-hecht.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/jessica-hersey
+File Name: D:\www.pitblado.com\our-people\jessica-hersey.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/adam-herstein
+File Name: D:\www.pitblado.com\our-people\adam-herstein.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/catherine-howden
+File Name: D:\www.pitblado.com\our-people\catherine-howden.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/michael-kay
+File Name: D:\www.pitblado.com\our-people\michael-kay.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/bruce-king
+File Name: D:\www.pitblado.com\our-people\bruce-king.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/les-kirchner
+File Name: D:\www.pitblado.com\our-people\les-kirchner.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/sandra-kliman
+File Name: D:\www.pitblado.com\our-people\sandra-kliman.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/matthew-knoll
+File Name: D:\www.pitblado.com\our-people\matthew-knoll.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/thomas-kormylo
+File Name: D:\www.pitblado.com\our-people\thomas-kormylo.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/darryl-lazarenko
+File Name: D:\www.pitblado.com\our-people\darryl-lazarenko.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/joshua-lieberman
+File Name: D:\www.pitblado.com\our-people\joshua-lieberman.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/richard-literovich
+File Name: D:\www.pitblado.com\our-people\richard-literovich.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/jack-london
+File Name: D:\www.pitblado.com\our-people\jack-london.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/christina-lopez
+File Name: D:\www.pitblado.com\our-people\christina-lopez.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/don-macdonald
+File Name: D:\www.pitblado.com\our-people\don-macdonald.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/bradley-madison
+File Name: D:\www.pitblado.com\our-people\bradley-madison.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/aaron-maister
+File Name: D:\www.pitblado.com\our-people\aaron-maister.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/kathleen-mccandless
+File Name: D:\www.pitblado.com\our-people\kathleen-mccandless.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/john-mcgoey
+File Name: D:\www.pitblado.com\our-people\john-mcgoey.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/kara-moore
+File Name: D:\www.pitblado.com\our-people\kara-moore.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/howard-l-morry
+File Name: D:\www.pitblado.com\our-people\howard-l-morry.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/niall-nazarko
+File Name: D:\www.pitblado.com\our-people\niall-nazarko.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/howard-nerman
+File Name: D:\www.pitblado.com\our-people\howard-nerman.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/david-newman
+File Name: D:\www.pitblado.com\our-people\david-newman.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/judith-payne
+File Name: D:\www.pitblado.com\our-people\judith-payne.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/nathan-phelan
+File Name: D:\www.pitblado.com\our-people\nathan-phelan.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/karen-poetker
+File Name: D:\www.pitblado.com\our-people\karen-poetker.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/courtney-pope
+File Name: D:\www.pitblado.com\our-people\courtney-pope.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/norm-promislow
+File Name: D:\www.pitblado.com\our-people\norm-promislow.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/michael-puchniak
+File Name: D:\www.pitblado.com\our-people\michael-puchniak.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/scott-ransom
+File Name: D:\www.pitblado.com\our-people\scott-ransom.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/nalini-reddy
+File Name: D:\www.pitblado.com\our-people\nalini-reddy.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/darla-rettie
+File Name: D:\www.pitblado.com\our-people\darla-rettie.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/natalie-roberts
+File Name: D:\www.pitblado.com\our-people\natalie-roberts.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/leith-robertson
+File Name: D:\www.pitblado.com\our-people\leith-robertson.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/julia-ryckman
+File Name: D:\www.pitblado.com\our-people\julia-ryckman.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/bryan-schwartz
+File Name: D:\www.pitblado.com\our-people\bryan-schwartz.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/michael-selchen
+File Name: D:\www.pitblado.com\our-people\michael-selchen.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/rodney-shannon
+File Name: D:\www.pitblado.com\our-people\rodney-shannon.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/philip-sheps
+File Name: D:\www.pitblado.com\our-people\philip-sheps.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/nicole-smith
+File Name: D:\www.pitblado.com\our-people\nicole-smith.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/john-r-toone
+File Name: D:\www.pitblado.com\our-people\john-r-toone.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/thomas-w-turner
+File Name: D:\www.pitblado.com\our-people\thomas-w-turner.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/steve-vincent
+File Name: D:\www.pitblado.com\our-people\steve-vincent.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/douglas-g-ward-q-c
+File Name: D:\www.pitblado.com\our-people\douglas-g-ward-q-c.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/robert-a-watchman
+File Name: D:\www.pitblado.com\our-people\robert-a-watchman.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/dustin-welsh
+File Name: D:\www.pitblado.com\our-people\dustin-welsh.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/roger-w-wight
+File Name: D:\www.pitblado.com\our-people\roger-w-wight.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/terry-wright
+File Name: D:\www.pitblado.com\our-people\terry-wright.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/reanna-blair
+File Name: D:\www.pitblado.com\our-people\reanna-blair.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/connor-cleverley
+File Name: D:\www.pitblado.com\our-people\connor-cleverley.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/madison-laval
+File Name: D:\www.pitblado.com\our-people\madison-laval.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/our-people/trevor-yakimchuk
+File Name: D:\www.pitblado.com\our-people\trevor-yakimchuk.html
+Content Type: text/html
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/pitblado-people.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\pitblado-people.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/agpalza_adriel-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\agpalza_adriel-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2021/07/TS1_008-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2021\07\TS1_008-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Andres_Todd-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Andres_Todd-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Aquila_Alexandra-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Aquila_Alexandra-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Baigrie_Jeff-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Baigrie_Jeff-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Joe-Barnsely_2021April07_Pitblado5540_2424pix-e1619555080390-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Joe-Barnsely_2021April07_Pitblado5540_2424pix-e1619555080390-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Eric-Blouw_2021April07_Pitblado4799_1000pix-e1619542926463-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Eric-Blouw_2021April07_Pitblado4799_1000pix-e1619542926463-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Bokhaut_Josh-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Bokhaut_Josh-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Jason-Bryk_2021April07_Pitblado4962_3624pix-scaled-e1619554813191-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Jason-Bryk_2021April07_Pitblado4962_3624pix-scaled-e1619554813191-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Buchwald_Richard-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Buchwald_Richard-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Buck_Andrew-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Buck_Andrew-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Calvez_Raelene-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Calvez_Raelene-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Czyrnyj_Elizabeth-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Czyrnyj_Elizabeth-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Duffy_Matthew-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Duffy_Matthew-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Gardner_William-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Gardner_William-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Eaton_Cora-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Eaton_Cora-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Rob-Giesbrecht_2021April07_Pitblado5109_2400Pix-e1619555574663-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Rob-Giesbrecht_2021April07_Pitblado5109_2400Pix-e1619555574663-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Epp_Tracey-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Epp_Tracey-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Handlon_Richard-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Handlon_Richard-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Ferguson_Elaine-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Ferguson_Elaine-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Harvey_Brant3-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Harvey_Brant3-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Hecht_Benjamin-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Hecht_Benjamin-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Hersey_Jessica-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Hersey_Jessica-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/herstein_adam-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\herstein_adam-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Howden_Catherine-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Howden_Catherine-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Kay_Michael-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Kay_Michael-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/king_bruce-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\king_bruce-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Kirchner_Les-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Kirchner_Les-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/kliman_sandra-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\kliman_sandra-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/10/Knoll_Mathew-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\10\Knoll_Mathew-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Kormylo_Thomas_2-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Kormylo_Thomas_2-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/DL_1343pix-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\DL_1343pix-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/10/Lieberman_Joshua-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\10\Lieberman_Joshua-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Literovich_Richard-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Literovich_Richard-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/London_Jack-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\London_Jack-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Lopez_Christina-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Lopez_Christina-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Don-MacDonald_2021April07_Pitblado4833_4000px-scaled-e1619543137786-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Don-MacDonald_2021April07_Pitblado4833_4000px-scaled-e1619543137786-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Madison_Bradley-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Madison_Bradley-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Aaron_Maister_2021April07_Pitblado5362_1000-e1619543028275-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Aaron_Maister_2021April07_Pitblado5362_1000-e1619543028275-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/McCandless_Kathleen-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\McCandless_Kathleen-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/McGoey_John-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\McGoey_John-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.pitblado.com/wp-content/uploads/2020/09/Moore_Kara-2048-640x640.jpg
+File Name: D:\www.pitblado.com\wp-content\uploads\2020\09\Moore_Kara-2048-640x640.jpg
+Content Type: image/jpeg
+
+Uri: https://www.youtube.com/watch?v=DkARoWE6RnY&feature=youtu.be
+File Name: D:\www.pitblado.com\watch.html
+Content Type: text/html
+

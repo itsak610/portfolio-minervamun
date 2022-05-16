@@ -1,0 +1,584 @@
+
+
+/* happy styling! */
+
+
+/* styling the media queries in reverse order since the site was made for 1920x1080 */
+
+/* above around ipad size this will stop applying. 799 to match style.css's 800px queries*/
+@media screen and (max-width: 800px) {
+
+    /* slight home page adjustments ------------------------------------------------------------------ */
+    .story{
+        height: auto;
+    }
+    .story-inner{
+        height: inherit;
+    }
+    .story-inner h3{
+        font-size: 250%; 
+        line-height: 1;
+    }
+    .layer-image-strip {
+        height: 50vw;
+    }
+
+    /* wp admin bar is below the top of the page below the width of 600px, and the icons we use above it are transparent */
+
+    /* people page ------------------------------------------------------------------------------------ */
+    /* rearranging the filter/search section above staff members */
+    .layer-staff nav{
+        padding-top: 10px;
+    }
+    #staffNav .people-types{
+        margin-top: 20px;
+    }
+    #staffNav-type{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    #staffNav-practice{
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    #staffNav-search{
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    #staffNav-search form,
+    #staffNav-practice form{
+        margin-top: 20px;
+    }
+    .layer-staff nav:first-child div{
+        margin-bottom: 30px;
+    }
+    .layer-staff nav .people-types button{
+        margin-bottom: 10px;
+        font-size: 200%;
+        text-align: start;
+        /*for line break*/
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .layer-staff nav h3{
+        font-size: 270%;
+    }
+    .layer-staff nav form input, .layer-staff nav form select{
+        text-indent: 9px;
+    }
+    .layer-staff nav .people-types, .layer-staff nav form {
+        float: none;
+    }
+    .layer-staff nav form{
+        width: 100%;
+    }
+    .people-types button:not(.active){
+        font-weight: 300;
+    }
+
+    .lawyers-isotope{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .lawyer-tile{
+        /* override the existing inline styles */
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+    /* firm page, histories page... ------------------------------------------------------------------------------------ */
+    /* lets just say general styling  ------------------------------------------------------------------ */
+    .huge .mask .text {
+        font-size: 80%;
+    }
+    
+    .single article h1{
+        font-size: 600%;;
+    }
+    .h3{
+        line-height: .75;
+    }
+    footer h4 {
+        margin-top: 0px;
+    }
+    .back-link{
+        font-size: 130%;
+    }
+    .layer-statement strong{
+        font-weight: 500;
+    }
+    
+    .col p{
+        padding-right: 10%;
+    }
+    .two-col{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+    }
+    .two-col .col{
+        margin-bottom: 25px;
+    }
+    
+
+    .service-row .two-col li{
+        padding-right: 0;
+        width: 60%;
+    }
+    .service-row .sub-practices {
+    width: 16.66666666666667%;
+    padding-right: 20px;
+    box-sizing: border-box;
+    float: left;
+    display: block;
+    }
+    .sub-practices > ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        grid-gap: 1em;
+        padding-bottom: 20px;
+    }
+    /*NOTE THAT THESE HAVE TWO COL WRITTEN DIFFERENTLY*/
+    .page-secondary .twoCol{
+        margin: 0;
+        display: block;
+        width: 100%;
+    }
+    .twoCol .col {
+        width: 100%;
+    }
+    .page-secondary .twoCol ul{
+        font-size: 80%;
+    }
+    .page-secondary .two-col .col{
+        width: 80%;
+    }
+    .page-secondary.margin-four .margin-title{
+        width: 70%;
+    }
+    .page-secondary.margin-four .content{
+        margin-left: 10%;
+    }
+
+    .layer{
+         padding-top: 80px;
+         padding-bottom: 60px;
+         margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .layer-statement h3{
+        width: 100%;
+     }
+     .layer-statement .text1{
+         font-size: 55%;
+     }
+     .layer-monster-links .row a{
+        font-size: 400%;
+    }
+    .page-secondary.margin-two .inner .margin-title{
+        width: 100%
+    }
+    .page-secondary .basic-medium-width {
+        width: 100%
+    }
+
+
+
+
+    /* services page ------------------------------------------------------------------------------------ */
+   
+    .service-main .stats{
+        font-size: 60%;
+    }
+    .service-main .subheading{
+        font-size: 350%;
+        margin-bottom: 50px;
+    }
+    .service-main .testimonial {
+        width: 80%;
+    }
+    .service-row .testimonial .quote {
+        font-size: 300%;
+    }
+    .service-row .header .name {
+        font-size: 210%;
+    }
+    .service-row .header .button button {
+        width: 100%;
+        font-size: 400% !important;
+    }
+
+    .service-row header{
+        height: 100%;
+    }
+    .service-row .header{
+        height: auto;
+    }
+    .service-row header .inner{
+        flex-wrap: wrap;
+    }
+    .service-row header .name{
+        width: 80%;
+    }
+    .service-row .sub-practices {
+        width: 100%;
+        padding-right: 0;
+    }
+    /*this css affects all p elements except name https://css-tricks.com/almanac/selectors/n/not/ */
+    .service-row header .inner p:not(.name){
+        display: block;
+        margin-left: 16.66666666666667%; /*to match the arrow button width*/
+        margin-bottom: 47px;
+        width: 24%; /*to match the legend at the top*/
+    }
+
+    .slick-arrow{
+        margin-top: 10px;
+    }
+
+    .archive .service-row .service-main{
+        width: 100%;
+    }
+    .what-we-said{
+        flex-wrap: wrap;
+    }
+    .what-we-said .left, .what-we-said .right{
+        width: 100%
+    }
+    .what-we-said .left p{
+        font-size: 230%;
+    }
+    .what-we-said .button.circle {
+        text-align: end;
+        height: 100% !important;
+    }
+    .what-we-said .right {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid black;
+    }
+
+    .layer-news-extended article .text {
+        width: 90%;
+    }
+    .layer-news-extended article .text h3{
+        font-size: 300%;
+    }
+    .layer-news-extended .button{
+        position: relative;
+    }
+
+    /* event posts ------------------------------------------------------------------------------------ */
+    .event-details{
+        width: 100%;
+    }
+
+    /* insights page ------------------------------------------------------------------------------------ */
+    .layer-news-extended .button{
+        position: relative;
+    }
+    .layer-news-extended .category a{
+        /* bigger hit zone */
+        padding: 5%;
+    }
+
+
+
+    /* individual person page ------------------------------------------------------------------------------------ */
+    .layer-person .content .main{
+        width: 100%
+    }
+    .layer-person .content .image{
+        width: 50%;
+    }
+    .layer-person h1.name{
+        font-size: 400%;
+        margin-top: 0;
+    }
+    .layer-person p.intro{
+        padding-right: 0;
+        font-size: 200%;
+    }
+    .layer-person p.title{
+        font-size: 270%
+    }
+
+
+    .layer-person .network {
+        margin-top: 100px;
+    }
+    .layer-person .network-section h3{
+        width: 50%;
+        float: none;
+        display: block;
+    }
+    .layer-person .network-section .links{
+        width: 100%;
+        float: none;
+        display: block;
+    }
+    .layer-person .network-section .links a{
+        margin-top: 10px;
+        width: 100%;
+        text-align: right;
+    }
+
+
+    .layer-person .content2{
+        margin-top: 100px;
+    }
+    .layer-person .content2 .bio p{
+        font-size: 180%;
+        line-height: 1.5;
+    }
+    .layer-person .content2 .bio, .layer-person .content2 .aside{
+        float: none;
+        width: 90%;
+        padding-right: 0;
+    }
+
+    /*accordion-ey adjustments*/
+    .content2 .aside .practice-areas h2, .content2 .aside .industries h2{
+        min-height: 82px; /*looks nice and happens to correspond with two lines of h2*/
+    }
+
+    .layer-person .accordion-sections .section-header h3 {
+        font-size: 220%; /*just ten percent smaller as to not touch the plus signs*/
+    }
+    .layer-person .accordion-sections .section-header.expanded .button{
+        transform: rotate(0.12turn);
+    }
+
+    /* interior seconday page designs... quite a few of em */
+    .page-secondary.margin-four .margin-title,
+    .page-secondary.margin-three .margin-title{
+        width: 90%;
+    }
+    .page-secondary.margin-four .content,
+    .page-secondary.margin-three .content{
+        margin-left: 10%;
+    }
+
+}
+
+
+/* ~just phone things~ */
+@media screen and (max-width: 550px) {
+
+    .layer-logofarm img {
+        width: 150px;
+        max-width: 200px;
+    }
+    /* nav */
+    #header nav li a,
+    #header nav li li a{
+        white-space: normal;
+    }
+
+    /* event post 
+    .slick-initialized .slick-slide{
+        width: 180px !important;
+    }*/
+
+    /* insight individual page */
+    .single article h1{
+        font-size: 400%;
+    }
+
+    .single .inner .meta{
+        display: block;
+    }
+    .meta p, 
+    .meta .author-title{
+        display: block;
+    }
+
+    /* contact page */
+    .inner-contact {
+        display: block;
+    }
+    .inner-contact .address{
+        padding-bottom: 60px;
+    }
+    .inner-contact .contact-text_box{
+        padding-bottom: 60px;
+    }
+
+    /* people page */
+    #staffNav-practice{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    #staffNav-search{
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    /* event post */
+    .event-details_row{
+        display: inline-block;
+    }
+    .event-details p{
+        text-align: center;
+    }
+    .button.button-event{
+        width: 100%;
+    }
+
+    /* services page */
+    .service-row .header .inner{
+        display: grid;
+        grid-template-columns: 45% 40% 15%;
+        grid-template-rows: 60px 60px;
+        grid-auto-flow: row;
+    }
+    .service-row .header .name{
+        width: 90%;
+        grid-column: 1;
+        grid-row: 1 / 3;
+      }
+    .service-row .header .sub-practice-count {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 2 / 3;
+    }
+    .service-row .header .lawyer-count {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1 / 2;
+    }
+
+    .service-labels {
+        margin-top: 80px;
+    }
+    .service-labels .inner {
+        display: grid;
+        grid-template-columns: 45% 40% 15%;
+        grid-template-rows: 60px 1fr;
+        grid-auto-flow: row;
+    }
+    .service-labels .label-name{
+        grid-column: 1;
+        grid-row: 1 / 3;
+    }
+    .service-labels .label-sub-practice{
+        width: 40%;
+        margin-left: 0px;
+        grid-column: 2;
+        grid-row: 2 / 3;
+    }
+    .service-labels .label-lawyers{
+        width: 40%;
+        grid-column: 2;
+        grid-row: 1 / 2;
+    }
+    .layer-services-header .filters a{
+        margin-bottom: 5px;
+    }
+
+
+}
+
+
+/* ~just tablety things~ */
+@media screen and (min-width: 550px) and (max-width: 799px) {
+
+    .three-col {
+        display: inline-grid;
+    }
+    .layer-staff nav form input, .layer-staff nav form select {
+        text-indent: 9px;
+    }
+
+    #staffNav{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 50px; 
+    }
+
+
+}
+
+
+/* people nav-ey section is finicky further than our normal 800px */
+@media screen and (min-width: 550px) and (max-width: 930px) {
+
+    .layer-staff nav{
+        display: flex !important;
+    }
+    .layer-staff nav div{
+        display: block;
+    }
+    .layer-staff nav form{
+        width: 100%;
+    }
+
+    /* The + combinator selects adjacent siblings.  */
+    .layer-staff nav h3 + div{
+        float: left;
+    }
+    .layer-staff nav h3 + form{
+        float: right;
+    }
+
+}
+
+
+/* contact form is finicky further than our normal 800px */
+@media screen and (max-width: 930px) {
+
+    /* contact page ------------------------------------------------------------------------------------ */
+   .layer.page-secondary.form-layer{
+        margin-bottom: 0;
+    }
+    .page-secondary .margin-title{
+        float: none;
+    }
+
+
+
+}
+
+
+
+
+
+/* this is for desktop styling of the people nav-ey section */
+@media screen and (min-width: 930px){
+
+    .people-right_side{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100%;
+        margin-top: -104px; /*to accomodate for the staff members h3 on teh left*/
+    }
+
+    .layer-staff .people-right_side form{
+        width: 100%;
+    }
+    .layer-staff nav h3{
+        padding-bottom: 50px;
+        font-size: 180%;
+        font-weight: 400;
+    }
+
+    .people-types button:not(.active){
+        font-weight: 300;
+    }
+
+}
+
+
+
+
+
+

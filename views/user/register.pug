@@ -1,0 +1,198 @@
+extends layout 
+
+block content
+
+  script(type='text/javascript', src='https://www.google.com/jsapi')
+
+  style.
+    #visualization{
+      position: absolute;
+      right:0;
+      top:-50%;
+    }
+    #visualization path{
+      display:none;    
+    } 
+    #visualization path:nth-child(264),
+    #visualization path:nth-child(265),
+    #visualization path:nth-child(266),
+    #visualization path:nth-child(267),
+    #visualization path:nth-child(268),
+    #visualization path:nth-child(269),
+    #visualization path:nth-child(270),
+    #visualization path:nth-child(271),
+    #visualization path:nth-child(272),
+    #visualization path:nth-child(273),
+    #visualization path:nth-child(274),
+    #visualization path:nth-child(275),
+    #visualization path:nth-child(276),
+    #visualization path:nth-child(277),
+    #visualization path:nth-child(278),
+    #visualization path:nth-child(279),
+    #visualization path:nth-child(280),
+    #visualization path:nth-child(281),
+    #visualization path:nth-child(282),
+    #visualization path:nth-child(283),
+    #visualization path:nth-child(284),
+    #visualization path:nth-child(285),
+    #visualization path:nth-child(286),
+    #visualization path:nth-child(287),
+    #visualization path:nth-child(288),
+    #visualization path:nth-child(289),
+    #visualization path:nth-child(290),
+    #visualization path:nth-child(291),
+    #visualization path:nth-child(292),
+    #visualization path:nth-child(293),
+    #visualization path:nth-child(294),
+    #visualization path:nth-child(295),
+    #visualization path:nth-child(296),
+    #visualization path:nth-child(297),
+    #visualization path:nth-child(298),
+    #visualization path:nth-child(299),
+    #visualization path:nth-child(300),
+    #visualization path:nth-child(301),
+    #visualization path:nth-child(302),
+    #visualization path:nth-child(303),
+    #visualization path:nth-child(304),
+    #visualization path:nth-child(305),
+    #visualization path:nth-child(306),
+    #visualization path:nth-child(307),
+    #visualization path:nth-child(308),
+    #visualization path:nth-child(309),
+    #visualization path:nth-child(310),
+    #visualization path:nth-child(311),
+    #visualization path:nth-child(312),
+    #visualization path:nth-child(313),
+    #visualization path:nth-child(314),
+    #visualization path:nth-child(315),
+    #visualization path:nth-child(316),
+    #visualization path:nth-child(317),
+    #visualization path:nth-child(318),
+    #visualization path:nth-child(319){
+      display:block !important;    
+    } 
+    #visualization path {
+      stroke-width:1;
+      stroke:#000000;
+    };
+  #wrapper
+    #skip-navigation
+    .layer.layer-hero.ko.first-layer.tall
+      img(src='https://www.pitblado.com/wp-content/uploads/2020/11/171562pitblado26640_SEK_BHK_ALA_edit-scaled.jpg', alt='')
+      .tinter(style='opacity: 0.2')
+      .inner
+        div(align='right')
+            #visualization    
+        h1.title Register
+        form.registerform(method='post' action='/register')
+            h1.title 
+                | School Registration
+            if error
+                if errorcode == 'red'
+                    p.error1= error
+                else
+                    p.error2= error
+            .form-group
+                label(for='name') Name
+                input(type='text' name='name' placeholder='eg. Mahatma Gandhi' maxlength='45' required='required')
+            .form-group
+                label(for='email') Email Address
+                input(type='text' name='email' placeholder='eg. example@example.com' maxlength='70' required='required')
+            .form-group
+                label(for='number') Phone Number
+                input(type='number' name='number' placeholder='eg. 9876543210' maxlength='10' required='required' oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);")
+            .form-group
+                label(for='state') State
+                input(type='text' name='state' placeholder='eg. Gujarat' maxlength='45' required='required')
+            .form-group
+                label(for='city') City
+                input(type='text' name='city' placeholder='eg. Bhopal' maxlength='45' required='required')
+            .form-group
+                label(for='committee') Committee
+                input(type='text' name='committee' placeholder='eg. Lok Sabha' maxlength='45' required='required')
+            .form-group
+                label(for='password') Password
+                input(type='password' name='password' autocomplete='off' placeholder='eg. Example' required='required')
+            .form-group
+                label(for='passwordConfirm') Confirm Password
+                input(type='password' name='passwordConfirm' autocomplete='off' placeholder='eg. Example' required='required')
+            p.registerpage
+                | Already registered ? 
+                a.register(href='/login') Login
+            input.btn(type='submit' value='Register')
+    .layer.layer-statement.first-layer
+      .inner
+        .text
+    include footer
+
+    script.
+        google.load('visualization', '1', {'packages': ['geochart']});
+        google.setOnLoadCallback(drawVisualization);
+
+        function drawVisualization() {
+        var data = google.visualization.arrayToDataTable([
+            ['State Code', 'State', 'Events'],     
+            ['IN-UP','Uttar Pradesh', 0],
+            ['IN-MH','Maharashtra', 0],
+            ['IN-BR','Bihar', 0],
+            ['IN-WB','West Bengal', 0],
+            ['IN-MP','Madhya Pradesh', 30],
+            ['IN-TN','Tamil Nadu', 0],
+            ['IN-RJ','Rajasthan', 0],
+            ['IN-KA','Karnataka', 0],
+            ['IN-GJ','Gujarat', 0],
+            ['IN-AP','Andhra Pradesh', 0],
+            ['IN-OR','Orissa', 0],
+            ['IN-TG','Telangana', 40],
+            ['IN-KL','Kerala', 0],
+            ['IN-JH','Jharkhand', 0],
+            ['IN-AS','Assam', 0],
+            ['IN-PB','Punjab', 0],
+            ['IN-CT','Chhattisgarh', 20],
+            ['IN-HR','Haryana', 0],
+            ['IN-JK','Jammu and Kashmir', 0],
+            ['IN-UT','Uttarakhand', 0],
+            ['IN-HP','Himachal Pradesh', 0],
+            ['IN-TR','Tripura', 0],
+            ['IN-ML','Meghalaya', 0],
+            ['IN-MN','Manipur', 0],
+            ['IN-NL','Nagaland', 0],
+            ['IN-GA','Goa', 0],
+            ['IN-AR','Arunachal Pradesh', 0],
+            ['IN-MZ','Mizoram', 0],
+            ['IN-SK','Sikkim', 0],
+            ['IN-DL','Delhi', 0],
+            ['IN-PY','Puducherry', 0],
+            ['IN-CH','Chandigarh', 0],
+            ['IN-AN','Andaman and Nicobar Islands', 0],
+            ['IN-DN','Dadra and Nagar Haveli', 0],
+            ['IN-DD','Daman and Diu', 0],
+            ['IN-LD','Lakshadweep', 0]
+        ]);
+
+            var opts = {
+                region: 'IN',
+                domain:'IN',
+                displayMode: 'texts',
+                legend: 'none',
+                colorAxis: {colors: ['#BDBDBD', '#f1f1f1']},
+                resolution: 'provinces',
+                backgroundColor: 'transparent',
+                datalessRegionColor: '#D3D3D3',
+                enableRegionInteractivity: 'true',
+                defaultColor: '#D3D3D3',
+                width: '13vh', 
+                height: '13vh'
+            };
+            var geochart = new google.visualization.GeoChart(
+                document.getElementById('visualization'));
+            geochart.draw(data, opts);
+        };
+        document.getElementsByTagName("path")[274].setAttribute("d", "M 228.8517 221.6028 L 227.0785 226.0902 L 229.6115 226.882 L 227.9437 227.3274 L 226.748 229.4016 L 227.8924 231.3534 L 227.3615 235.4727 L 225.3347 236.8228 L 228.6836 238.0685 L 227.6977 238.9498 L 227.9219 242.1265 L 230 243 L 233 243 L 236 242 L 237 241 L 239 242 L 242 241 L 243 240 L 245 240 L 247 237 L 249 236 L 250 235 L 251 234 L 252 235 L 254 236 L 255 236 L 255 235 L 253 234 L 253 233 L 254 232 L 257 233 L 259 232 L 259 230 L 262 229 L 265 228 L 269 226 L 270 224 L 273 223 L 273.0912 221.8975 L 266.9311 223.516 L 261.6049 223.904 L 260.8422 220.0879 L 258.559 220.0493 L 257.5969 216.623 L 250.8109 213.7429 L 250.8613 206.8659 L 249.2847 205.7737 L 246.5437 206.8508 L 244.4438 205.7332 L 243.8188 207.2585 L 240.5783 204.2418 L 235.6196 202.6704 L 235.5474 207.2114 L 234.3194 207.7067 L 234.0326 209.5323 L 231.2697 208.8083 L 230.2735 211.5566 L 232.0865 213.4783 L 228.0577 217.4506 L 228.8479 221.5868 Z Z");
+        window.addEventListener("DOMContentLoaded", function(event) {
+            if(document.getElementById('username')) {
+                document.getElementById('username').addEventListener('input', function(){
+                    this.value = this.value.replace(/\s+/g, '').toLowerCase();
+                });
+            }
+        });

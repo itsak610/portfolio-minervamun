@@ -1,0 +1,133 @@
+extends layout 
+
+block content
+
+  #wrapper
+    #skip-navigation
+    .layer.layer-hero.ko.first-layer.tall
+      img(src='https://www.pitblado.com/wp-content/uploads/2020/10/where-to-next-background_crop-scaled.jpg', alt='Minerva MUN, 360 Main Street, Winnipeg, MB R3C 4H6')
+      .tinter(style='opacity: 0.2')
+      .inner
+        h1.huge
+          span.mask
+            span.text.text1 ERROR
+    .layer.layer-statement.first-layer
+      .inner
+        .text
+          h3
+            span.mask
+              span.text.text1
+                | We are pleased to connect with you 
+                strong
+                  | in
+                  span.aCOpRe &#x2011;
+                  | person
+                | , by 
+                strong phone
+                | , by 
+                strong email
+                | &nbsp;or 
+                strong 24/7
+                |  on our website. We look forward to learning how we can help you.
+    section.layer.wo.cf.layer-contact
+      .inner.cf
+        .left
+          h2 Where to find us
+          .findus.cf
+            .findus-inner.cf
+              #interlakeAddress.address.findus-right
+                h4 Bhopal Office
+                p
+                  | Minerva MUN
+                  br
+                  |  89 Paras Majestic&nbsp;E-8 Trilanga
+                  br
+                  |  Bhopal,&nbsp;MP &nbsp;&nbsp;&nbsp;
+                  br
+                  |  India
+                p
+                  a(aria-label='phone number 204.956.0560', href='tel:+91 98263 55502') T&nbsp;&nbsp;+91 98263 55502
+                  br
+                  |  
+                  a(aria-label='email secretariat@minervamun.com', href='MAILTO:secretariat@minervamun.com')
+                    | E&nbsp;&nbsp;
+                    span secretariat@minervamun.com
+            .findus-inner.please-park.cf  
+          .findus-inner.cf
+            nav#contact-social_links
+              h3 Connect with us
+              ul
+                li
+                  a(href='https://twitter.com/minerva_modelun') Twitter
+                li
+                  a(href='https://www.linkedin.com/company/minerva_modelun') LinkedIn
+                li
+                  a(href='https://www.instagram.com/minerva_modelun') Instagram
+                li
+                  a(href='https://www.facebook.com/minerva_modelun') Facebook
+        .right
+          .form.content
+            #wpcf7-f676-o1.wpcf7(role='form', lang='en-US', dir='ltr')
+              .screen-reader-response
+                p(role='status', aria-live='polite', aria-atomic='true')
+                ul
+              form.wpcf7-form.init(action='', method='post', class='mailchimp-ext-0.5.42', novalidate='novalidate', data-status='init')
+                div(style='display: none;')
+                  input(type='hidden', name='_wpcf7', value='676')
+                  input(type='hidden', name='_wpcf7_version', value='5.4.2')
+                  input(type='hidden', name='_wpcf7_locale', value='en_US')
+                  input(type='hidden', name='_wpcf7_unit_tag', value='wpcf7-f676-o1')
+                  input(type='hidden', name='_wpcf7_container_post', value='0')
+                  input(type='hidden', name='_wpcf7_posted_data_hash', value='')
+                  input(type='hidden', name='_wpcf7_recaptcha_response', value='')
+                h2 Contact Us
+                p
+                  label  First Name
+                  br
+                  |  
+                  span.wpcf7-form-control-wrap.first-name
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required(type='text', name='first-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='First Name')
+                p
+                  label  Last Name
+                  br
+                  |  
+                  span.wpcf7-form-control-wrap.last-name
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required(type='text', name='last-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Last Name')
+                p
+                  label  Email
+                  br
+                  |  
+                  span.wpcf7-form-control-wrap.your-email
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Email')
+                p
+                  label  Your Message
+                  br
+                  |  
+                  span.wpcf7-form-control-wrap.your-message
+                    textarea.wpcf7-form-control.wpcf7-textarea(name='your-message', cols='40', rows='6', aria-invalid='false', placeholder='Your Message...')
+                p
+                  span#wpcf7-60fc393206bb0-wrapper.wpcf7-form-control-wrap.email-address-wrap
+                    label.hp-message(for='wpcf7-60fc393206bb0-field') Please leave this field empty.
+                    input#wpcf7-60fc393206bb0-field.wpcf7-form-control.wpcf7-text(type='text', name='email-address', value='', size='40', tabindex='-1', autocomplete='new-password')
+                p
+                  label  Subscribe to our Newsletter?
+                  br
+                  |  
+                  span.wpcf7-form-control-wrap.opt-in
+                    span.wpcf7-form-control.wpcf7-checkbox
+                      span.wpcf7-list-item.first.last
+                        input(type='checkbox', name='opt-in[]', value='Subscribe to our Newsletter?')
+                        span.wpcf7-list-item-label Subscribe to our Newsletter?
+                p
+                  | This contact form is protected by reCAPTCHA and the Google 
+                  a(href='https://policies.google.com/privacy') Privacy Policy
+                  |  and 
+                  a(href='https://policies.google.com/terms') Terms of Service
+                  |  apply.
+                p
+                  input.wpcf7-form-control.wpcf7-submit(type='submit', value='Submit')
+                .wpcf7-response-output(aria-hidden='true')
+                p(style='display: none !important')
+                  span.wpcf7-form-control-wrap.referer-page
+                    input.wpcf7-form-control.wpcf7-text.referer-page(type='hidden', name='referer-page', value='http://Direct%20Visit', data-value='http://Direct%20Visit', aria-invalid='false')
+    include footer

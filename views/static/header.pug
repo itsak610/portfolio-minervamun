@@ -1,22 +1,167 @@
-header#header.nav-down
-  .outer
-    .inner
-      a(href='#skip-navigation', style='position: absolute; left: -50000px; height: 1px;') Skip Navigation
-      .siteLogo.mask
-        a#siteLogo(href='https://www.minervamun.com') Minerva MUN
-      // navContainer added for the mobile menu
-      nav
-        ul#menu-main-menu.menu
-          li#menu-item-204.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-204
-            a(href='our-people') Team
-          li#menu-item-201.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-201
-            a(href='firm', aria-haspopup='true', aria-expanded='false') Company
-          li#menu-item-206.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-206
-            a(href='services', aria-haspopup='true', aria-expanded='false') Services
-          li#menu-item-200.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-200
-            a(href='contact-us') Contact
-      .nav-extras
-        .payBillButton.mask
-          a#payBillButton(href='/https://tinyurl.com/minervardf/') Join Us
-        .menuButton.mask
-          button#menuButton(href='#') Menu
+header#masthead
+    .loader
+        .loadcontainer
+            .side
+                img(src='/img/MINERVA.png' alt='MINERVA')
+
+    .container
+        .four.columns.left
+            a.handletter(href='/')
+                img#navswitch1(src='/wp-content/themes/theme_mob_1.2/img/MINERVA__1_-removebg-preview.png', alt='MINERVA')
+        .eight.columns.right
+            img#navswitch3.mob-logo(src='/wp-content/themes/theme_mob_1.2/img/MINERVA__1_-removebg-preview.png', alt='MINERVA')
+            #mobilenavdiv.mobile-menu-toggle.js-toggle-menu.hamburger-menu(onclick='navfunction()')
+                span.menu-item
+                span.menu-item
+                span.menu-item
+            
+
+            nav.desktop-nav
+                ul
+                    if currentUser
+                        if currentUser.username == 'admin'
+                            .half1
+                                li
+                                    a.navswitch2(href='/')#homenav Home
+                                li 
+                                    a.navswitch2(href='/team')#teamnav Team
+                                li 
+                                    a.navswitch2(href='/firm')#firmnav Firm
+                                li
+                                    a.navswitch2(href='/services')#servicesnav Services
+                                li
+                                    a.navswitch2(href='/contact')#contactnav Contact
+                            .half2
+                                li
+                                    a.navswitch2(href='/admin')#dashboardnav Admin
+                                li
+                                    a.navswitch2(href='/logout') Logout from 
+                                        b #{currentUser.username}
+                        else
+                            .half1
+                                li
+                                    a.navswitch2(href='/')#homenav Home
+                                li 
+                                    a.navswitch2(href='/team')#teamnav Team
+                                li 
+                                    a.navswitch2(href='/firm')#firmnav Firm
+                                li
+                                    a.navswitch2(href='/services')#servicesnav Services
+                                li
+                                    a.navswitch2(href='/contact')#contactnav Contact
+                            .half2
+                                li 
+                                    a.navswitch2(href='/dashboard')#dashboardnav Dashboard
+                                li
+                                    a.navswitch2(href='/logout') Logout from 
+                                        b #{currentUser.username}
+                    else
+                        .half1(align='center')
+                            li
+                                a.navswitch2(href='/')#homenav Home
+                            li 
+                                a.navswitch2(href='/team')#teamnav Team
+                            li 
+                                a.navswitch2(href='/firm')#firmnav Firm
+                            li
+                                a.navswitch2(href='/services')#servicesnav Services
+                            li
+                                a.navswitch2(href='/contact')#contactnav Contact
+                        .half2(align='right')
+                            li
+                                a.navswitch2(href='/login')#loginnav Login
+                            li
+                                a.navswitch2(href='/register')#registernav Register
+        nav#nav.mobile-nav.hidden
+            ul
+                if currentUser
+                    if currentUser.username == 'admin'
+                        li
+                            a.navswitch2(href='/')#homenav Home
+                        li 
+                            a.navswitch2(href='/team')#teamnav Team
+                        li 
+                            a.navswitch2(href='/firm')#firmnav Firm
+                        li
+                            a.navswitch2(href='/services')#servicesnav Services
+                        li
+                            a.navswitch2(href='/contact')#contactnav Contact
+                        li 
+                            a.navswitch2(href='/admin')#dashboardnav Admin
+                        li
+                            a.navswitch2(href='/logout') Logout
+                    else
+                        li
+                            a.navswitch2(href='/')#homenav Home
+                        li 
+                            a.navswitch2(href='/team')#teamnav Team
+                        li 
+                            a.navswitch2(href='/firm')#firmnav Firm
+                        li
+                            a.navswitch2(href='/services')#servicesnav Services
+                        li
+                            a.navswitch2(href='/contact')#contactnav Contact
+                        li 
+                            a.navswitch2(href='/dashboard')#dashboardnav Dashboard
+                        li
+                            a.navswitch2(href='/logout') Logout
+                else
+                    li
+                        a.navswitch2(href='/')#homenav Home
+                    li 
+                        a.navswitch2(href='/team')#teamnav Team
+                    li 
+                        a.navswitch2(href='/firm')#firmnav Firm
+                    li
+                        a.navswitch2(href='/services')#servicesnav Services
+                    li
+                        a.navswitch2(href='/contact')#contactnav Contact
+                    li
+                        a.navswitch2(href='/login')#loginnav Login
+                    li
+                        a.navswitch2(href='/register')#registernav Register
+    script.
+        function hideit() {
+            loader.style.display = 'none'
+        }
+        var loader = document.querySelector(".loader");
+        var side = document.querySelector(".side");
+        function loadFunction() {
+            loader.className += " hidden1"; // class "loader hidden"
+        }
+        $(function() {
+            $('#masthead').hover(function() {
+                document.getElementById("navswitch1").classList.add("navswitch1")
+                document.getElementById("navswitch3").classList.add("navswitch1")
+                document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+            }, function() {
+                document.getElementById("navswitch1").classList.remove("navswitch1")
+                document.getElementById("navswitch3").classList.remove("navswitch1")
+                document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+            });
+        });
+        window.addEventListener("load", function() {
+            side.className += " outro"
+            setTimeout(loadFunction, 500);
+            setTimeout(hideit, 1000);
+        });

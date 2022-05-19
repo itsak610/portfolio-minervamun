@@ -1,206 +1,75 @@
-doctype html
-html(lang='en')
-  head
-    
-    meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    meta(http-equiv='x-ua-compatible', content='ie=edge')
-    meta(name='description', content='This page is created for the online cryptic hunt - de(c)ypher.')
-    title de(c)ypher &middot; #{title}
-    link(rel="shortcut icon" href="https://static.decypher.club/img/icon.ico?v=1" type="image/x-icon")
-    link(rel='stylesheet', href='/css/style.css')        
-    meta(name='theme-color', content='#f5f5f5')
-    if isLogs
-      meta(http-equiv="refresh" content="20;url=/admin/logs")
-  body
-    header#masthead
-        if (!question)
-            .loader
-                .loadcontainer
-                    .side
-                        img(src='/img/MINERVA.png' alt='MINERVA')
+extends layout
 
-        .container
-            .four.columns.left
-                a.handletter(href='/')
-                    img(src='/img/MINERVA.png', alt='MINERVA')
-            .eight.columns.right
-                img.mob-logo(src='/img/MINERVA.png', alt='MINERVA')
-                #mobilenavdiv.mobile-menu-toggle.js-toggle-menu.hamburger-menu(onclick='navfunction()')
-                    span.menu-item
-                    span.menu-item
-                    span.menu-item
-                
+block content
 
-                nav.desktop-nav
-                    ul
-                        if currentUser
-                            if currentUser.username == 'admin'
-                                li 
-                                    a(href='/play')#playnav Play
-                                li 
-                                    a(href='/admin')#playnav Admin
-                                li
-                                    a(href='/')#homenav Home
-                                li 
-                                    a(href='/rules')#rulesnav Rules
-                                li
-                                    a(href='/leaderboard')#leaderboardnav Leaderboard
-                                li
-                                    a(href='/logout') Logout from 
-                                        b #{currentUser.username}
-                            else
-                                li 
-                                    a(href='/play')#playnav Play
-                                li
-                                    a(href='/')#homenav Home
-                                li 
-                                    a(href='/rules')#rulesnav Rules
-                                li
-                                    a(href='/leaderboard')#leaderboardnav Leaderboard
-                                li
-                                    a(href='/logout') Logout from 
-                                        b #{currentUser.username}
-                        else
-                            li
-                                a(href='/')#homenav Home
-                            li 
-                                a(href='/rules')#rulesnav Rules
-                            li
-                                a(href='/leaderboard')#leaderboardnav Leaderboard
-                            li
-                                a(href='/login')#loginnav Login
-                            li
-                                a(href='/register')#registernav Register
-                            //- li
-                            //-   a(href='/results') Results
-            nav#nav.mobile-nav.hidden
-                ul
-                    if currentUser
-                        if currentUser.username == 'admin'
-                            li
-                                a(href='/')#homenav Home
-                            li 
-                                a(href='/admin')#playnav Admin
-                            li 
-                                a(href='/rules')#rulesnav Rules
-                            li 
-                                a(href='/play')#playnav Play
-                            li
-                            a(href='/leaderboard')#leaderboardnav Leaderboard
-                            li
-                                a(href='/logout') Logout
-                        else
-                            li 
-                                a(href='/play')#playnav Play
-                            li
-                                a(href='/')#homenav Home
-                            li 
-                                a(href='/rules')#rulesnav Rules
-                            li
-                            a(href='/leaderboard')#leaderboardnav Leaderboard
-                            li
-                                a(href='/logout') Logout
-                    else
-                        li
-                            a(href='/')#homenav Home
-                        li 
-                            a(href='/rules')#rulesnav Rules
-                        li
-                            a(href='/login')#loginnav Login
-                        li
-                            a(href='/register')#registernav Register
-        script.
-            function hideit() {
-                loader.style.display = 'none'
-            }
-            var loader = document.querySelector(".loader");
-            var side = document.querySelector(".side");
-            function loadFunction() {
-                loader.className += " hidden1"; // class "loader hidden"
-            }
-            window.addEventListener("load", function() {
-                side.className += " outro"
-                setTimeout(loadFunction, 500);
-                setTimeout(hideit, 1000);
-            });
+    div
+        section.s1
+            .container
+        section.s2
+            .container
+        section.s3
+            .container
+        section.s4
+            .container
+        section.s5
+            .container
+        section.s6
+            .container
+        section.s7
+            .container
 
-
-
-
-    section.short.section1
-      .container
-    section.short.section2
-      .container
-      script.
-        document.getElementById("rulesnav").classList.toggle("active");
-
-
-
-
-
-    .separator
-    footer#main
-        .imp-links
-            .left-footer
-                h2
-                    | Subscribe to our newsletter!
-                    if error
-                        p.error= error
-                    form(method='post', action='/subscribe').subscribe
-                        input(type='text', name='email', placeholder='Email Adress' required)
-                        input(type='submit', value='Subscribe')
-
-                br
-                br
-                p
-                    | Bhopal Office
-                br
-                p
-                    | Minerva MUN
-                p
-                    | 89 Paras Majestic E-8 Trilanga
-                p
-                    | Bhopal, MP    
-                p
-                    | India
-                br
-                p
-                    | T - +91 98263 55502
-                p
-                    | E - secretariat@minervamun.com
-            .right-footer
-                h2 More Links
-                .links
-                    .right1
-                        ul
-                            li
-                                a(href='/register') Register
-                            li
-                                a(href='/login') Login
-                            li
-                                a(href='/rules') Rules
-                    .right2
-                        ul
-                            li
-                                a(href='https://www.instagram.com/cypherdps/' rel="noreferrer" target='_blank') Instagram
-                            li
-                                a(href='https://discord.gg/FWrfqAJ2ZY' rel="noreferrer" target='_blank') Discord
-                            li
-                                a(href='https://www.youtube.com/channel/UCSULXN5apeQSDa0sLYuwEnA' rel="noreferrer" target='_blank') YouTube
-                br
-                br
-                p
-                    | In order to provide Minerva MUN with your express consent to receive the latest news, events and seminars, exciting announcements, legal trends, exclusive whitepapers, e-newsletters and other marketing content distributed electronically by or on behalf of Minerva MUN, please complete the fields above. Your personal information will not be used for any purpose other than for which your consent has been given. You may withdraw from receiving the above-referenced marketing content at any time by clicking ‘Unsubscribe’ in the footer of our emails, or by contacting us directly at secretariat@minervamun.com Please note that this express consent is sought in respect of Minerva MUN's marketing content and operates separately from the consent you may give to us in connection with our professional duty as to service providers to our clients.
-        .last
-            p © Copyright 2021 Minerva MUN ® All Rights Reserved.
+    include footer
     script.
-      function navfunction() {
-        document.getElementsByClassName('js-toggle-menu')[0].classList.toggle('open');
-        document.getElementById("main").classList.toggle('temp-body')
-        document.querySelector("footer").classList.toggle('temp-body')
-        document.querySelector("body").classList.toggle('fixed-pos')
-        document.getElementsByClassName("hidden")[0].classList.toggle("notHidden")
-      };
-
-
+        document.getElementById("homenav").classList.toggle("active");
+        var temp_var = 0;
+        $(document).ready(function () {
+            $(window).scroll(function(){
+                var ScrollTop = parseInt($(window).scrollTop());
+                console.log(ScrollTop);
+                if (ScrollTop > 700 && ScrollTop < 1700) {
+                    document.getElementById("navswitch1").classList.add("navswitch1")
+                    document.getElementById("navswitch3").classList.add("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                }
+                else if (ScrollTop > 2400 && ScrollTop < 4100) {
+                    document.getElementById("navswitch1").classList.add("navswitch1")
+                    document.getElementById("navswitch3").classList.add("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                }
+                else{
+                    document.getElementById("navswitch1").classList.remove("navswitch1")
+                    document.getElementById("navswitch3").classList.remove("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                }
+            });
+        });        

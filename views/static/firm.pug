@@ -1,70 +1,255 @@
-extends layout
+extends layout 
 
 block content
+    style.
+        section.s8{
+            height:100vh;
+            background-image: linear-gradient(to bottom, rgba(0,0,0, 0.3),rgba(0,0,0, 0.75)), url("https://www.pitblado.com/wp-content/uploads/2020/09/pitblado-people.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-attachment: fixed; */
+            backdrop-filter: blur(30px);
+            background-color: #000;
+        }
+        .leftside{
+            float:left;
+            text-align:left;
+            margin-left:150px;
+            color:#fff;
+            font-size:2vw;
+            margin-top:17vh
+        }
+        .leftside p{
+            font-size: 2vw;
+        }
+        .leftside b{
+            text-decoration: underline;
+        }
+        .titlediv{
+            display:flex;
+            flex-flow:row;
+        }
+        .title{
+            padding-right:2vw;
+        }
+        section.s9{
+            height:max-content;
+        }
+        .imagetab1{
+            margin-top:20vh;
+            display:flex;
+            flex-flow:row;
+            justify-content: space-evenly;
+            align-content:center;
+            width:100vw;
+        }
+        .imagediv{
+            width:20vw;
+        }
+        .imagepart img{
+            width:18vw;
+            height:18vw;
+        }
+        .imagepart img:hover{
+            opacity: 0.5;        
+        }
+        .textpart h1{
+            font-size:2em;
+        }
+        .textpart p{
+            letter-spacing:0.001em;
+            color: #697881;
+            font-size:1.2em;
+        }
+        @media (min-width:1000px) and (max-width:1300px) {
+            .textpart h1{
+                font-size:1.6em;
+            }
+            .textpart p{
+                font-size:1em;
+            }
+        }
 
-  #wrapper
-    #skip-navigation
-    .layer.layer-hero.ko.first-layer.tall
-      img(src='https://www.pitblado.com/wp-content/uploads/2020/11/171562pitblado26640_SEK_BHK_ALA_edit-scaled.jpg', alt='')
-      .tinter(style='opacity: 0.2')
-      .inner
-        h1.huge
-          span.mask
-            span.text.text1 Our Firm
-    .layer.layer-statement.first-layer
-      .inner
-        .text
-          h3
-            span.mask
-              span.text.text1
-                | We&nbsp;
-                strong build
-                | &nbsp;trusting relationships,&nbsp;
-                strong understand
-                | &nbsp;client needs, and provide 
-                strong solutions.
-    .layer.layer-one-column
-      .inner
-        .text
-          p
-            | Minerva Model UN is an emerging foundation which has its roots in the vision of some students from grades 11 and 12. This chapter, very much like the previous one is an Online conference, keeping in mind the current situation around the globe. To recapitulate things, the first chapter was a grand success for all of us with the participation of over 200 delegates from India as well as many other countries and building upon that, we are expecting over 500 delegates for the Second chapter.
-          p
-            | Apart from our conferences, we are proud to have received a Letter of Recommendation from the Governor of Gujarat, honourable Sri Acharya Devvrat, the Governor of Meghalaya, honourable Sri Satya Pal Malik and the honourable Chief Minister of Rajasthan Shri Ashok Gehlot. Our organisation is recognised by the United Nations General Assembly (UNGA) and we also have successful ties with NGOs like the Abraham Lincoln Shiksha Society, etc.
-            br
-            | Our Board of Advisors comprises of-
-            br
-            br
-            | 1. H.E. Shekhar Dutt [Former governor of Chhattisgarh, former Defense Secretary]
-            br
-            | 2. Dr Shivran Raghuwanshi [Former Head of Physics group at National Atomic Energy Department]
-            br
-            | 3. Ms Chandana Hiran [Online Youth leader and feminist]
-            br
-            | 4. Adv. Mayank Singhal [Prominent figure with experience in over 500 MUNs]
-            br
-            | 5. Dr Kalyan Srinivas Raygalla [Prominent Entrepreneur]
-            br
-            | 6. Dr Sudhakar [famous psychologist]
-            br
-            | 7. Amb. K.P. Fabian (former ambassador to Qatar and Italy)
-            br
-            br
-            |  Inspired by the Atmanirbhar approach introduced by our government, we too have developed our strategies and ideologies. We host committees of a great spectrum ranging from a future crisis like dealing with the galactic federation to the past like the Reagan Administration idea of Star Wars, we also support human rights of prisoners that are being violated to a high extent by a lot of countries in the contemporary world and we also are revisiting the Indian elections of 2019 to develop the spirit of a true politician amongst the delegates and we also have a journalists committee, that is to support the fourth pillar of democracy.
-    .layer.layer-logofarm
-      .inner
-        p Honoured to be recognized by:
-        |  
-        img(src='recog/1.png', alt='')
-        |  
-        img(src='recog/2.png', alt='')
-        |  
-        img(src='recog/3.png', alt='')
-        |  
-        img(src='recog/4.png', alt='')
-        |  
-        img(src='recog/5.png', alt='')
-        |  
-        img(src='recog/6.png', alt='')
-        |  
-        img(src='recog/7.png', alt='')
+        @media (min-width:750px) and (max-width:1000px) {
+            .textpart h1{
+                font-size:1.3em;
+            }
+            .textpart p{
+                font-size:0.8em;
+            }
+        }
+
+        @media (max-width:750px) {
+            h1.title{
+                font-size:8vh;
+                text-align:left;
+                margin-top:-50px;
+            }
+            .titlediv{
+                margin-top:20vh;
+                flex-flow:column;
+            }
+            .leftside{
+                margin-left:20px;
+            }
+            .leftside p{
+                font-size:1.6vh;
+                line-height:2.8vh
+            }
+            .textpart h1{
+                font-size:1.3em;
+            }
+            .textpart p{
+                font-size:0.9em;
+            }
+            .imagetab1{
+                flex-flow:column;
+                align-items:center;
+            }
+            .imagepart img{
+                margin-top:10vh;
+                width:30vh;
+                height:30vh;
+            }
+            .imagediv{
+                width:30vh;
+            }
+            .imagetab1:nth-child(2), .imagetab1:nth-child(3){
+                margin-top:0;
+            }
+        }
+
+    section.s8
+        .leftside
+            .titlediv
+                h1.title Our
+                h1.title Firm
+            p 
+                | At Minerva MUN, we seek, attract, and celebrate
+                br
+                | student advocates who are shaped by 
+                b
+                    | values,
+                br
+                b
+                    | inspired
+                |  by our clients, and 
+                b
+                    | driven
+                |  to succeed.
+    section.s9
+        .imagetab1
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/1.png')
+                .textpart
+                    br
+                    h1 Arsh Arora
+                    p Founder - Executive Chairman
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/2.png')
+                .textpart
+                    br
+                    h1 Shourima Mishra
+                    p Non - Executive Chairman
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/3.png')
+                .textpart
+                    br
+                    h1 Aditya Raj Handa
+                    p Chief Executive Office
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/4.png')
+                .textpart
+                    br
+                    h1 Mahika Batra
+                    p Chief Operating Officer
+        .imagetab1
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/5.png')
+                .textpart
+                    br
+                    h1 Krishna Verma
+                    p Chief Administrative Officer
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/6.png')
+                .textpart
+                    br
+                    h1 Anushka Sahay
+                    p Chief Strategy Officer
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/7.png')
+                .textpart
+                    br
+                    h1 Ravi Vichitra
+                    p Senior Vice President
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/8.png')
+                .textpart
+                    br
+                    h1 Prachish Dubey
+                    p VP - Research
+        .imagetab1
+            .imagediv
+                .imagepart
+                    img(src='/team/team1/9.png')
+                .textpart
+                    br
+                    h1 Priyansh Shrivastava
+                    p VP - Research
     include footer
+    script.
+        document.getElementById("firmnav").classList.toggle("active");
+        $(document).ready(function () {
+            $(window).scroll(function(){
+                var ScrollTop = parseInt($(window).scrollTop());
+                console.log(ScrollTop);
+                if (ScrollTop > 950 && ScrollTop < 3200) {
+                    document.getElementById("navswitch1").classList.add("navswitch1")
+                    document.getElementById("navswitch3").classList.add("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                }
+                else{
+                    document.getElementById("navswitch1").classList.remove("navswitch1")
+                    document.getElementById("navswitch3").classList.remove("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                }
+            });
+        });
+        function mediaQ1(x) {
+            if (x.matches) { // If media query matches
+                document.getElementsByClassname('title').innerHTML = "yellow";
+            } else {
+            }
+        }
+
+            var x = window.matchMedia("(max-width: 750px)")
+            mediaQ1(x) // Call listener function at run time
+            x.addListener(mediaQ1)    

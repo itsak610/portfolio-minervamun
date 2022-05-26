@@ -3,26 +3,20 @@ var Schema = mongoose.Schema;
 var passportLocalMongoose = require("passport-local-mongoose");
 
 var UserSchema = new Schema({
-	// ------ Login ------ //
-
 	username: String,
 	password: String,
 
-	// ------------------- //
-
-	// ------ Admin ------ //
-
-	userType: String, // ( Admin / Surveillance / Accounting / User)
-
-	// ------------------- //
-
-	// ----- Details ----- //
+	userType: String,
 
 	name: {
 		type: String,
 		default: "",
 	},
 	committee: {
+		type: String,
+		default: "",
+	},
+	committeeCode: {
 		type: String,
 		default: "",
 	},
@@ -43,26 +37,11 @@ var UserSchema = new Schema({
 		default: "",
 	},
 
-	// ------------------- //
+	paymentID: String,
 
-	// // --- Profile Pic --- //
-
-	// profilepic: String,
-
-	// // ------------------- //
-
-	// ------ Other ------ //
-
-	verification: String,
-	verified: {
-		type: Boolean,
-		default: false,
-	},
 	time: {
 		type: Date,
 	},
-
-	// ------------------- //
 });
 
 UserSchema.plugin(passportLocalMongoose, {

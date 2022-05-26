@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .card.leaderboard
+    h1.form-title Committees
+    table
+      tr
+        th No.
+        th Committee
+        th Code
+      each committee, index in committees
+        tr
+          td= (index+1)
+          - var link2 = '/admin/committees/' + committee.CommitteeCode + '/allotment';
+          td
+            a(href=link2) #{committee.CommitteeName}
+          td= committee.CommitteeCode
+

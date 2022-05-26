@@ -1,198 +1,336 @@
-extends layout
+extends layout 
 
 block content
+    style.
+        section.s8{
+            height:90vh;
+            background-image: linear-gradient(to bottom, rgba(0,0,0, 0.3),rgba(0,0,0, 0.75)), url("https://www.pitblado.com/wp-content/uploads/2020/10/contact-page-scaled.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            backdrop-filter: blur(30px);
+            background-color: #000;
+        }
+        section.s11{
+            height:50vh;
+            background: url("https://www.pitblado.com/wp-content/uploads/2020/10/where-to-next-background-2560.jpg");
+            background-repeat: no-repeat;
+            background-position-y:85%;
+            background-size: cover;
+            backdrop-filter: blur(30px);
+            background-color: #000;
+        }        
+        .leftside{
+            float:left;
+            text-align:left;
+            margin-left:150px;
+            color:#fff;
+            font-size:2vw;
+            margin-top:17vh
+        }
+        .leftside p{
+            font-size: 2vw;
+        }
+        .leftside b{
+            text-decoration: underline;
+        }
 
-  #wrapper
-    #skip-navigation
-    .layer.layer-hero.ko.first-layer.tall
-      img.align-top(src='https://www.pitblado.com/wp-content/uploads/2020/10/contact-page-scaled.jpg', alt='')
-      .tinter(style='opacity: 0.2')
-      .inner
-        h1.huge
-          span.mask
-            span.text.text1 Our Services
-    .layer.layer-statement.first-layer
-      .inner
-        .text
-          h3
-            span.mask
-              span.text.text1
-                | We are 
-                strong continuously advancing
-                |  our knowledge of new developments in the industries and areas we practice. We 
-                strong never stand still
-                | ; we 
-                strong never grow stale.
-                |  It shows in our work.
-    .layer.layer-one-column
-      .inner
-        .text
-          p
-            | For over 365 days, Minerva MUN has helped its clients navigate complex legal matters with skill and professionalism.
-          p
-            | Our tradition speaks volumes, but we do not stand on tradition alone. We work with our clients to deeply understand the changing nuances and market conditions that influence all key sectors of the economy. Through knowledge, passion, and diligence, we help our clients achieve their desired objectives.
-          p &nbsp;
-    #layer-services-header.layer-services-header
-      #practice-areas.service-rows.active.cf
-        .service-labels.cf
-          .inner
-            span.label-name Name
-            |  
-            span.label-sub-practice Sub Practices
-            |  
-            span.label-Members Members Practicing
-            |  
-            span.label-open Tick
-        .service-row
-          a.header(aria-label='Banking and Financial Services')
-            .inner
-              p.name Public Speaking
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 22 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Bankruptcy and Insolvency')
-            .inner
-              p.name Diplomacy
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 23 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Business')
-            .inner
-              p.name Business
-              p.sub-practice-count 3 Sub-Practices
-              p.Member-count 10 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Family')
-            .inner
-              p.name Linguistic Training
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 4 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Franchising')
-            .inner
-              p.name Financial Planning
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 7 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Immigration')
-            .inner
-              p.name Marketing Training
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 11 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Indigenous')
-            .inner
-              p.name Data Analytics
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 11 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Insurance')
-            .inner
-              p.name Statistical Planning
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 5 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Intellectual Property')
-            .inner
-              p.name Team Management
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 6 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Labour and Employment')
-            .inner
-              p.name Professional Training
-              p.sub-practice-count 8 Sub-Practices
-              p.Member-count 16 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Litigation and Dispute Resolution')
-            .inner
-              p.name Startup Incubation
-              p.sub-practice-count 11 Sub-Practices
-              p.Member-count 38 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Mergers and Acquisitions')
-            .inner
-              p.name Technical Training
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 5 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Municipal')
-            .inner
-              p.name Outreach Training
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 1 Member
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .service-row
-          a.header(aria-label='Pensions')
-            .inner
-              p.name Corporate English Development
-              p.sub-practice-count(style='opacity: 0.2;') 0 Sub-Practices
-              p.Member-count 6 Members
-              |  
-              span.button
-                button(tabindex='-1', aria-hidden='true')
-                  span(aria-hidden='true') &rarr;
-        .layer.where-to-next
-          img(src='https://www.pitblado.com/wp-content/uploads/2020/10/where-to-next-background-2560.jpg', alt='')
-          .tinter(style='opacity: 0.2')
-          .inner
-            .text
-              span.eyebrow We have expertise across 14 Areas.
-              p.huge
-                | If you can&apos;t find what you are looking for
-                span(aria-hidden='true') &rarr;
-                |  
-                a(href='/contact') Contact Us
-                | .
+
+        .s8 .titlediv{
+            display:flex;
+            flex-flow:row;
+        }
+        .titlediv{
+            display:flex;
+            flex-flow:column;
+        }
+        .title{
+            padding-right:2vw;
+        }
+        section.s9{
+            height:max-content;
+        }
+        .s11 .linky{
+            cursor:pointer;
+        }
+        .s11 b{
+            text-decoration:none;
+        }
+        section.s10{
+            height:max-content;
+        }
+        .s9 p{
+            color:#687780;
+        }
+        .s9 b{
+            color:#000;
+            text-decoration:none;
+            font-weight:bolder;
+        }
+        .pdiv1{
+            display:flex;
+            justify-content:center
+        }
+        .pdiv2{
+            width:65%;
+            padding-bottom:10vh;
+        }
+        .pdiv2 p{
+            font-size:0.67em;
+            color:#000;
+        }
+        .imagetab1{
+            margin-top:20vh;
+            display:flex;
+            flex-flow:row;
+            justify-content: space-evenly;
+            align-content:center;
+            width:100vw;
+        }
+        .imagediv{
+            width:20vw;
+        }
+        .imagepart img{
+            width:18vw;
+            height:18vw;
+        }
+        .imagepart img:hover{
+            opacity: 0.5;        
+        }
+        .textpart h1{
+            font-size:2em;
+        }
+        .textpart p{
+            letter-spacing:0.001em;
+            color: #697881;
+            font-size:1.2em;
+        }
+        .h8container{
+            font-size:0.8em;
+            width:100%;
+            font-weight:bolder;
+            text-align:left;
+            color:#fff;
+            padding-bottom:50px;
+        }
+        .imgs{
+            display:flex;
+            justify-content:center;
+            padding:40px;
+
+        }
+        .imgs1{
+            width:fit-content;
+            display:flex;
+            flex-flow:row;
+        }
+        .imgs img{
+            height:200px;
+            width:200px;
+            padding:10px;
+        }
+        .leftside{
+            float:left;
+            text-align:left;
+            margin-left:150px;
+        }
+        .s11 .leftside{
+            color:#fff;
+        }
+        .s11 .leftside h1{
+            font-size:1.7em;
+            margin-top:-30px;
+            font-weight:400;
+            letter-spacing:0.07em;
+            text-decoration:none;
+        }
+        section.s9{
+            height:max-content;
+        }
+        @media (min-width:1000px) and (max-width:1300px) {
+            .textpart h1{
+                font-size:1.6em;
+            }
+            .textpart p{
+                font-size:1em;
+            }
+        }
+
+        @media (min-width:750px) and (max-width:1000px) {
+            .textpart h1{
+                font-size:1.3em;
+            }
+            .textpart p{
+                font-size:0.8em;
+            }
+        }
+
+        @media (max-width:750px) {
+            h1.title{
+                font-size:8vh;
+                text-align:left;
+                margin-top:-50px;
+            }
+            .titlediv{
+                margin-top:20vh;
+                flex-flow:column;
+            }
+            .leftside{
+                margin-left:20px;
+            }
+            .leftside p{
+                font-size:1.6vh;
+                line-height:2.8vh
+            }
+            .textpart h1{
+                font-size:1.3em;
+            }
+            .textpart p{
+                font-size:0.9em;
+            }
+            .imagetab1{
+                flex-flow:column;
+                align-items:center;
+            }
+            .imagepart img{
+                margin-top:10vh;
+                width:30vh;
+                height:30vh;
+            }
+            .imagediv{
+                width:30vh;
+            }
+            .imagetab1:nth-child(2), .imagetab1:nth-child(3){
+                margin-top:0;
+            }
+        }
+
+    section.s8
+        .container
+            .leftside
+                .titlediv
+                    h1.title Our
+                    h1.title Services
+
+    section.s9
+        .container
+            .leftside
+                .titlediv
+                    p 
+                        | We are  
+                        b continuously advancing
+                        |  our
+                        br
+                        |  knowledge of new developments in the
+                        br
+                        | industries and areas we practice. We 
+                        b never
+                        br
+                        b stand still
+                        | ; we 
+                        b never grow stale
+                        | . It shows in
+                        br
+                        | our work.
+
+    section.s10
+        .container
+            .leftside
+                .pdiv2
+                    p For over 365 days, Minerva MUN has helped its clients navigate complex legal matters with skill and professionalism.
+                    br
+                    p Our tradition speaks volumes, but we do not stand on tradition alone. We work with our clients to deeply understand the changing nuances and market conditions that influence all key sectors of the economy. Through knowledge, passion, and diligence, we help our clients achieve their desired objectives.
+                    br
+    section.s11
+        .container
+            .leftside
+                .titlediv
+                    .h8container
+                        h8 We have expertise across 14 Areas.
+                    h1 If you can't find what you are
+                    h1(onclick="location.href='/contact'")
+                        | looking for 
+                        b.linky &#8594; Contact Us
+    section.s12
+        .container
     include footer
+    script.
+        document.getElementById("servicesnav").classList.toggle("active");
+        $(document).ready(function () {
+            $(window).scroll(function(){
+                var ScrollTop = parseInt($(window).scrollTop());
+                if (ScrollTop > 800 && ScrollTop < 3200) {
+                    document.getElementById("navswitch1").classList.add("navswitch1")
+                    document.getElementById("navswitch3").classList.add("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                }
+                else{
+                    document.getElementById("navswitch1").classList.remove("navswitch1")
+                    document.getElementById("navswitch3").classList.remove("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                };
+                if (ScrollTop > 1000) {
+                    document.getElementById('masthead').classList.add('navshift')
+                }
+                else{
+                    document.getElementById('masthead').classList.remove('navshift')
+                }
+            });
+        });
+
+            $(function() {
+                $('#masthead').hover(function() {
+                    var ScrollTop = parseInt($(window).scrollTop());
+                    if (ScrollTop < 850) {
+                        document.getElementById("navswitch1").classList.add("navswitch1")
+                        document.getElementById("navswitch3").classList.add("navswitch1")
+                        document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                        document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                        document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                        document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                        document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                    }
+                }, function() {
+                    var ScrollTop = parseInt($(window).scrollTop());
+                    if (ScrollTop < 850) {
+                        document.getElementById("navswitch1").classList.remove("navswitch1")
+                        document.getElementById("navswitch3").classList.remove("navswitch1")
+                        document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                        document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                        document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                        document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                        document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                    }
+                });
+            });

@@ -1,0 +1,95 @@
+extends layout
+
+block content
+    .card.leaderboard
+        h1.form-title Manage Users
+        - var postlink1 = '/admin/manage/admins/' + editUsername;
+        form.registerform(method='post', action=postlink1)
+            label.single Current Username:
+                br
+                br
+                span
+                    b#currentUsername
+            label.single Current Name:
+                br
+                br
+                span
+                    b#currentName
+            label.single Current Email:
+                br
+                br
+                span
+                    b#currentEmail
+            label.single Current Number:
+                br
+                br
+                span
+                    b#currentNumber
+            label.single Current Committee:
+                br
+                br
+                span
+                    b#currentCommittee
+            label.single Current Code:
+                br
+                br
+                span
+                    b#currentCommitteeCode
+            label.single Current Allotment:
+                br
+                br
+                span
+                    b#currentAllotment
+            label.single Current Type:
+                br
+                br
+                span 
+                    b#currentType
+
+            label Set new Username:
+            input.select-teams(type='text',name='newUsername', id='selectedTeam')
+
+            label Set new Name:
+            input.select-teams(type='text',name='newName', id='selectedTeam')
+
+            label Set new Email:
+            input.select-teams(type='email',name='newEmail', id='selectedTeam')
+
+            label Set new Number:
+            input.select-teams(type='number',name='newNumber', id='selectedTeam')
+
+            label Set new Committee:
+            input.select-teams(type='text',name='newCommittee', id='selectedTeam')
+
+            label Set new Committee Code:
+            input.select-teams(type='text',name='newCommitteeCode', id='selectedTeam')
+
+            label Set new Allotment:
+            input.select-teams(type='text',name='newAllotment', id='selectedTeam')
+
+            label Set new Type:
+            input.select-teams(type='text', name='newType', id='selectedTeam')
+
+            input(type='submit', value='Save Changes')
+
+
+            script(type='text/javascript').
+                var teams = !{JSON.stringify(teams)};
+                document.getElementById('currentUsername').innerHTML = teams[0].username;
+                document.getElementById('currentName').innerHTML = teams[0].name;
+                document.getElementById('currentEmail').innerHTML = teams[0].email;
+                document.getElementById('currentNumber').innerHTML = teams[0].number;
+                document.getElementById('currentCommittee').innerHTML = teams[0].committee;
+                document.getElementById('currentCommitteeCode').innerHTML = teams[0].committeeCode;
+                document.getElementById('currentAllotment').innerHTML = teams[0].allotment;
+                document.getElementById('currentType').innerHTML = teams[0].userType;
+
+                document.querySelectorAll('#selectedTeam')[0].value = teams[0].username;
+                document.querySelectorAll('#selectedTeam')[1].value = teams[0].name;
+                document.querySelectorAll('#selectedTeam')[2].value = teams[0].email;
+                document.querySelectorAll('#selectedTeam')[3].value = teams[0].number;
+                document.querySelectorAll('#selectedTeam')[4].value = teams[0].committee;
+                document.querySelectorAll('#selectedTeam')[5].value = teams[0].committeeCode;
+                document.querySelectorAll('#selectedTeam')[6].value = teams[0].allotment;
+                document.querySelectorAll('#selectedTeam')[7].value = teams[0].userType;                
+

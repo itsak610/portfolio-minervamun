@@ -1,133 +1,428 @@
-extends layout
+extends layout 
 
 block content
+    style.
+        section.s8{
+            height:90vh;
+            background-image: linear-gradient(to bottom, rgba(0,0,0, 0.3),rgba(0,0,0, 0.75)), url("https://www.pitblado.com/wp-content/uploads/2020/10/contact-page-scaled.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            backdrop-filter: blur(30px);
+            background-color: #000;
+        }
 
-  #wrapper
-    #skip-navigation
-    .layer.layer-hero.ko.first-layer.tall
-      img(src='https://www.pitblado.com/wp-content/uploads/2020/10/where-to-next-background_crop-scaled.jpg', alt='Minerva MUN, 360 Main Street, Winnipeg, MB R3C 4H6')
-      .tinter(style='opacity: 0.2')
-      .inner
-        h1.huge
-          span.mask
-            span.text.text1 Contact Us
-    .layer.layer-statement.first-layer
-      .inner
-        .text
-          h3
-            span.mask
-              span.text.text1
-                | We are pleased to connect with you 
-                strong
-                  | in
-                  span.aCOpRe &#x2011;
-                  | person
-                | , by 
-                strong phone
-                | , by 
-                strong email
-                | &nbsp;or 
-                strong 24/7
-                |  on our website. We look forward to learning how we can help you.
-    section.layer.wo.cf.layer-contact
-      .inner.cf
-        .left
-          h2 Where to find us
-          .findus.cf
-            .findus-inner.cf
-              #interlakeAddress.address.findus-right
-                h4 Bhopal Office
-                p
-                  | Minerva MUN
-                  br
-                  |  89 Paras Majestic&nbsp;E-8 Trilanga
-                  br
-                  |  Bhopal,&nbsp;MP &nbsp;&nbsp;&nbsp;
-                  br
-                  |  India
-                p
-                  a(aria-label='phone number 204.956.0560', href='tel:+91 98263 55502') T&nbsp;&nbsp;+91 98263 55502
-                  br
-                  |  
-                  a(aria-label='email secretariat@minervamun.com', href='MAILTO:secretariat@minervamun.com')
-                    | E&nbsp;&nbsp;
-                    span secretariat@minervamun.com
-            .findus-inner.please-park.cf  
-          .findus-inner.cf
-            nav#contact-social_links
-              h3 Connect with us
-              ul
-                li
-                  a(href='https://twitter.com/minerva_modelun') Twitter
-                li
-                  a(href='https://www.linkedin.com/company/minerva_modelun') LinkedIn
-                li
-                  a(href='https://www.instagram.com/minerva_modelun') Instagram
-                li
-                  a(href='https://www.facebook.com/minerva_modelun') Facebook
-        .right
-          .form.content
-            #wpcf7-f676-o1.wpcf7(role='form', lang='en-US', dir='ltr')
-              .screen-reader-response
-                p(role='status', aria-live='polite', aria-atomic='true')
-                ul
-              form.wpcf7-form.init(action='', method='post', class='mailchimp-ext-0.5.42', novalidate='novalidate', data-status='init')
-                div(style='display: none;')
-                  input(type='hidden', name='_wpcf7', value='676')
-                  input(type='hidden', name='_wpcf7_version', value='5.4.2')
-                  input(type='hidden', name='_wpcf7_locale', value='en_US')
-                  input(type='hidden', name='_wpcf7_unit_tag', value='wpcf7-f676-o1')
-                  input(type='hidden', name='_wpcf7_container_post', value='0')
-                  input(type='hidden', name='_wpcf7_posted_data_hash', value='')
-                  input(type='hidden', name='_wpcf7_recaptcha_response', value='')
-                h2 Contact Us
-                p
-                  label  First Name
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.first-name
-                    input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required(type='text', name='first-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='First Name')
-                p
-                  label  Last Name
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.last-name
-                    input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required(type='text', name='last-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Last Name')
-                p
-                  label  Email
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.your-email
-                    input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Email')
-                p
-                  label  Your Message
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.your-message
-                    textarea.wpcf7-form-control.wpcf7-textarea(name='your-message', cols='40', rows='6', aria-invalid='false', placeholder='Your Message...')
-                p
-                  span#wpcf7-60fc393206bb0-wrapper.wpcf7-form-control-wrap.email-address-wrap
-                    label.hp-message(for='wpcf7-60fc393206bb0-field') Please leave this field empty.
-                    input#wpcf7-60fc393206bb0-field.wpcf7-form-control.wpcf7-text(type='text', name='email-address', value='', size='40', tabindex='-1', autocomplete='new-password')
-                p
-                  label  Subscribe to our Newsletter?
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.opt-in
-                    span.wpcf7-form-control.wpcf7-checkbox
-                      span.wpcf7-list-item.first.last
-                        input(type='checkbox', name='opt-in[]', value='Subscribe to our Newsletter?')
-                        span.wpcf7-list-item-label Subscribe to our Newsletter?
-                p
-                  | This contact form is protected by reCAPTCHA and the Google 
-                  a(href='https://policies.google.com/privacy') Privacy Policy
-                  |  and 
-                  a(href='https://policies.google.com/terms') Terms of Service
-                  |  apply.
-                p
-                  input.wpcf7-form-control.wpcf7-submit(type='submit', value='Submit')
-                .wpcf7-response-output(aria-hidden='true')
-                p(style='display: none !important')
-                  span.wpcf7-form-control-wrap.referer-page
-                    input.wpcf7-form-control.wpcf7-text.referer-page(type='hidden', name='referer-page', value='http://Direct%20Visit', data-value='http://Direct%20Visit', aria-invalid='false')
+        section.s11{
+            height:50vh;
+            background: url("https://www.pitblado.com/wp-content/uploads/2020/10/where-to-next-background-2560.jpg");
+            background-repeat: no-repeat;
+            background-position-y:85%;
+            background-size: cover;
+            backdrop-filter: blur(30px);
+            background-color: #000;
+        }        
+        .leftside{
+            float:left;
+            text-align:left;
+            margin-left:150px;
+            color:#fff;
+            font-size:2vw;
+            margin-top:17vh
+        }
+        .leftside p{
+            font-size: 2vw;
+        }
+        .leftside b{
+            text-decoration: underline;
+        }
+
+
+        .s8 .titlediv{
+            display:flex;
+            flex-flow:row;
+        }
+        .titlediv{
+            display:flex;
+            flex-flow:column;
+        }
+        .title{
+            padding-right:2vw;
+        }
+        section.s9{
+            height:max-content;
+        }
+        .s11 .linky{
+            cursor:pointer;
+        }
+        .s11 b{
+            text-decoration:none;
+        }
+        section.s10{
+            height:max-content;
+        }
+        .s9 p{
+            color:#687780;
+        }
+        .s9 b{
+            color:#000;
+            text-decoration:none;
+            font-weight:bolder;
+        }
+        .pdiv1{
+            display:flex;
+            justify-content:center
+        }
+        .pdiv2{
+            width:65%;
+            padding-bottom:10vh;
+        }
+        .pdiv2 p{
+            font-size:0.67em;
+            color:#000;
+        }
+        .imagetab1{
+            margin-top:20vh;
+            display:flex;
+            flex-flow:row;
+            justify-content: space-evenly;
+            align-content:center;
+            width:100vw;
+        }
+        .imagediv{
+            width:20vw;
+        }
+        .imagepart img{
+            width:18vw;
+            height:18vw;
+        }
+        .imagepart img:hover{
+            opacity: 0.5;        
+        }
+        .textpart h1{
+            font-size:2em;
+        }
+        .textpart p{
+            letter-spacing:0.001em;
+            color: #697881;
+            font-size:1.2em;
+        }
+        .h8container{
+            font-size:0.8em;
+            width:100%;
+            font-weight:bolder;
+            text-align:left;
+            color:#fff;
+            padding-bottom:50px;
+        }
+        .imgs{
+            display:flex;
+            justify-content:center;
+            padding:40px;
+
+        }
+        .imgs1{
+            width:fit-content;
+            display:flex;
+            flex-flow:row;
+        }
+        .imgs img{
+            height:200px;
+            width:200px;
+            padding:10px;
+        }
+        .leftside{
+            float:left;
+            text-align:left;
+            margin-left:150px;
+        }
+        .s11 .leftside{
+            color:#fff;
+        }
+        .s11 .leftside h1{
+            font-size:1.7em;
+            margin-top:-30px;
+            font-weight:400;
+            letter-spacing:0.07em;
+            text-decoration:none;
+        }
+        section.s9{
+            height:max-content;
+        }
+        section.s12{
+            height:100vh;
+        }
+        .headdiv1{
+            display:flex;
+            justify-content:space-evenly;
+            margin-top:15vh;
+        }
+        .headdiv1 h1{
+            width:80%;
+            text-align:left;
+            font-size:3em;
+        }
+        .contactdiv1{
+            display:flex;
+            flex-flow:row;
+            justify-content:space-evenly;
+        }
+        .contactdiv1 h2{
+            margin-top:5vh;
+            font-size:2em;
+        }
+        .contactdiv1 a, .contactdiv1 p{
+            width:fit-content;
+            font-size:1.3em
+        }
+        .contactdiv2, .contactdiv3, .contactdiv4{
+            display:flex;
+            flex-flow:column;
+            justify-content:space-evenly;
+        }
+        .contactdiv5{
+            display:flex;
+            flex-flow:column;
+            justify-content:center;
+        }
+        .contactdiv2, .contactdiv5{
+            width:35%;
+        }
+        .contactdiv4 a{
+            margin-top:20px;
+        }
+        .headdiv2 h3{
+            color:darkgrey;
+        }
+        .resizable-input-v3 {
+            /* make resizable */
+            overflow: hidden;
+            resize: both;
+            display: inline-block;
+
+            /* no extra spaces */
+            padding: 0;
+            margin: 0;
+            white-space: nowrap;
+
+            /* default widths */
+            min-width: 2em;
+            max-width: 100%;
+        }
+        .contactdiv5 form {
+            width:100%
+        }
+        .contactdiv5 form input, select, textarea{
+            display: block;
+            width: 100%;
+            font-size: 1em;
+            border: 1px solid #000;
+            height: 48px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            box-shadow: none;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            background: #FFFFFF;
+            -webkit-appearance: none;
+            color: #000;
+            font-family: 'suisse';
+            margin-top: 2em;
+        }
+        @media (min-width:1000px) and (max-width:1300px) {
+            .textpart h1{
+                font-size:1.6em;
+            }
+            .textpart p{
+                font-size:1em;
+            }
+        }
+
+        @media (min-width:750px) and (max-width:1000px) {
+            .textpart h1{
+                font-size:1.3em;
+            }
+            .textpart p{
+                font-size:0.8em;
+            }
+        }
+
+        @media (max-width:750px) {
+            h1.title{
+                font-size:8vh;
+                text-align:left;
+                margin-top:-50px;
+            }
+            .titlediv{
+                margin-top:20vh;
+                flex-flow:column;
+            }
+            .leftside{
+                margin-left:20px;
+            }
+            .leftside p{
+                font-size:1.6vh;
+                line-height:2.8vh
+            }
+            .textpart h1{
+                font-size:1.3em;
+            }
+            .textpart p{
+                font-size:0.9em;
+            }
+            .imagetab1{
+                flex-flow:column;
+                align-items:center;
+            }
+            .imagepart img{
+                margin-top:10vh;
+                width:30vh;
+                height:30vh;
+            }
+            .imagediv{
+                width:30vh;
+            }
+            .imagetab1:nth-child(2), .imagetab1:nth-child(3){
+                margin-top:0;
+            }
+        }
+
+    section.s8
+        .container
+            .leftside
+                .titlediv
+                    h1.title Contact
+                    h1.title Us
+
+    section.s9
+        .container
+            .leftside
+                .titlediv
+                    p 
+                        | We are pleased to connect with you
+                        br 
+                        b in&#8211;person
+                        | , by 
+                        b phone
+                        |  , by
+                        b email
+                        |  or 
+                        b 24/7
+                        | on our
+                        br
+                        | website. We look forward to learning how we
+                        br
+                        | can help you.
+
+    section.s12
+        .container
+            .headdiv1
+                h1 Where to find us?
+            .contactdiv1
+                .contactdiv2
+                    .contactdiv3
+                        h2 Bhopal Office
+                        p Minerva MUN
+                        p 89 Paras Majestic E-8 Trilanga
+                        p Bhopal, MP
+                        p India
+                        a(href='tel:+919826355502') T- +91 98263 55502
+                        a(href='mailto:secretariat@minervamun.com') E- secretariat@minervamun.com
+                    .contactdiv4
+                        h2 Connect with us
+                        a(href='https://twitter.com/minerva_modelun') Twitter
+                        a(href='https://www.linkedin.com/company/minerva_modelun') LinkedIn
+                        a(href='https://www.instagram.com/minerva_modelun') Instagram
+                        a(href='https://www.facebook.com/minerva_modelun') Facebook
+                .contactdiv5
+                    .headdiv2
+                        h2 Send us a message
+                        h3 We'll get back to you
+                        h3 on the email mentioned.
+                    form(action="/send/message", method="post") 
+                        if msgerror
+                            p  #{msgerror}
+                        input(type='text', name='name', placeholder='Name' required)
+                        input(type='email', name='email', placeholder='Email Adress' required)
+                        textarea(name='message', placeholder='Message' required)
+                        input(type='submit', value='Send')
     include footer
+    script.
+        document.getElementById("contactnav").classList.toggle("active");
+        $(document).ready(function () {
+            $(window).scroll(function(){
+                var ScrollTop = parseInt($(window).scrollTop());
+                if (ScrollTop > 800 && ScrollTop < 3200) {
+                    document.getElementById("navswitch1").classList.add("navswitch1")
+                    document.getElementById("navswitch3").classList.add("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                }
+                else{
+                    document.getElementById("navswitch1").classList.remove("navswitch1")
+                    document.getElementById("navswitch3").classList.remove("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                };
+                if (ScrollTop > 1000) {
+                    document.getElementById('masthead').classList.add('navshift')
+                }
+                else{
+                    document.getElementById('masthead').classList.remove('navshift')
+                }
+            });
+        });
+
+            $(function() {
+                $('#masthead').hover(function() {
+                    var ScrollTop = parseInt($(window).scrollTop());
+                    if (ScrollTop < 850) {
+                        document.getElementById("navswitch1").classList.add("navswitch1")
+                        document.getElementById("navswitch3").classList.add("navswitch1")
+                        document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                        document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                        document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                        document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                        document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                    }
+                }, function() {
+                    var ScrollTop = parseInt($(window).scrollTop());
+                    if (ScrollTop < 850) {
+                        document.getElementById("navswitch1").classList.remove("navswitch1")
+                        document.getElementById("navswitch3").classList.remove("navswitch1")
+                        document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                        document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                        document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                        document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                        document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                    }
+                });
+            });

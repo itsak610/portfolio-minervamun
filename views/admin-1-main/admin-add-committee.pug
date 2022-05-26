@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1.title Add a Committee
+    if error
+        p.error= error
+    form.registerform(method='post', action='/admin/add-committee')
+        textarea(placeholder='Committee Name', name='CommitteeName' required)
+        textarea(placeholder='Committee Code', name='CommitteeCode')
+        input(type='submit', value='Add Committee')

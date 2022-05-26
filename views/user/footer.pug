@@ -1,121 +1,345 @@
 .separator
 footer#main
-    .imp-links
-        .left-footer
-            h2
-                | Subscribe to our newsletter!
-                form(method='post', action='/subscribe').subscribe
-                    input(type='text', name='email', placeholder='Email Adress' required)
-                    input(type='submit', value='Subscribe')
+    style.
+        .footerform input, .footerform select, .footerform textarea{
+            border: 1px solid #000;
+            height: 48px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            box-shadow: none;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            background: #FFFFFF;
+            -webkit-appearance: none;
+            color: #000;
+            font-family: 'suisse';
+            margin-top: 1em;
+        }
+        #urllink{
+            display:none;
+        }
+    .row4
+        .column4.left4
+            .details1
+                img(style='height:60px;' src='/wp-content/themes/theme_mob_1.2/img/MINERVA__1_-removebg-preview.png')
+            br
+            br
+            .details2
+                p
+                    | Bhopal Office
+                br
+                p
+                    | Minerva MUN
+                p
+                    | 89 Paras Majestic E-8 Trilanga
+                p
+                    | Bhopal, MP    
+                p
+                    | India
+                br
+                p
+                    a(href='tel:+919826355502') T - +91 98263 55502
+                p
+                    a(href='mailto:secretariat@minervamun.com') E - secretariat@minervamun.com
 
-            br
-            br
-            p
-                | Bhopal Office
-            br
-            p
-                | Minerva MUN
-            p
-                | 89 Paras Majestic E-8 Trilanga
-            p
-                | Bhopal, MP    
-            p
-                | India
-            br
-            p
-                | T - +91 98263 55502
-            p
-                | E - secretariat@minervamun.com
-        .right-footer
-            h2 More Links
-            .links
-                .right1
-                    ul
+
+        .column4.middle4
+            .details1
+                ul
+                    li
+                        a(href='https://twitter.com/minerva_modelun' rel="noreferrer" target='_blank') Twitter
+                    li
+                        a(href='https://www.linkedin.com/company/minerva_modelun' rel="noreferrer" target='_blank') Linkedin
+                    li
+                        a(href='https://www.instagram.com/minerva_modelun' rel="noreferrer" target='_blank') Instagram
+                    li
+                        a(href='https://www.facebook.com/minerva_modelun' rel="noreferrer" target='_blank') Facebook
+            ul
+                .pages
+                    .pages1
                         li
-                            a(href='/register') Register
+                            a(href='/') Home
+                        li 
+                            a(href='/team') Our Team
+                        li 
+                            a(href='/firm') Our Firm
+                        li
+                            a(href='/services') Our Services
+                    .pages2
+                        li
+                            a(href='/contact') Contact Us
                         li
                             a(href='/login') Login
                         li
-                            a(href='/rules') Rules
-                .right2
+                            a(href='/register') Join Us
+
+        .column4.right4
+            .subform
+                h2
+                    | Subscribe to our newsletter!
+                if suberror
+                    p.error= suberror
+                form.footerform(method='post', action='/subscribe').subscribe
+                    input(type='text', name='email', placeholder='Email Adress' required)
+                    input#urllink(type='text', name='urllink' required)
+                    input(type='submit', value='Subscribe')
+            br
+            br
+            .subformp
+                p
+                    | In order to provide Minerva MUN with your express consent to receive the latest news, events and seminars, exciting announcements, legal trends, exclusive whitepapers, e-newsletters and other marketing content distributed electronically by or on behalf of Minerva MUN, please complete the fields above. Your personal information will not be used for any purpose other than for which your consent has been given. You may withdraw from receiving the above-referenced marketing content at any time by clicking ‘Unsubscribe’ in the footer of our emails, or by contacting us directly at secretariat@minervamun.com Please note that this express consent is sought in respect of Minerva MUN's marketing content and operates separately from the consent you may give to us in connection with our professional duty as to service providers to our clients.
+    .row5
+        .supercolumn5
+            .column5.left5
+                .details1
                     ul
+                        img(src='/wp-content/themes/theme_mob_1.2/img/MINERVA__1_-removebg-preview.png')
+                        br
+                        br
+                        br
                         li
-                            a(href='https://www.instagram.com/cypherdps/' rel="noreferrer" target='_blank') Instagram
+                            a(href='https://twitter.com/minerva_modelun' rel="noreferrer" target='_blank') Twitter
                         li
-                            a(href='https://discord.gg/FWrfqAJ2ZY' rel="noreferrer" target='_blank') Discord
+                            a(href='https://www.linkedin.com/company/minerva_modelun' rel="noreferrer" target='_blank') Linkedin
                         li
-                            a(href='https://www.youtube.com/channel/UCSULXN5apeQSDa0sLYuwEnA' rel="noreferrer" target='_blank') YouTube
-            br
-            br
-            p
-                | In order to provide Minerva MUN with your express consent to receive the latest news, events and seminars, exciting announcements, legal trends, exclusive whitepapers, e-newsletters and other marketing content distributed electronically by or on behalf of Minerva MUN, please complete the fields above. Your personal information will not be used for any purpose other than for which your consent has been given. You may withdraw from receiving the above-referenced marketing content at any time by clicking ‘Unsubscribe’ in the footer of our emails, or by contacting us directly at secretariat@minervamun.com Please note that this express consent is sought in respect of Minerva MUN's marketing content and operates separately from the consent you may give to us in connection with our professional duty as to service providers to our clients.
+                            a(href='https://www.instagram.com/minerva_modelun' rel="noreferrer" target='_blank') Instagram
+                        li
+                            a(href='https://www.facebook.com/minerva_modelun' rel="noreferrer" target='_blank') Facebook
+            .column5.right5
+                .subform
+                    h2
+                        | Subscribe to our newsletter!
+                    if suberror
+                        p.error= suberror
+                    form.footerform(method='post', action='/subscribe').subscribe
+                        input(type='text', name='email', placeholder='Email Adress' required)
+                        input#urllink(type='text', name='urllink' required)
+                        input(type='submit', value='Subscribe')
+        .supercolumn5
+            .column5.left5
+                .details2
+                    p
+                        | Bhopal Office
+                    br
+                    p
+                        | Minerva MUN
+                    p
+                        | 89 Paras Majestic E-8 Trilanga
+                    p
+                        | Bhopal, MP    
+                    p
+                        | India
+                    br
+                    p
+                        a(href='tel:+919826355502') T - +91 98263 55502
+                    p
+                        a(href='mailto:secretariat@minervamun.com') E - secretariat@minervamun.com
+            .column5.right5
+                ul
+                    .pages
+                        .pages1
+                            li
+                                a(href='/') Home
+                            li 
+                                a(href='/team') Our Team
+                            li 
+                                a(href='/firm') Our Firm
+                            li
+                                a(href='/services') Our Services
+                            li
+                                a(href='/contact') Contact Us
+                            li
+                                a(href='/login') Login
+                            li
+                                a(href='/register') Join Us
+        .column5.middle5
+            .subformp
+                p
+                    | In order to provide Minerva MUN with your express consent to receive the latest news, events and seminars, exciting announcements, legal trends, exclusive whitepapers, e-newsletters and other marketing content distributed electronically by or on behalf of Minerva MUN, please complete the fields above. Your personal information will not be used for any purpose other than for which your consent has been given. You may withdraw from receiving the above-referenced marketing content at any time by clicking ‘Unsubscribe’ in the footer of our emails, or by contacting us directly at secretariat@minervamun.com Please note that this express consent is sought in respect of Minerva MUN's marketing content and operates separately from the consent you may give to us in connection with our professional duty as to service providers to our clients.
     .last
         p © Copyright 2021 Minerva MUN ® All Rights Reserved.
-        
+
     script.
+        document.getElementById("urllink").setAttribute('value',window.location.pathname)
+        var ScrollLimit = (parseInt(document.getElementsByTagName('section')[1].getBoundingClientRect().top));
         function navfunction() {
             document.getElementsByClassName('js-toggle-menu')[0].classList.toggle('open');
-            document.getElementById("main").classList.toggle('temp-body')
+            document.querySelector('#main').classList.toggle('temp-body')
+            document.getElementsByClassName("hidden")[0].classList.toggle("notHidden")
             document.querySelector("footer").classList.toggle('temp-body')
             document.querySelector("body").classList.toggle('fixed-pos')
-            document.getElementsByClassName("hidden")[0].classList.toggle("notHidden")
-            if (document.getElementById("navswitch1").classList.contains('navswitch1')){
-                console.log("xxx")
+
+            var ScrollTop = parseInt($(window).scrollTop());
+            if (ScrollTop < ScrollLimit) {
+                document.getElementById("hidenav2").classList.add('notHidden')
+                document.getElementById("navswitch1").classList.add("navswitch1")
+                document.getElementById("navswitch3").classList.add("navswitch1")
+                document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                document.getElementsByClassName("menu-item")[2].classList.add("navham")
             }
             else{
-                document.getElementById("navswitch1").classList.toggle("navswitch1")
-                document.getElementById("navswitch3").classList.toggle("navswitch1")
-                document.getElementsByClassName("menu-item")[0].classList.toggle("navham")
-                document.getElementsByClassName("menu-item")[1].classList.toggle("navham")
-                document.getElementsByClassName("menu-item")[2].classList.toggle("navham")
-                var ScrollTop = parseInt($(window).scrollTop());
-                if (ScrollTop > 700 && ScrollTop < 1700) {
-                    document.getElementById("navswitch1").classList.add("navswitch1")
-                    document.getElementById("navswitch3").classList.add("navswitch1")
-                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
-                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
-                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
-                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
-                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
-                }
-                else if (ScrollTop > 2400 && ScrollTop < 4100) {
-                    document.getElementById("navswitch1").classList.add("navswitch1")
-                    document.getElementById("navswitch3").classList.add("navswitch1")
-                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
-                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
-                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
-                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
-                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
-                }
-                else{
-                    document.getElementById("navswitch1").classList.remove("navswitch1")
-                    document.getElementById("navswitch3").classList.remove("navswitch1")
-                    document.getElementsByClassName("menu-item")[0].classList.remove("navham")
-                    document.getElementsByClassName("menu-item")[1].classList.remove("navham")
-                    document.getElementsByClassName("menu-item")[2].classList.remove("navham")
-                    document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
-                    document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
-                }
-
+                document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                document.getElementsByClassName("menu-item")[2].classList.add("navham")
             }
         };
 
+        $(document).ready(function () {
+            var ScrollTop = parseInt($(window).scrollTop());
+            if (ScrollTop > (50+ScrollLimit)) {
+                document.getElementById('masthead').classList.add('navshift')
+            }
+            else{
+                document.getElementById('masthead').classList.remove('navshift')
+            }
 
+            $(window).scroll(function(){
+                var ScrollTop = parseInt($(window).scrollTop());
+                if (ScrollTop > (50+ScrollLimit)) {
+                    document.getElementById('masthead').classList.add('navshift')
+                }
+                else{
+                    document.getElementById('masthead').classList.remove('navshift')
+                }
+            });
+        });
+
+        function mediaQ1(x) {
+            if (x.matches) { // If media query matches
+                $(document).ready(function () {
+                    $(window).scroll(function(){
+                        var ScrollTop = parseInt($(window).scrollTop());
+                        if (ScrollTop > ScrollLimit) {
+                            document.getElementById("navswitch1").classList.add("navswitch1")
+                            document.getElementById("navswitch3").classList.add("navswitch1")
+                            document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                            document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                            document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                            document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                            document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                        }
+                    });
+                });
+
+                document.getElementById("navswitch1").classList.add("navswitch1")
+                document.getElementById("navswitch3").classList.add("navswitch1")
+                document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+
+                $(function() {
+                    $('#masthead').hover(function() {
+                        var ScrollTop = parseInt($(window).scrollTop());
+                        if (ScrollTop < ScrollLimit) {
+                            document.getElementById("navswitch1").classList.add("navswitch1")
+                            document.getElementById("navswitch3").classList.add("navswitch1")
+                            document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                            document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                            document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                            document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                            document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                        }
+                    })
+                });
+            } else {
+                $(document).ready(function () {
+                    $(window).scroll(function(){
+                        var ScrollTop = parseInt($(window).scrollTop());
+                        if (ScrollTop > ScrollLimit) {
+                            document.getElementById("navswitch1").classList.add("navswitch1")
+                            document.getElementById("navswitch3").classList.add("navswitch1")
+                            document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                            document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                            document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                            document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                            document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                        }
+                        else{
+                            document.getElementById("navswitch1").classList.remove("navswitch1")
+                            document.getElementById("navswitch3").classList.remove("navswitch1")
+                            document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                            document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                            document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                            document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                            document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                        };
+                    });
+                });
+                $(function() {
+                    $('#masthead').hover(function() {
+                        var ScrollTop = parseInt($(window).scrollTop());
+                        if (ScrollTop < ScrollLimit) {
+                            document.getElementById("navswitch1").classList.add("navswitch1")
+                            document.getElementById("navswitch3").classList.add("navswitch1")
+                            document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                            document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                            document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                            document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                            document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                        }
+                    }, function() {
+                        var ScrollTop = parseInt($(window).scrollTop());
+                        if (ScrollTop < ScrollLimit){
+                            if ( $('.mobile-nav').hasClass('hidden')){
+                                document.getElementById("navswitch1").classList.remove("navswitch1")
+                                document.getElementById("navswitch3").classList.remove("navswitch1")
+                                document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                                document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                                document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                                document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                                document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                            }
+                        }
+                    });
+                });
+            }
+        }
+
+        var x = window.matchMedia("(max-width: 1112px)")
+        mediaQ1(x) // Call listener function at run time
+        x.addListener(mediaQ1)   

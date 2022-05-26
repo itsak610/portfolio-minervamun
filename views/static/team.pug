@@ -49,27 +49,39 @@ block content
             margin-top:20vh;
             display:flex;
             flex-flow:row;
-            justify-content: space-evenly;
-            align-content:center;
+            justify-content:center;
             width:100vw;
         }
         .imagediv{
-            width:20vw;
+            width:21.5vw;
+        }
+        .imagepart{
+            display:flex;
+            justify-content:center;
         }
         .imagepart img{
-            width:18vw;
-            height:18vw;
+            width:20vw;
+            height:20vw;
         }
         .imagepart img:hover{
             opacity: 0.5;        
         }
+        .textpart{
+            margin-left:5%;
+        }
         .textpart h1{
             font-size:2em;
+            margin:0;
+            font-weight:300;
         }
         .textpart p{
             letter-spacing:0.001em;
             color: #697881;
             font-size:1.2em;
+            margin:0
+        }
+        .imagetab1:nth-child(2), .imagetab1:nth-child(3){
+            margin-top:5vh;
         }
         @media (min-width:1000px) and (max-width:1300px) {
             .textpart h1{
@@ -98,16 +110,18 @@ block content
             .titlediv{
                 margin-top:20vh;
                 flex-flow:column;
+                margin-left:5vh;
             }
             .leftside{
                 margin-left:20px;
             }
             .leftside p{
-                font-size:1.6vh;
-                line-height:2.8vh
+                font-size:2.5vw;
+                line-height:4vw
             }
             .textpart h1{
                 font-size:1.3em;
+                padding-bottom:5px;
             }
             .textpart p{
                 font-size:0.9em;
@@ -217,59 +231,15 @@ block content
                     br
                     h1 Priyansh Shrivastava
                     p VP - Research
+            .imagediv
+                .imagepart
+                .textpart
+            .imagediv
+                .imagepart
+                .textpart    
+            .imagediv
+                .imagepart
+                .textpart                
     include footer
     script.
         document.getElementById("teamnav").classList.toggle("active");
-        $(document).ready(function () {
-            $(window).scroll(function(){
-                var ScrollTop = parseInt($(window).scrollTop());
-                console.log(ScrollTop);
-                if (ScrollTop > 950 && ScrollTop < 3200) {
-                    document.getElementById("navswitch1").classList.add("navswitch1")
-                    document.getElementById("navswitch3").classList.add("navswitch1")
-                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
-                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
-                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
-                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
-                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
-                }
-                else{
-                    document.getElementById("navswitch1").classList.remove("navswitch1")
-                    document.getElementById("navswitch3").classList.remove("navswitch1")
-                    document.getElementsByClassName("menu-item")[0].classList.remove("navham")
-                    document.getElementsByClassName("menu-item")[1].classList.remove("navham")
-                    document.getElementsByClassName("menu-item")[2].classList.remove("navham")
-                    document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
-                    document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
-                    document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
-                };
-                if (ScrollTop > 1000) {
-                    console.log('xxxxx')
-                    document.getElementById('masthead').classList.add('navshift')
-                }
-                else{
-                    document.getElementById('masthead').classList.remove('navshift')
-                }
-            });
-        });
-        function mediaQ1(x) {
-            if (x.matches) { // If media query matches
-                document.getElementsByClassname('title').innerHTML = "yellow";
-            } else {
-            }
-        }
-
-            var x = window.matchMedia("(max-width: 750px)")
-            mediaQ1(x) // Call listener function at run time
-            x.addListener(mediaQ1)    

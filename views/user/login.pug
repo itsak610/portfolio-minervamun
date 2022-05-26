@@ -2,38 +2,38 @@ extends layout
 
 block content
 
-  #wrapper
-    #skip-navigation
-    .layer.layer-hero.ko.first-layer.tall
-      img(src='https://www.pitblado.com/wp-content/uploads/2020/11/171562pitblado26640_SEK_BHK_ALA_edit-scaled.jpg', alt='')
-      .tinter(style='opacity: 0.2')
-      .inner
-        h1.title Login
-          form.registerform(method='post' action='/login')
-            if error
-                if errorcode == 'red'
-                    p.error1= error
-                else
-                    p.error2= error
-            .form-group
-                label(for='username') Username:
-                input#username(type='text' name='username' placeholder='Username' maxlength='70' required)
-            .form-group
-                label(for='password') Password:
-                input(type='password', name='password', placeholder='Password', required)
-            p Not yet registered? 
-                b 
-                    a(href='/register') Register Here
-            input.btn(type='submit', value='Sign In')
-    .layer.layer-statement.first-layer
-      .inner
-        .text      
-      script.
-          window.addEventListener("DOMContentLoaded", function(event) {
-              if(document.getElementById('username')) {
-                  document.getElementById('username').addEventListener('input', function(){
-                      this.value = this.value.replace(/\s+/g, '').toLowerCase();
-                  });
-              }
-          });
-    include footer
+    #wrapper
+        #skip-navigation
+        .layer.layer-hero.ko.first-layer.tall
+            img(src='https://www.pitblado.com/wp-content/uploads/2020/11/171562pitblado26640_SEK_BHK_ALA_edit-scaled.jpg', alt='')
+            .tinter(style='opacity: 0.2')
+            .inner
+                h1.title Login
+                    form.registerform(method='post' action='/login')
+                        if error
+                            if errorcode == 'red'
+                                p.error1= error
+                            else
+                                p.error2= error
+                        .form-group
+                            label(for='username') Username:
+                            input#username(type='text' name='username' placeholder='Username' maxlength='70' required)
+                        .form-group
+                            label(for='password') Password:
+                            input(type='password', name='password', placeholder='Password', required)
+                        p Not yet registered? 
+                            b 
+                                a(href='/register') Register Here
+                        input.btn(type='submit', value='Sign In')
+        .layer.layer-statement.first-layer
+            .inner
+                .text      
+            script.
+                window.addEventListener("DOMContentLoaded", function(event) {
+                    if(document.getElementById('username')) {
+                        document.getElementById('username').addEventListener('input', function(){
+                            this.value = this.value.replace(/\s+/g, '').toLowerCase();
+                        });
+                    }
+                });
+        include footer

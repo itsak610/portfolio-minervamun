@@ -83,7 +83,16 @@ block content
             stroke:#000000;
         };
     .container
+        //- option(value=allotment) #{allotment}
+        //- if committee != ""
+        //- each allotment in committee
+        //-     if allotment != 'CommitteeName' && allotment != 'CommitteeCode'
+
         form#regForm.registerform(method='post' action='/register')
+            //- for committee in (committees[0])
+            //-     p= committee
+            //-     //- for allotment in committee.Allotments
+
             h1.title 
                 | Registration
             if error
@@ -186,58 +195,12 @@ block content
                     label(for='committee') Committee
                     select(type='text' name='committee' placeholder='eg. Lok Sabha' maxlength='45' required='required' oninput="this.className = ''")
                         option(value='Select a committee') Select a committee
-                        option(value='Committee 1') Committee 1
-                        option(value='Committee 2') Committee 2
-                        option(value='Committee 3') Committee 3
-                        option(value='Committee 4') Committee 4
-                        option(value='Committee 5') Committee 5
-                        option(value='Committee 6') Committee 6
+                        for committee in committees
+                            option(value='#{committee.CommitteeName}') #{committee.CommitteeName}
                 .form-group
                     label(for='allotment') Allotment
                     select(type='text' name='allotment' placeholder='eg. India' maxlength='45' required='required' oninput="this.className = ''")
                         option(value='Select a portfolio') Select a portfolio
-                        option(value='Afghanistan') Afghanistan
-                        option(value='Albania') Albania
-                        option(value='Algeria') Algeria
-                        option(value='Andorra') Andorra
-                        option(value='Angola') Angola
-                        option(value='Argentina') Argentina
-                        option(value='Armenia') Armenia
-                        option(value='Australia') Australia
-                        option(value='Bangladesh') Bangladesh
-                        option(value='Belgium') Belgium
-                        option(value='Brazil') Brazil
-                        option(value='Burkina Faso') Burkina Faso
-                        option(value='Cameroon') Cameroon
-                        option(value='Canada') Canada
-                        option(value='Chile') Chile
-                        option(value='China') China
-                        option(value='DPRK') DPRK
-                        option(value='Egypt') Egypt
-                        option(value='Ethiopia') Ethiopia
-                        option(value='France') France
-                        option(value='Germany') Germany
-                        option(value='India') India
-                        option(value='Iraq') Iraq
-                        option(value='Japan') Japan
-                        option(value='Malaysia') Malaysia
-                        option(value='Micronesia') Micronesia
-                        option(value='Morocco') Morocco
-                        option(value='New Zealand') New Zealand
-                        option(value='Netherlands') Netherlands
-                        option(value='Norway') Norway
-                        option(value='Pakistan') Pakistan
-                        option(value='Republic of Korea') Republic of Korea
-                        option(value='Russian Federation') Russian Federation
-                        option(value='Singapore') Singapore
-                        option(value='South Africa') South Africa
-                        option(value='Spain') Spain
-                        option(value='Sri Lanka') Sri Lanka
-                        option(value='Switzerland') Switzerland
-                        option(value='Turkey') Turkey
-                        option(value='Ukraine') Ukraine
-                        option(value='United Kingdom') United Kingdom
-                        option(value='United States of America') United States of America
                         option(value='Venezuela') Venezuela
                         option(value='Vietnam') Vietnam
                         option(value='Zimbabwe') Zimbabwe
@@ -258,7 +221,7 @@ block content
                 .form-group
                     label(for='passwordConfirm') Confirm Password
                     input(type='password' name='passwordConfirm' autocomplete='off' placeholder='eg. Example' required='required' oninput="this.className = ''")
-            
+
             div.half(style='overflow:auto;')
                 div(style='float:left;width:100%')
                     button#nextBtn(type='button', onclick='nextPrev(1)') Next
@@ -419,7 +382,7 @@ block content
                         height: mapHeight,
                         chartArea: {left:10, top:20, width: '100%', height: '100%'}               
                     };
-                    var hostlink = 'https://minerva-mun.herokuapp.com'
+                    var hostlink = 'http://192.168.1.2:5000'
                     var links = {
                         'IN-UP':hostlink+'/register/UP',
                         'IN-MH':hostlink+'/register/MH',

@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  .card.leaderboard
+    h1.form-title View #{comcode} Allotments
+    input#myInput(type='text' onkeyup='searchBar()' placeholder='Search Name')
+    table#myTable
+        tr
+            th No.
+            th Name
+            th Allotment
+        each team, index in teams
+            if team.username != currentUser.username
+                tr
+                    td= (index+1)
+                    - var link2 = '/admin/participant/' + team.username;
+                    td
+                        a(href=link2) #{team.name}
+                    td= team.allotment
+    script.
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        document.getElementById("leaderboardnav").classList.toggle("active");
+        document.getElementById("leaderboardnav").style.backgroundSize = "80px 2px";
+        var variable3 = (document.getElementsByTagName("tr").length - ((document.getElementsByTagName("tr").length)%15)) +1
+        var count = document.getElementsByTagName("tr").length - 1
+        function searchBar() {
+            // Declare variables
+            var input, filter, table, tr, td, td1, txtValue1, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            input.placeholder = "Search Name"
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } 
+                else {
+                    tr[i].style.display = "none";
+                }
+                if (!input.value){
+                    td1 = tr[i].getElementsByTagName("td")[0];
+                    txtValue1 = td1.innerText;
+                }
+                }
+            }
+        }
+        window.addEventListener("DOMContentLoaded", searchBar() )

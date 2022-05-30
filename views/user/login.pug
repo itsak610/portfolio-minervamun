@@ -1,39 +1,121 @@
 extends layout
 
 block content
+    style.
+        .form-group{
+            z-index:2;
+            display:flex;
+            justify-content:center;
+            flex-flow:column;
+        }
+        h1.title{
+            z-index:2;
+        }
+        form.registerform{
+            width:100%;
+        }
+        form .loginform{
+            display:flex;
+            justify-content:center;
+        }
+        .registerform input, .registerform select, .registerform textarea{
+            width:100%;
+        }
+        h1.title{
+            text-align:center;
+        }
+        @media (min-width:750px) and (max-width:1000px) {
+            h1.title{
+                font-size:2.4em;
+            }
+            .registerform input, .registerform select, .registerform textarea{
+                height:40px;
+                font-size:1em;
+            }
+            button#nextBtn, button#prevBtn{
+                font-size:1.2em;
+            }
+            .step{
+                height:12px;
+                width:12px;
+            }
+            .step:nth-child(1){
+                margin-left:-2%
+            }
+            p.registerpage{
+                font-size:0.8em;
+            }
+            form .form-group{
+                margin-bottom:0;
+            }
+        }
+    .container
+        form#regForm.registerform(method='post' action='/login')
+            .loginform
+                .half
+                    h1.title 
+                        | Login
+                    .form-group
+                        label Email / Phone Number:
+                        input(type='text',name='username' required)
 
-    #wrapper
-        #skip-navigation
-        .layer.layer-hero.ko.first-layer.tall
-            img(src='https://www.pitblado.com/wp-content/uploads/2020/11/171562pitblado26640_SEK_BHK_ALA_edit-scaled.jpg', alt='')
-            .tinter(style='opacity: 0.2')
-            .inner
-                h1.title Login
-                    form.registerform(method='post' action='/login')
-                        if error
-                            if errorcode == 'red'
-                                p.error1= error
-                            else
-                                p.error2= error
-                        .form-group
-                            label(for='username') Username:
-                            input#username(type='text' name='username' placeholder='Username' maxlength='70' required)
-                        .form-group
-                            label(for='password') Password:
-                            input(type='password', name='password', placeholder='Password', required)
-                        p Not yet registered? 
-                            b 
-                                a(href='/register') Register Here
-                        input.btn(type='submit', value='Sign In')
-        .layer.layer-statement.first-layer
-            .inner
-                .text      
-            script.
-                window.addEventListener("DOMContentLoaded", function(event) {
-                    if(document.getElementById('username')) {
-                        document.getElementById('username').addEventListener('input', function(){
-                            this.value = this.value.replace(/\s+/g, '').toLowerCase();
-                        });
-                    }
-                });
-        include footer
+                        label Password:
+                        input(type='password', name='password' required)
+
+                        input(type='submit', value='Save Changes')
+                        p.registerpage
+                            | Not registered yet ? 
+                            a.register(href='/register') Register
+    include footer
+    script.
+        document.getElementById("loginnav").classList.toggle("active");
+
+        document.getElementById("navswitch1").classList.add("navswitch1")
+        document.getElementById("navswitch3").classList.add("navswitch1")
+        document.getElementsByClassName("menu-item")[0].classList.add("navham")
+        document.getElementsByClassName("menu-item")[1].classList.add("navham")
+        document.getElementsByClassName("menu-item")[2].classList.add("navham")
+        document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+        document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+        document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+        document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+        document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+        document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+        document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+        document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+
+        $(document).ready(function () {
+            $(window).scroll(function(){
+                var ScrollTop = parseInt($(window).scrollTop());
+                if (ScrollTop < 900) {
+                    document.getElementById("navswitch1").classList.add("navswitch1")
+                    document.getElementById("navswitch3").classList.add("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                }
+                else{
+                    document.getElementById("navswitch1").classList.remove("navswitch1")
+                    document.getElementById("navswitch3").classList.remove("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                }
+            });
+        });       

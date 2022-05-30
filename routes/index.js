@@ -3,10 +3,13 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 var passport = require("passport");
+var Razorpay = require("razorpay");
+var crypto = require("crypto");
 var User = require("../models/user");
 var Committee = require("../models/committees");
 var Subscriber = require("../models/subscriber");
 var Message = require("../models/message");
+const Allotment = require("../models/allotments");
 // var LocalStrategy = require("passport-local").Strategy;
 // const { find } = require("../models/user");
 
@@ -24,6 +27,17 @@ function makeid(length) {
 }
 
 // -------------------------------------------- //
+
+var instance = new Razorpay({
+    key_id: "rzp_test_dj59UYKq5LugNS",
+    key_secret: "RDvnx7DCSKaaJ7yX4i4YvSb7",
+});
+
+var options = {
+    amount: 100000,
+    currency: "INR",
+    receipt: "order_rcptid_11",
+};
 
 // ----------------------------------------------------------------------------------------------------------------------------------------- //
 
@@ -164,139 +178,145 @@ router.get("/register", (req, res, next) => {
     if (req.user) {
         return res.redirect("/user/dashboard");
     } else {
-        Committee.find().exec(function(err, committees) {
-            if (err) {
-                console.log(err);
-            }
-            return res.render("register", {
-                committees: committees,
+        User.find().exec(function(err, users) {
+            Committee.find().exec(function(err, committees) {
+                Allotment.find().exec(function(err, allotments) {
+                    instance.orders.create(options, function(err, order) {
+                        return res.render("register", {
+                            committees: committees,
+                            allotments: allotments,
+                            orderID: order.id,
+                            userList: users,
+                        });
+                    });
+                });
             });
         });
     }
 });
 
-router.get("/register/:code", (req, res, next) => {
-    if (req.user) {
-        return res.redirect("/user/dashboard");
-    } else {
-        var codes = {
-            UP: "Uttar Pradesh",
-            MH: "Maharashtra",
-            BR: "Bihar",
-            WB: "West Bengal",
-            MP: "Madhya Pradesh",
-            TN: "Tamil Nadu",
-            RJ: "Rajasthan",
-            KA: "Karnataka",
-            GJ: "Gujarat",
-            AP: "Andhra Pradesh",
-            OR: "Orissa",
-            TG: "Telangana",
-            KL: "Kerala",
-            JH: "Jharkhand",
-            AS: "Assam",
-            PB: "Punjab",
-            CT: "Chhattisgarh",
-            HR: "Haryana",
-            JK: "Jammu and Kashmir",
-            UT: "Uttarakhand",
-            HP: "Himachal Pradesh",
-            TR: "Tripura",
-            ML: "Meghalaya",
-            MN: "Manipur",
-            NL: "Nagaland",
-            GA: "Goa",
-            AR: "Arunachal Pradesh",
-            MZ: "Mizoram",
-            SK: "Sikkim",
-            DL: "Delhi",
-            PY: "Puducherry",
-            CH: "Chandigarh",
-            AN: "Andaman and Nicobar Islands",
-            DN: "Dadra and Nagar Haveli",
-            DD: "Daman and Diu",
-            LD: "Lakshadweep",
-        };
-        for (const [key, value] of Object.entries(codes)) {
-            if (req.params.code == key) {
-                return res.render("register", {
-                    title: "Register",
-                    stateSelect: true,
-                    stateSelection: value,
-                });
-            }
-        }
-        return res.redirect("/register");
-    }
+router.post("/api/payment/verify", (req, res) => {
+    let body =
+        req.body.response.razorpay_order_id +
+        "|" +
+        req.body.response.razorpay_payment_id;
+
+    var expectedSignature = crypto
+        .createHmac("sha256", "RDvnx7DCSKaaJ7yX4i4YvSb7")
+        .update(body.toString())
+        .digest("hex");
+    console.log("sig received ", req.body.response.razorpay_signature);
+    console.log("sig generated ", expectedSignature);
+    var response = { signatureIsValid: "false" };
+    if (expectedSignature === req.body.response.razorpay_signature)
+        response = { signatureIsValid: "true" };
+    console.log(response);
 });
 
 router.post("/register", (req, res) => {
-    if (req.body.password != req.body.passwordConfirm) {
-        return res.render("register", {
-            title: "Register",
-            error: "The passwords dont match.",
-            errorcode: "red",
-        });
-    } else {
-        User.findOne({
-                username: req.body.email,
-            },
-            function(err, user) {
-                if (!user) {
-                    var verifyid = makeid(64);
-                    var editedUsername = req.body.email.substring(
-                        0,
-                        req.body.email.indexOf("@")
-                    );
-                    User.register(
-                        new User({
-                            userType: "user",
-                            username: editedUsername,
-                            email: req.body.email,
-                            name: req.body.name,
-                            number: req.body.number,
-                            committee: req.body.committee,
-                            allotment: req.body.allotment,
-                            city: req.body.city,
-                            verification: verifyid,
-                            password1: req.body.password,
-                            time: new Date(),
-                        }),
-                        req.body.password,
-                        function(err, user) {
-                            if (err) {
+    User.findOne({
+            email: req.body.email,
+        },
+        function(err, user) {
+            if (!user) {
+                var verifyid = makeid(64);
+                var editedUsername = req.body.email.substring(
+                    0,
+                    req.body.email.indexOf("@")
+                );
+                User.register(
+                    new User({
+                        username: editedUsername,
+                        userType: "user",
+                        state: req.body.state,
+                        city: req.body.city,
+                        name: req.body.name,
+                        committee: req.body.committee,
+                        allotment: req.body.allotment,
+                        email: req.body.email,
+                        number: req.body.number,
+                        password1: req.body.password,
+                        paymentID: req.body.payment1,
+                        orderID: req.body.payment2,
+                        signatureID: req.body.payment3,
+                        time: new Date(),
+                    }),
+                    req.body.password,
+                    function(err, user) {
+                        Allotment.findOne({
+                                ComName: req.body.committee,
+                                ComState: req.body.state,
+                                ComCity: req.body.city,
+                                Portfolio: req.body.allotment,
+                            },
+                            function(err, allot) {
+                                if (err) {
+                                    User.find().exec(function(err, users) {
+                                        Committee.find().exec(function(err, committees) {
+                                            Allotment.find().exec(function(err, allotments) {
+                                                instance.orders.create(options, function(err, order) {
+                                                    return res.render("register", {
+                                                        committees: committees,
+                                                        allotments: allotments,
+                                                        orderID: order.id,
+                                                        error: "The email is already registered.",
+                                                        errorcode: "red",
+                                                        userList: users,
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                } else {
+                                    User.find().exec(function(err, users) {
+                                        allot.Allotted = editedUsername;
+                                        allot.save();
+                                        Committee.find().exec(function(err, committees) {
+                                            Allotment.find().exec(function(err, allotments) {
+                                                instance.orders.create(options, function(err, order) {
+                                                    return res.render("register", {
+                                                        committees: committees,
+                                                        allotments: allotments,
+                                                        orderID: order.id,
+                                                        error: "User registered successfully.",
+                                                        errorcode: "green",
+                                                        userList: users,
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                }
+                            }
+                        );
+                    }
+                );
+            } else {
+                User.find().exec(function(err, users) {
+                    Committee.find().exec(function(err, committees) {
+                        Allotment.find().exec(function(err, allotments) {
+                            instance.orders.create(options, function(err, order) {
                                 return res.render("register", {
-                                    title: "Register",
+                                    committees: committees,
+                                    allotments: allotments,
+                                    orderID: order.id,
                                     error: "The email is already registered.",
                                     errorcode: "red",
+                                    userList: users,
                                 });
-                            } else {
-                                return res.render("register", {
-                                    isRedirect: true,
-                                    title: "Student Register",
-                                    error: "User registered successfully.",
-                                    errorcode: "blue",
-                                });
-                            }
-                        }
-                    );
-                } else {
-                    return res.render("register", {
-                        title: "Register",
-                        error: "The email is already registered.",
-                        errorcode: "red",
+                            });
+                        });
                     });
-                }
+                });
             }
-        );
-    }
+        }
+    );
 });
 
 // ----------------------------------------------------------------------------- //
 
 router.post("/subscribe", (req, res) => {
     var templink = req.body.urllink.replace("/", "");
-    console.log(templink);
     User.findOne({
             email: req.body.email,
         },
@@ -337,16 +357,13 @@ router.post("/send/message", (req, res) => {
                     req.body.email,
                     req.body.message,
                     (err) => {
-                        console.log("msg");
                         if (err) {
-                            console.log("a");
                             return res.render("contact", {
-                                msgerror: "err",
+                                error3: "err",
                             });
                         } else {
-                            console.log("b");
                             return res.render("contact", {
-                                msgerror: "Message sent successfully.",
+                                error3: "Message sent successfully.",
                             });
                         }
                     }
@@ -357,16 +374,13 @@ router.post("/send/message", (req, res) => {
                     req.body.email,
                     req.body.message,
                     (err) => {
-                        console.log("msg");
                         if (err) {
-                            console.log("a");
                             return res.render("contact", {
-                                msgerror: "err",
+                                error3: "err",
                             });
                         } else {
-                            console.log("b");
                             return res.render("contact", {
-                                msgerror: "Message sent successfully.",
+                                error3: "Message sent successfully.",
                             });
                         }
                     }
@@ -586,7 +600,6 @@ router.post("/admin/manage/entries/:editUsername", (req, res, next) => {
             username: req.body.editUsername,
         },
         function(err, user) {
-            console.log(user);
             user.username = req.body.newUsername;
             user.name = req.body.newName;
             user.committee = req.body.newCommittee;
@@ -677,56 +690,12 @@ router.get("/admin/add-committee", (req, res, next) => {
     return res.render("admin-add-committee", { title: "Add Committee" });
 });
 
-//ADD A QUES
 router.post("/admin/add-committee", (req, res, next) => {
     Committee.addCommittee(
         req.body.CommitteeName,
         req.body.CommitteeCode,
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        req.body.CommitteeState,
+        req.body.CommitteeCity,
         (err) => {
             if (err) {
                 return res.render("admin-add-committee", {
@@ -740,6 +709,46 @@ router.post("/admin/add-committee", (req, res, next) => {
             });
         }
     );
+});
+
+router.get("/admin/add-allotment", (req, res, next) => {
+    if (req.user.userType != "admin1") {
+        res.redirect("/");
+    }
+    return res.render("admin-add-allotment", { title: "Add Allotment" });
+});
+
+router.post("/admin/add-allotment", (req, res, next) => {
+    Committee.find({
+        CommitteeCode: req.body.ComCode,
+        CommitteeState: req.body.ComState,
+        CommitteeCity: req.body.ComCity,
+    }).exec(function(err, committee) {
+        Allotment.addAllotment(
+            req.body.Portfolio,
+            committee[0].CommitteeName,
+            committee[0].CommitteeCode,
+            committee[0].CommitteeState,
+            committee[0].CommitteeCity,
+            "",
+            (err) => {
+                if (err) {
+                    return res.render("admin-add-allotment", {
+                        error: "No such Committee found",
+                        title: "Add Allotment",
+                    });
+                }
+                return res.render("admin-add-allotment", {
+                    error: "Allotment created successfully.",
+                    title: "Add Allotment",
+                });
+            }
+        );
+    });
+    return res.render("admin-add-allotment", {
+        error: "Allotment created successfully.",
+        title: "Add Allotment",
+    });
 });
 
 // --------------------------------------------------------------------------------------------- //

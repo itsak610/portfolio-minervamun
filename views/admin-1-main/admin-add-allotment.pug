@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1.title Add an Allotment
+    if error
+        p.error= error
+    form.registerform(method='post', action='/admin/add-allotment')
+        textarea(placeholder='Committee Code', name='ComCode' required)
+        textarea(placeholder='Allotment', name='Portfolio' required)
+        textarea(placeholder='Committee State', name='ComState' required)
+        textarea(placeholder='Committee City', name='ComCity' required)
+        input(type='submit', value='Add Allotment')

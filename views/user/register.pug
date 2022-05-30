@@ -78,25 +78,127 @@ block content
             display:block !important;    
         } 
         #visualization path {
-            stroke-width:1;
+            stroke-width:0.5;
             display:none;
             stroke:#000000;
         };
+        #visualization path:hover {
+            display:none;
+        }
+        .form-group{
+            z-index:2;
+        }
+        h1.title{
+            z-index:2;
+        }
+        button#nextBtn,
+        button#prevBtn,
+        span.step,
+        p.registerpage{
+            z-index:3;
+        }
+        .halfagain.halftemp.half{
+            width:35%;
+            padding-bottom:30px;
+            display:flex !important;
+            justify-content:center;
+            margin-left:0;
+        }
+
+        #wronginput1, #wronginput2{
+            display:none;
+            color:red;
+            font-size:0.75em;
+            font-weight:bold;
+        }
+
+        .wronginput1, .wronginput2{
+            display:block !important;
+        }
+        #paymentIDinput,
+        #orderIDinput,
+        #signatureIDinput{
+            visibility:hidden;
+        }
+
+        @media (min-width:750px) and (max-width:1000px) {
+            h1.title{
+                font-size:2.4em;
+            }
+            .registerform input, .registerform select, .registerform textarea{
+                height:40px;
+                font-size:1em;
+            }
+            button#nextBtn, button#prevBtn{
+                font-size:1.2em;
+            }
+            .step{
+                height:12px;
+                width:12px;
+            }
+            .step:nth-child(1){
+                margin-left:-2%
+            }
+            p.registerpage{
+                font-size:0.8em;
+            }
+            form .form-group{
+                margin-bottom:0;
+            }
+        }
+        @media (max-width:750px) {
+            h1.title{
+                font-size:1.5em;
+            }
+            #visualization{
+                right:0;
+            }
+            .tab.tab1{
+                display:flex !important;
+                flex-flow:column-reverse;
+            }
+            button#nextBtn,
+            button#prevBtn,
+            h1.title{
+                position: relative;
+            }
+            h1.title{
+                z-index:3;
+            }
+            .halfagain.half{
+                width:100%;
+                padding-left:40px;
+                padding-right:40px;
+            }
+            button#nextBtn, button#prevBtn{
+                font-size:1.1em;
+                width:100%;
+            }
+            .halfagain.halftemp.half{
+                width:100%;
+            }        
+            .visual{
+                margin-top:-10vh;
+                margin-bottom:-10vh;
+                transform: scale(1.7)
+            }
+            #visualization path {
+                stroke-width:0.2;
+            }
+            text{
+                display:none;
+            }
+            footer{
+                z-index:3;
+                position:relative
+            }
+        }
     .container
-        //- option(value=allotment) #{allotment}
-        //- if committee != ""
-        //- each allotment in committee
-        //-     if allotment != 'CommitteeName' && allotment != 'CommitteeCode'
-
         form#regForm.registerform(method='post' action='/register')
-            //- for committee in (committees[0])
-            //-     p= committee
-            //-     //- for allotment in committee.Allotments
-
             h1.title 
                 | Registration
             if error
-                if errorcode == 'red'
+                if errorcode == 'green'
                     p.error1= error
                 else
                     p.error2= error
@@ -105,128 +207,89 @@ block content
                     .left2
                         .form-group
                             label(for='state') State
-                            if stateSelect
-                                select#inputState.form-control.mapstate(type='text' name='state' placeholder='eg. Gujarat' maxlength='45' required='required' oninput="this.className = ''")
-                                    option(value=stateSelection) #{stateSelection}
-                                    option(value='Andra Pradesh') Andra Pradesh
-                                    option(value='Arunachal Pradesh') Arunachal Pradesh
-                                    option(value='Assam') Assam
-                                    option(value='Bihar') Bihar
-                                    option(value='Chhattisgarh') Chhattisgarh
-                                    option(value='Goa') Goa
-                                    option(value='Gujarat') Gujarat
-                                    option(value='Haryana') Haryana
-                                    option(value='Himachal Pradesh') Himachal Pradesh
-                                    option(value='Jammu and Kashmir') Jammu and Kashmir
-                                    option(value='Jharkhand') Jharkhand
-                                    option(value='Karnataka') Karnataka
-                                    option(value='Kerala') Kerala
-                                    option(value='Madhya Pradesh') Madhya Pradesh
-                                    option(value='Maharashtra') Maharashtra
-                                    option(value='Manipur') Manipur
-                                    option(value='Meghalaya') Meghalaya
-                                    option(value='Mizoram') Mizoram
-                                    option(value='Nagaland') Nagaland
-                                    option(value='Orissa') Orissa
-                                    option(value='Punjab') Punjab
-                                    option(value='Rajasthan') Rajasthan
-                                    option(value='Sikkim') Sikkim
-                                    option(value='Tamil Nadu') Tamil Nadu
-                                    option(value='Telangana') Telangana
-                                    option(value='Tripura') Tripura
-                                    option(value='Uttaranchal') Uttaranchal
-                                    option(value='Uttar Pradesh') Uttar Pradesh
-                                    option(value='West Bengal') West Bengal
-                                    option(value='Andaman and Nicobar Islands') Andaman and Nicobar Islands
-                                    option(value='Chandigarh') Chandigarh
-                                    option(value='Dadar and Nagar Haveli') Dadar and Nagar Haveli
-                                    option(value='Daman and Diu') Daman and Diu
-                                    option(value='Delhi') Delhi
-                                    option(value='Lakshadeep') Lakshadeep
-                                    option(value='Pondicherry') Pondicherry
-                            else
-                                select#inputState.form-control.mapstate(type='text' name='state' placeholder='eg. Gujarat' maxlength='45' required='required' oninput="this.className = ''")
-                                    option(value='SelectState') Select State
-                                    option(value='Andra Pradesh') Andra Pradesh
-                                    option(value='Arunachal Pradesh') Arunachal Pradesh
-                                    option(value='Assam') Assam
-                                    option(value='Bihar') Bihar
-                                    option(value='Chhattisgarh') Chhattisgarh
-                                    option(value='Goa') Goa
-                                    option(value='Gujarat') Gujarat
-                                    option(value='Haryana') Haryana
-                                    option(value='Himachal Pradesh') Himachal Pradesh
-                                    option(value='Jammu and Kashmir') Jammu and Kashmir
-                                    option(value='Jharkhand') Jharkhand
-                                    option(value='Karnataka') Karnataka
-                                    option(value='Kerala') Kerala
-                                    option(value='Madhya Pradesh') Madhya Pradesh
-                                    option(value='Maharashtra') Maharashtra
-                                    option(value='Manipur') Manipur
-                                    option(value='Meghalaya') Meghalaya
-                                    option(value='Mizoram') Mizoram
-                                    option(value='Nagaland') Nagaland
-                                    option(value='Orissa') Orissa
-                                    option(value='Punjab') Punjab
-                                    option(value='Rajasthan') Rajasthan
-                                    option(value='Sikkim') Sikkim
-                                    option(value='Tamil Nadu') Tamil Nadu
-                                    option(value='Telangana') Telangana
-                                    option(value='Tripura') Tripura
-                                    option(value='Uttaranchal') Uttaranchal
-                                    option(value='Uttar Pradesh') Uttar Pradesh
-                                    option(value='West Bengal') West Bengal
-                                    option(value='Andaman and Nicobar Islands') Andaman and Nicobar Islands
-                                    option(value='Chandigarh') Chandigarh
-                                    option(value='Dadar and Nagar Haveli') Dadar and Nagar Haveli
-                                    option(value='Daman and Diu') Daman and Diu
-                                    option(value='Delhi') Delhi
-                                    option(value='Lakshadeep') Lakshadeep
-                                    option(value='Pondicherry') Pondicherry
-                                p.registerpage Click on any state on the map
+                            select#inputState.form-control.mapstate(type='text' name='state' placeholder='eg. Gujarat' maxlength='45' required='required' oninput="this.className = ''")
+                                option(value='') Select State
+                                option(value='Andhra Pradesh') Andhra Pradesh
+                                option(value='Arunachal Pradesh') Arunachal Pradesh
+                                option(value='Assam') Assam
+                                option(value='Bihar') Bihar
+                                option(value='Chhattisgarh') Chhattisgarh
+                                option(value='Goa') Goa
+                                option(value='Gujarat') Gujarat
+                                option(value='Haryana') Haryana
+                                option(value='Himachal Pradesh') Himachal Pradesh
+                                option(value='Jammu and Kashmir') Jammu and Kashmir
+                                option(value='Jharkhand') Jharkhand
+                                option(value='Karnataka') Karnataka
+                                option(value='Kerala') Kerala
+                                option(value='Madhya Pradesh') Madhya Pradesh
+                                option(value='Maharashtra') Maharashtra
+                                option(value='Manipur') Manipur
+                                option(value='Meghalaya') Meghalaya
+                                option(value='Mizoram') Mizoram
+                                option(value='Nagaland') Nagaland
+                                option(value='Orissa') Orissa
+                                option(value='Punjab') Punjab
+                                option(value='Rajasthan') Rajasthan
+                                option(value='Sikkim') Sikkim
+                                option(value='Tamil Nadu') Tamil Nadu
+                                option(value='Telangana') Telangana
+                                option(value='Tripura') Tripura
+                                option(value='Uttaranchal') Uttaranchal
+                                option(value='Uttar Pradesh') Uttar Pradesh
+                                option(value='West Bengal') West Bengal
+                                option(value='Andaman and Nicobar Islands') Andaman and Nicobar Islands
+                                option(value='Chandigarh') Chandigarh
+                                option(value='Dadar and Nagar Haveli') Dadar and Nagar Haveli
+                                option(value='Daman and Diu') Daman and Diu
+                                option(value='Delhi') Delhi
+                                option(value='Lakshadeep') Lakshadeep
+                                option(value='Pondicherry') Pondicherry
+                            p.registerpage Click on any state on the map
                         .form-group
                             label(for='city') City
                             select#inputDistrict.form-control(type='text' name='city' placeholder='eg. Bhopal' maxlength='45' required='required' oninput="this.className = ''")
-                                option(value='') Select City
+                                option(value='SelectCity') Select City
                     div.visual(align='right')
                         #visualization
             .tab.half
                 .form-group
                     label(for='committee') Committee
-                    select(type='text' name='committee' placeholder='eg. Lok Sabha' maxlength='45' required='required' oninput="this.className = ''")
-                        option(value='Select a committee') Select a committee
-                        for committee in committees
-                            option(value='#{committee.CommitteeName}') #{committee.CommitteeName}
+                    select#commitvalue(type='text' name='committee' placeholder='eg. Lok Sabha' maxlength='45' required='required' oninput="this.className = ''")
                 .form-group
                     label(for='allotment') Allotment
-                    select(type='text' name='allotment' placeholder='eg. India' maxlength='45' required='required' oninput="this.className = ''")
-                        option(value='Select a portfolio') Select a portfolio
-                        option(value='Venezuela') Venezuela
-                        option(value='Vietnam') Vietnam
-                        option(value='Zimbabwe') Zimbabwe
+                    select#cvalue(type='text' name='allotment' placeholder='eg. India' maxlength='45' required='required' oninput="this.className = ''")
 
             .tab.half
                 .form-group
                     label(for='name') Name
-                    input(type='text' name='name' placeholder='eg. Mahatma Gandhi' maxlength='45' required='required' oninput="this.className = ''")
+                    input#nameinput(type='text' name='name' placeholder='eg. Mahatma Gandhi' maxlength='45' required='required' oninput="this.className = ''")
                 .form-group
                     label(for='email') Email Address
-                    input(type='text' name='email' placeholder='eg. example@example.com' maxlength='70' required='required' oninput="this.className = ''")
+                    input#emailinput(type='text' name='email' placeholder='eg. example@example.com' maxlength='70' required='required' oninput="this.className = ''")
+                    p#wronginput1 The email is already registered.
                 .form-group
                     label(for='number') Phone Number
-                    input(type='number' name='number' placeholder='eg. 9876543210' maxlength='10' required='required' oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.className = '';")
+                    input#numberinput(type='number' name='number' placeholder='eg. 9876543210' maxlength='10' required='required' oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.className = '';")
+                    p#wronginput2 The number is already registered.
                 .form-group
                     label(for='password') Password
                     input(type='password' name='password' autocomplete='off' placeholder='eg. Example' required='required' oninput="this.className = ''")
+            .tab.half
                 .form-group
-                    label(for='passwordConfirm') Confirm Password
-                    input(type='password' name='passwordConfirm' autocomplete='off' placeholder='eg. Example' required='required' oninput="this.className = ''")
+                    label(for='payment') Registration Fees
+                    input#paymentinput(type='text' name='payment' value='1000 INR' maxlength='10' required='required' )
+                    input#paymentIDinput(type='text' value=' ' name='payment1')
+                    input#orderIDinput(type='text' value=' ' name='payment2')
+                    input#signatureIDinput(type='text' value=' ' name='payment3')
 
-            div.half(style='overflow:auto;')
+
+            div.halfagain.half(style='overflow:auto;')
                 div(style='float:left;width:100%')
                     button#nextBtn(type='button', onclick='nextPrev(1)') Next
                     button#prevBtn(type='button', onclick='nextPrev(-1)') Previous
-            div.half(style='text-align:left;margin-top:40px;margin-left:15%')
+            div.halfagain.halftemp.half(style='margin-top:40px;')
+                span.step
                 span.step
                 span.step
                 span.step
@@ -234,18 +297,209 @@ block content
                 | Already registered ? 
                 a.register(href='/login') Login
 
-
         .layer.layer-statement.first-layer
             .inner
                 .text
         include footer
-        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+        script(src="https://code.jquery.com/jquery-3.6.0.js", integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=", crossorigin="anonymous")
         script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
         script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
-        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
         script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
+        script(src="https://checkout.razorpay.com/v1/checkout.js")
         script.
+
+            var tempname = document.getElementById('nameinput').value;
+            var tempemail = document.getElementById('emailinput').value;
+            var tempnumber = document.getElementById('numberinput').value;
+            var options = {
+                "key": "rzp_test_dj59UYKq5LugNS", // Enter the Key ID generated from the Dashboard
+                "amount": "1000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "currency": "INR",
+                "name": "Minerva MUN",
+                "description": "Minerva MUN",
+                "image": "https://minervamun.com/wp-content/themes/theme_mob_1.2/img/MINERVA.png",
+                "order_id":!{JSON.stringify(orderID)}, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "handler": function (response){
+                    document.getElementById('paymentIDinput').value = response.razorpay_payment_id
+                    document.getElementById('orderIDinput').value = response.razorpay_order_id
+                    document.getElementById('signatureIDinput').value = response.razorpay_signature
+                    var settings = {
+                        "url": "/api/payment/verify",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json"
+                        },
+                        "data": JSON.stringify({response}),
+                    }
+                    $.ajax(settings).done(function (response) {
+                        console.log(data);
+                    });
+                    document.getElementById("regForm").submit();
+                },
+                "prefill": {
+                    "name": tempname,
+                    "email": tempemail,
+                    "contact": tempnumber
+                },
+                "notes": {
+                    "address": "89 Paras Majestic E-8 Trilanga Bhopal MP"
+                },
+                "theme": {
+                    "color": "#000000"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.on('payment.failed', function (response){
+                window.location.href = "http://www.w3schools.com";
+                alert(response.error.code);
+                alert(response.error.description);
+                alert(response.error.source);
+                alert(response.error.step);
+                alert(response.error.reason);
+                alert(response.error.metadata.order_id);
+                alert(response.error.metadata.payment_id);
+            });
+
+            var paymentInput = document.getElementById("paymentinput");
+            paymentInput.style.backgroundColor = 'white'
+            paymentInput.setAttribute("disabled", true);
+            var userDateEntry = document.getElementById("commitvalue");
+            var stateEntry = document.getElementById("inputState")
+            var cityEntry = document.getElementById("inputDistrict")
+            var committees = !{JSON.stringify(committees)};
+            var allotments = !{JSON.stringify(allotments)};
+            var userList = !{JSON.stringify(userList)};
+            var userEntry = document.getElementById("cvalue");
+            var timesClicked1 = 0;
+            var timesClicked2 = 0;
+            document.getElementById('emailinput').addEventListener('change',
+                function () {
+                    document.getElementById('wronginput1').classList.remove('wronginput1');
+                });
+            document.getElementById('numberinput').addEventListener('change',
+                function () {
+                    document.getElementById('wronginput2').classList.remove('wronginput2');
+                });
+            cityEntry.addEventListener('change',
+                function () {
+                    if(cityEntry.value != ""){
+                        userDateEntry.classList.remove("invalid");
+                        userEntry.classList.remove("invalid");
+                    }
+                    timesClicked1++;
+                    if (timesClicked1>1){
+                        var e = document.querySelector("#commitvalue");
+                        var first = e.firstElementChild;
+                        while (first) {
+                            first.remove();
+                            first = e.firstElementChild;
+                        }
+                    }
+                    for (i in committees){
+                        var nmnm = stateEntry.value;
+                        var bmbm = cityEntry.value;
+                        if (committees[i].CommitteeState == nmnm && committees[i].CommitteeCity == bmbm){
+                            var element1 = document.createElement("option");
+                            element1.value = committees[i].CommitteeName
+                            element1.innerHTML = committees[i].CommitteeName
+                            var bnbn = document.getElementById('commitvalue')
+                            bnbn.appendChild(element1)
+                            timesClicked2++;
+                            if (timesClicked2>1){
+                                var e = document.querySelector("#cvalue");
+                                var first = e.firstElementChild;
+                                while (first) {
+                                    first.remove();
+                                    first = e.firstElementChild;
+                                }
+                            }
+                            for (i in allotments){
+                                var nmnm = userDateEntry.value;
+                                if (allotments[i].ComName == nmnm && allotments[i].ComState == stateEntry.value && allotments[i].ComCity == cityEntry.value){
+                                    if (allotments[i].Allotted == ""){
+                                        var element1 = document.createElement("option");
+                                        element1.value = allotments[i].Portfolio
+                                        element1.innerHTML = allotments[i].Portfolio
+                                        var bnbn = document.getElementById('cvalue')
+                                        bnbn.appendChild(element1)
+                                    }
+                                    else{
+                                        var element1 = document.createElement("option");
+                                        element1.value = allotments[i].Portfolio
+                                        element1.innerHTML = allotments[i].Portfolio + ' (full)'
+                                        element1.style.backgroundColor = 'lightgrey'
+                                        element1.setAttribute("disabled", true);
+                                        var bnbn = document.getElementById('cvalue')
+                                        bnbn.appendChild(element1)
+                                    }
+                                }
+                                else{}
+                            }
+                        }
+                    }
+                    if (userDateEntry.childElementCount == 0){
+                        var element1 = document.createElement("option");
+                        element1.value = ""
+                        element1.innerHTML = "No Committees Available"
+                        var bnbn = document.getElementById('commitvalue')
+                        bnbn.appendChild(element1)
+                    }
+                }
+            );
+            userDateEntry.addEventListener('change', 
+                function () { 
+                    if(userDateEntry.value != ""){
+                        userDateEntry.classList.remove("invalid");
+                        userEntry.classList.remove("invalid");
+                    }
+                    if(userEntry.value != ""){
+                        userEntry.classList.remove("invalid");
+                    }
+                    timesClicked2++;
+                    if (timesClicked2>1){
+                        var e = document.querySelector("#cvalue");
+                        var first = e.firstElementChild;
+                        while (first) {
+                            first.remove();
+                            first = e.firstElementChild;
+                        }
+                    }
+                    for (i in allotments){
+                        var nmnm = userDateEntry.value;
+                        if (allotments[i].ComName == nmnm && allotments[i].ComState == stateEntry.value && allotments[i].ComCity == cityEntry.value){
+                            if (allotments[i].Allotted == ""){
+                                var element1 = document.createElement("option");
+                                element1.value = allotments[i].Portfolio
+                                element1.innerHTML = allotments[i].Portfolio
+                                var bnbn = document.getElementById('cvalue')
+                                bnbn.appendChild(element1)
+                            }
+                            else{
+                                var element1 = document.createElement("option");
+                                element1.value = allotments[i].Portfolio
+                                element1.innerHTML = allotments[i].Portfolio + ' (full)'
+                                element1.style.backgroundColor = 'lightgrey'
+                                element1.setAttribute("disabled", true);
+                                var bnbn = document.getElementById('cvalue')
+                                bnbn.appendChild(element1)
+                            }
+                        }
+                        else{}
+                    }
+                }
+            );
+            userEntry.addEventListener('change', 
+                function () {
+                    if(userDateEntry.value != ""){
+                        userDateEntry.classList.remove("invalid");
+                        userEntry.classList.remove("invalid");
+                    }
+                    if(userEntry.value != ""){
+                        userEntry.classList.remove("invalid");
+                    }
+                })
             google.load('visualization', '1', {'packages': ['geochart']});
             google.setOnLoadCallback(drawVisualization);
 
@@ -292,7 +546,6 @@ block content
                 if (window.innerHeight < 1400 && window.innerHeight > 1100){
                     var mapHeight = window.innerHeight * 0.5
                     var mapWidth = window.innerWidth * 0.5
-                    console.log(mapHeight,mapWidth)
                     var opts = {
                         theme: 'maximized',
                         region: 'IN',
@@ -309,9 +562,10 @@ block content
                         height: mapHeight,
                         chartArea: {left:10, top:20, width: '100%', height: '100%'}               
                     };
-                    var hostlink = 'http://192.168.1.2:5000'
+                    var hostlink = window.location.protocol + window.location.host
+                    var stateinput = document.getElementById("InputState")
                     var links = {
-                        'IN-UP':hostlink+'/register/UP',
+                        'IN-UP':'javascript:stateinput.value = "Uttar Pradesh";stateinput.innerHTML = "Uttar Pradesh"',
                         'IN-MH':hostlink+'/register/MH',
                         'IN-BR':hostlink+'/register/BR',
                         'IN-WB':hostlink+'/register/WB',
@@ -357,15 +611,174 @@ block content
                             var code = data.getValue(sel[0].row, 0);
                             var link = links[code];
                             if (link) {
-                                window.location.href = link;
+                                $("#inputState").val(link)
+                                var AndhraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
+                                var ArunachalPradesh = ["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kra Daadi","Kurung Kumey","Lohit","Longding","Lower Dibang Valley","Lower Subansiri","Namsai","Papum Pare","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang","Itanagar"];
+                                var Assam = ["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup Metropolitan","Kamrup (Rural)","Karbi Anglong","Karimganj","Kokrajhar","Lakhimpur","Majuli","Morigaon","Nagaon","Nalbari","Dima Hasao","Sivasagar","Sonitpur","South Salmara Mankachar","Tinsukia","Udalguri","West Karbi Anglong"];
+                                var Bihar = ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa","Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"];
+                                var Chhattisgarh = ["Balod","Baloda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada","Dhamtari","Durg","Gariaband","Janjgir Champa","Jashpur","Kabirdham","Kanker","Kondagaon","Korba","Koriya","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur","Surguja"];
+                                var Goa = ["North Goa","South Goa"];
+                                var Gujarat = ["Ahmedabad","Amreli","Anand","Aravalli","Banaskantha","Bharuch","Bhavnagar","Botad","Chhota Udaipur","Dahod","Dang","Devbhoomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kheda","Kutch","Mahisagar","Mehsana","Morbi","Narmada","Navsari","Panchmahal","Patan","Porbandar","Rajkot","Sabarkantha","Surat","Surendranagar","Tapi","Vadodara","Valsad"];
+                                var Haryana = ["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Fatehabad","Gurugram","Hisar","Jhajjar","Jind","Kaithal","Karnal","Kurukshetra","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"];
+                                var HimachalPradesh = ["Bilaspur","Chamba","Hamirpur","Kangra","Kinnaur","Kullu","Lahaul Spiti","Mandi","Shimla","Sirmaur","Solan","Una"];
+                                var JammuKashmir = ["Anantnag","Bandipora","Baramulla","Budgam","Doda","Ganderbal","Jammu","Kargil","Kathua","Kishtwar","Kulgam","Kupwara","Leh","Poonch","Pulwama","Rajouri","Ramban","Reasi","Samba","Shopian","Srinagar","Udhampur"];
+                                var Jharkhand = ["Bokaro","Chatra","Deoghar","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribagh","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu","Ramgarh","Ranchi","Sahebganj","Seraikela Kharsawan","Simdega","West Singhbhum"];
+                                var Karnataka = ["Bagalkot","Bangalore Rural","Bangalore Urban","Belgaum","Bellary","Bidar","Vijayapura","Chamarajanagar","Chikkaballapur","Chikkamagaluru","Chitradurga","Dakshina Kannada","Davanagere","Dharwad","Gadag","Gulbarga","Hassan","Haveri","Kodagu","Kolar","Koppal","Mandya","Mysore","Raichur","Ramanagara","Shimoga","Tumkur","Udupi","Uttara Kannada","Yadgir"];
+                                var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
+                                var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
+                                "Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"];
+                                var Maharashtra = ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim","Yavatmal"];
+                                var Manipur = ["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","Kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"];
+                                var Meghalaya = ["East Garo Hills","East Jaintia Hills","East Khasi Hills","North Garo Hills","Ri Bhoi","South Garo Hills","South West Garo Hills","South West Khasi Hills","West Garo Hills","West Jaintia Hills","West Khasi Hills"];
+                                var Mizoram = ["Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip","Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"];
+                                var Nagaland = ["Dimapur","Kiphire","Kohima","Longleng","Mokokchung","Mon","Peren","Phek","Tuensang","Wokha","Zunheboto"];
+                                var Odisha = ["Angul","Balangir","Balasore","Bargarh","Bhadrak","Boudh","Cuttack","Debagarh","Dhenkanal","Gajapati","Ganjam","Jagatsinghpur","Jajpur","Jharsuguda","Kalahandi","Kandhamal","Kendrapara","Kendujhar","Khordha","Koraput","Malkangiri","Mayurbhanj","Nabarangpur","Nayagarh","Nuapada","Puri","Rayagada","Sambalpur","Subarnapur","Sundergarh"];
+                                var Punjab = ["Amritsar","Barnala","Bathinda","Faridkot","Fatehgarh Sahib","Fazilka","Firozpur","Gurdaspur","Hoshiarpur","Jalandhar","Kapurthala","Ludhiana","Mansa","Moga","Mohali","Muktsar","Pathankot","Patiala","Rupnagar","Sangrur","Shaheed Bhagat Singh Nagar","Tarn Taran"];
+                                var Rajasthan = ["Ajmer","Alwar","Banswara","Baran","Barmer","Bharatpur","Bhilwara","Bikaner","Bundi","Chittorgarh","Churu","Dausa","Dholpur","Dungarpur","Ganganagar","Hanumangarh","Jaipur","Jaisalmer","Jalore","Jhalawar","Jhunjhunu","Jodhpur","Karauli","Kota","Nagaur","Pali","Pratapgarh","Rajsamand","Sawai Madhopur","Sikar","Sirohi","Tonk","Udaipur"];
+                                var Sikkim = ["East Sikkim","North Sikkim","South Sikkim","West Sikkim"];
+                                var TamilNadu = ["Ariyalur","Chennai","Coimbatore","Cuddalore","Dharmapuri","Dindigul","Erode","Kanchipuram","Kanyakumari","Karur","Krishnagiri","Madurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","Salem","Sivaganga","Thanjavur","Theni","Thoothukudi","Tiruchirappalli","Tirunelveli","Tiruppur","Tiruvallur","Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"];
+                                var Telangana = ["Adilabad","Bhadradri Kothagudem","Hyderabad","Jagtial","Jangaon","Jayashankar","Jogulamba","Kamareddy","Karimnagar","Khammam","Komaram Bheem","Mahabubabad","Mahbubnagar","Mancherial","Medak","Medchal","Nagarkurnool","Nalgonda","Nirmal","Nizamabad","Peddapalli","Rajanna Sircilla","Ranga Reddy","Sangareddy","Siddipet","Suryapet","Vikarabad","Wanaparthy","Warangal Rural","Warangal Urban","Yadadri Bhuvanagiri"];
+                                var Tripura = ["Dhalai","Gomati","Khowai","North Tripura","Sepahijala","South Tripura","Unakoti","West Tripura"];
+                                var UttarPradesh = ["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kasganj","Kaushambi","Kheri","Kushinagar","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampur","Saharanpur","Sambhal","Sant Kabir Nagar","Shahjahanpur","Shamli","Shravasti","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"];
+                                var Uttarakhand  = ["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pauri","Pithoragarh","Rudraprayag","Tehri","Udham Singh Nagar","Uttarkashi"];
+                                var WestBengal = ["Alipurduar","Bankura","Birbhum","Cooch Behar","Dakshin Dinajpur","Darjeeling","Hooghly","Howrah","Jalpaiguri","Jhargram","Kalimpong","Kolkata","Malda","Murshidabad","Nadia","North 24 Parganas","Paschim Bardhaman","Paschim Medinipur","Purba Bardhaman","Purba Medinipur","Purulia","South 24 Parganas","Uttar Dinajpur"];
+                                var AndamanNicobar = ["Nicobar","North Middle Andaman","South Andaman"];
+                                var Chandigarh = ["Chandigarh"];
+                                var DadraHaveli = ["Dadra Nagar Haveli"];
+                                var DamanDiu = ["Daman","Diu"];
+                                var Delhi = ["Central Delhi","East Delhi","New Delhi","North Delhi","North East Delhi","North West Delhi","Shahdara","South Delhi","South East Delhi","South West Delhi","West Delhi"];
+                                var Lakshadweep = ["Lakshadweep"];
+                                var Puducherry = ["Karaikal","Mahe","Puducherry","Yanam"];
+
+
+                                var optionsList2;
+                                var htmlString = "";
+
+                                switch ($('#inputState').val()) {
+                                    case "Andhra Pradesh":
+                                        optionsList2 = AndhraPradesh;
+                                        break;
+                                    case "Arunachal Pradesh":
+                                        optionsList2 = ArunachalPradesh;
+                                        break;
+                                    case "Assam":
+                                        optionsList2 = Assam;
+                                        break;
+                                    case "Bihar":
+                                        optionsList2 = Bihar;
+                                        break;
+                                    case "Chhattisgarh":
+                                        optionsList2 = Chhattisgarh;
+                                        break;
+                                    case "Goa":
+                                        optionsList2 = Goa;
+                                        break;
+                                    case  "Gujarat":
+                                        optionsList2 = Gujarat;
+                                        break;
+                                    case "Haryana":
+                                        optionsList2 = Haryana;
+                                        break;
+                                    case "Himachal Pradesh":
+                                        optionsList2 = HimachalPradesh;
+                                        break;
+                                    case "Jammu and Kashmir":
+                                        optionsList2 = JammuKashmir;
+                                        break;
+                                    case "Jharkhand":
+                                        optionsList2 = Jharkhand;
+                                        break;
+                                    case  "Karnataka":
+                                        optionsList2 = Karnataka;
+                                        break;
+                                    case "Kerala":
+                                        optionsList2 = Kerala;
+                                        break;
+                                    case  "Madhya Pradesh":
+                                        optionsList2 = MadhyaPradesh;
+                                        break;
+                                    case "Maharashtra":
+                                        optionsList2 = Maharashtra;
+                                        break;
+                                    case  "Manipur":
+                                        optionsList2 = Manipur;
+                                        break;
+                                    case "Meghalaya":
+                                        optionsList2 = Meghalaya ;
+                                        break;
+                                    case  "Mizoram":
+                                        optionsList2 = Mizoram;
+                                        break;
+                                    case "Nagaland":
+                                        optionsList2 = Nagaland;
+                                        break;
+                                    case  "Orissa":
+                                        optionsList2 = Orissa;
+                                        break;
+                                    case "Punjab":
+                                        optionsList2 = Punjab;
+                                        break;
+                                    case  "Rajasthan":
+                                        optionsList2 = Rajasthan;
+                                        break;
+                                    case "Sikkim":
+                                        optionsList2 = Sikkim;
+                                        break;
+                                    case  "Tamil Nadu":
+                                        optionsList2 = TamilNadu;
+                                        break;
+                                    case  "Telangana":
+                                        optionsList2 = Telangana;
+                                        break;
+                                    case "Tripura":
+                                        optionsList2 = Tripura ;
+                                        break;
+                                    case  "Uttaranchal":
+                                        optionsList2 = Uttaranchal;
+                                        break;
+                                    case  "Uttar Pradesh":
+                                        optionsList2 = UttarPradesh;
+                                        break;
+                                    case "West Bengal":
+                                        optionsList2 = WestBengal;
+                                        break;
+                                    case  "Andaman and Nicobar Islands":
+                                        optionsList2 = AndamanNicobar;
+                                        break;
+                                    case "Chandigarh":
+                                        optionsList2 = Chandigarh;
+                                        break;
+                                    case  "Dadar and Nagar Haveli":
+                                        optionsList2 = DadraHaveli;
+                                        break;
+                                    case "Daman and Diu":
+                                        optionsList2 = DamanDiu;
+                                        break;
+                                    case  "Delhi":
+                                        optionsList2 = Delhi;
+                                        break;
+                                    case "Lakshadeep":
+                                        optionsList2 = Lakshadeep ;
+                                        break;
+                                    case  "Pondicherry":
+                                        optionsList2 = Pondicherry;
+                                        break;
+                                }
+
+                                function myFunction6() {
+                                    for(var i = 0; i < optionsList2.length; i++){
+                                        htmlString = htmlString+"<option value='"+ optionsList2[i] +"'>"+ optionsList2[i] +"</option>";
+                                    }
+                                    $("#inputDistrict").html(htmlString);
+                                };
+                                myFunction6();
                             }
                         }
                     });
                 }
-                else if (window.innerHeight < 1100){
-                    var mapHeight = window.innerHeight * 0.5
-                    var mapWidth = window.innerWidth * 0.3
-                    console.log(mapHeight,mapWidth)
+                else if (window.innerHeight > 750 && window.innerHeight < 1100){
+                    var mapHeight = window.innerHeight * 0.55
+                    var mapWidth = window.innerWidth * 0.35
                     var opts = {
                         theme: 'maximized',
                         region: 'IN',
@@ -383,43 +796,44 @@ block content
                         chartArea: {left:10, top:20, width: '100%', height: '100%'}               
                     };
                     var hostlink = 'http://192.168.1.2:5000'
+                    var stateinput = document.getElementById("InputState")
                     var links = {
-                        'IN-UP':hostlink+'/register/UP',
-                        'IN-MH':hostlink+'/register/MH',
-                        'IN-BR':hostlink+'/register/BR',
-                        'IN-WB':hostlink+'/register/WB',
-                        'IN-MP':hostlink+'/register/MP',
-                        'IN-TN':hostlink+'/register/TN',
-                        'IN-RJ':hostlink+'/register/RJ',
-                        'IN-KA':hostlink+'/register/KA',
-                        'IN-GJ':hostlink+'/register/GJ',
-                        'IN-AP':hostlink+'/register/AP',
-                        'IN-OR':hostlink+'/register/OR',
-                        'IN-TG':hostlink+'/register/TG',
-                        'IN-KL':hostlink+'/register/KL',
-                        'IN-JH':hostlink+'/register/JH',
-                        'IN-AS':hostlink+'/register/AS',
-                        'IN-PB':hostlink+'/register/PB',
-                        'IN-CT':hostlink+'/register/CT',
-                        'IN-HR':hostlink+'/register/HR',
-                        'IN-JK':hostlink+'/register/JK',
-                        'IN-UT':hostlink+'/register/UT',
-                        'IN-HP':hostlink+'/register/HP',
-                        'IN-TR':hostlink+'/register/TR',
-                        'IN-ML':hostlink+'/register/ML',
-                        'IN-MN':hostlink+'/register/MN',
-                        'IN-NL':hostlink+'/register/NL',
-                        'IN-GA':hostlink+'/register/GA',
-                        'IN-AR':hostlink+'/register/AR',
-                        'IN-MZ':hostlink+'/register/MZ',
-                        'IN-SK':hostlink+'/register/SK',
-                        'IN-DL':hostlink+'/register/DL',
-                        'IN-PY':hostlink+'/register/PY',
-                        'IN-CH':hostlink+'/register/CH',
-                        'IN-AN':hostlink+'/register/AN',
-                        'IN-DN':hostlink+'/register/DN',
-                        'IN-DD':hostlink+'/register/DD',
-                        'IN-LD':hostlink+'/register/LD'
+                        'IN-UP':'Uttar Pradesh',
+                        'IN-MH':'Maharashtra',
+                        'IN-BR':'Bihar',
+                        'IN-WB':'West Bengal',
+                        'IN-MP':'Madhya Pradesh',
+                        'IN-TN':'Tamil Nadu',
+                        'IN-RJ':'Rajasthan',
+                        'IN-KA':'Karnataka',
+                        'IN-GJ':'Gujarat',
+                        'IN-AP':'Andhra Pradesh',
+                        'IN-OR':'Orissa',
+                        'IN-TG':'Telangana',
+                        'IN-KL':'Kerala',
+                        'IN-JH':'Jharkhand',
+                        'IN-AS':'Assam',
+                        'IN-PB':'Punjab',
+                        'IN-CT':'Chhattisgarh',
+                        'IN-HR':'Haryana',
+                        'IN-JK':'Jammu and Kashmir',
+                        'IN-UT':'Uttarakhand',
+                        'IN-HP':'Himachal Pradesh',
+                        'IN-TR':'Tripura',
+                        'IN-ML':'Meghalaya',
+                        'IN-MN':'Manipur',
+                        'IN-NL':'Nagaland',
+                        'IN-GA':'Goa',
+                        'IN-AR':'Arunachal Pradesh',
+                        'IN-MZ':'Mizoram',
+                        'IN-SK':'Sikkim',
+                        'IN-DL':'Delhi',
+                        'IN-PY':'Puducherry',
+                        'IN-CH':'Chandigarh',
+                        'IN-AN':'Andaman and Nicobar Islands',
+                        'IN-DN':'Dadra and Nagar Haveli',
+                        'IN-DD':'Daman and Diu',
+                        'IN-LD':'Lakshadweep',
                     };
                     var geochart = new google.visualization.GeoChart(
                         document.getElementById('visualization'));
@@ -430,10 +844,403 @@ block content
                             var code = data.getValue(sel[0].row, 0);
                             var link = links[code];
                             if (link) {
-                                window.location.href = link;
+                                $("#inputState").val(link)
+                                var AndhraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
+                                var ArunachalPradesh = ["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kra Daadi","Kurung Kumey","Lohit","Longding","Lower Dibang Valley","Lower Subansiri","Namsai","Papum Pare","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang","Itanagar"];
+                                var Assam = ["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup Metropolitan","Kamrup (Rural)","Karbi Anglong","Karimganj","Kokrajhar","Lakhimpur","Majuli","Morigaon","Nagaon","Nalbari","Dima Hasao","Sivasagar","Sonitpur","South Salmara Mankachar","Tinsukia","Udalguri","West Karbi Anglong"];
+                                var Bihar = ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa","Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"];
+                                var Chhattisgarh = ["Balod","Baloda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada","Dhamtari","Durg","Gariaband","Janjgir Champa","Jashpur","Kabirdham","Kanker","Kondagaon","Korba","Koriya","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur","Surguja"];
+                                var Goa = ["North Goa","South Goa"];
+                                var Gujarat = ["Ahmedabad","Amreli","Anand","Aravalli","Banaskantha","Bharuch","Bhavnagar","Botad","Chhota Udaipur","Dahod","Dang","Devbhoomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kheda","Kutch","Mahisagar","Mehsana","Morbi","Narmada","Navsari","Panchmahal","Patan","Porbandar","Rajkot","Sabarkantha","Surat","Surendranagar","Tapi","Vadodara","Valsad"];
+                                var Haryana = ["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Fatehabad","Gurugram","Hisar","Jhajjar","Jind","Kaithal","Karnal","Kurukshetra","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"];
+                                var HimachalPradesh = ["Bilaspur","Chamba","Hamirpur","Kangra","Kinnaur","Kullu","Lahaul Spiti","Mandi","Shimla","Sirmaur","Solan","Una"];
+                                var JammuKashmir = ["Anantnag","Bandipora","Baramulla","Budgam","Doda","Ganderbal","Jammu","Kargil","Kathua","Kishtwar","Kulgam","Kupwara","Leh","Poonch","Pulwama","Rajouri","Ramban","Reasi","Samba","Shopian","Srinagar","Udhampur"];
+                                var Jharkhand = ["Bokaro","Chatra","Deoghar","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribagh","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu","Ramgarh","Ranchi","Sahebganj","Seraikela Kharsawan","Simdega","West Singhbhum"];
+                                var Karnataka = ["Bagalkot","Bangalore Rural","Bangalore Urban","Belgaum","Bellary","Bidar","Vijayapura","Chamarajanagar","Chikkaballapur","Chikkamagaluru","Chitradurga","Dakshina Kannada","Davanagere","Dharwad","Gadag","Gulbarga","Hassan","Haveri","Kodagu","Kolar","Koppal","Mandya","Mysore","Raichur","Ramanagara","Shimoga","Tumkur","Udupi","Uttara Kannada","Yadgir"];
+                                var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
+                                var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
+                                "Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"];
+                                var Maharashtra = ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim","Yavatmal"];
+                                var Manipur = ["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","Kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"];
+                                var Meghalaya = ["East Garo Hills","East Jaintia Hills","East Khasi Hills","North Garo Hills","Ri Bhoi","South Garo Hills","South West Garo Hills","South West Khasi Hills","West Garo Hills","West Jaintia Hills","West Khasi Hills"];
+                                var Mizoram = ["Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip","Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"];
+                                var Nagaland = ["Dimapur","Kiphire","Kohima","Longleng","Mokokchung","Mon","Peren","Phek","Tuensang","Wokha","Zunheboto"];
+                                var Odisha = ["Angul","Balangir","Balasore","Bargarh","Bhadrak","Boudh","Cuttack","Debagarh","Dhenkanal","Gajapati","Ganjam","Jagatsinghpur","Jajpur","Jharsuguda","Kalahandi","Kandhamal","Kendrapara","Kendujhar","Khordha","Koraput","Malkangiri","Mayurbhanj","Nabarangpur","Nayagarh","Nuapada","Puri","Rayagada","Sambalpur","Subarnapur","Sundergarh"];
+                                var Punjab = ["Amritsar","Barnala","Bathinda","Faridkot","Fatehgarh Sahib","Fazilka","Firozpur","Gurdaspur","Hoshiarpur","Jalandhar","Kapurthala","Ludhiana","Mansa","Moga","Mohali","Muktsar","Pathankot","Patiala","Rupnagar","Sangrur","Shaheed Bhagat Singh Nagar","Tarn Taran"];
+                                var Rajasthan = ["Ajmer","Alwar","Banswara","Baran","Barmer","Bharatpur","Bhilwara","Bikaner","Bundi","Chittorgarh","Churu","Dausa","Dholpur","Dungarpur","Ganganagar","Hanumangarh","Jaipur","Jaisalmer","Jalore","Jhalawar","Jhunjhunu","Jodhpur","Karauli","Kota","Nagaur","Pali","Pratapgarh","Rajsamand","Sawai Madhopur","Sikar","Sirohi","Tonk","Udaipur"];
+                                var Sikkim = ["East Sikkim","North Sikkim","South Sikkim","West Sikkim"];
+                                var TamilNadu = ["Ariyalur","Chennai","Coimbatore","Cuddalore","Dharmapuri","Dindigul","Erode","Kanchipuram","Kanyakumari","Karur","Krishnagiri","Madurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","Salem","Sivaganga","Thanjavur","Theni","Thoothukudi","Tiruchirappalli","Tirunelveli","Tiruppur","Tiruvallur","Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"];
+                                var Telangana = ["Adilabad","Bhadradri Kothagudem","Hyderabad","Jagtial","Jangaon","Jayashankar","Jogulamba","Kamareddy","Karimnagar","Khammam","Komaram Bheem","Mahabubabad","Mahbubnagar","Mancherial","Medak","Medchal","Nagarkurnool","Nalgonda","Nirmal","Nizamabad","Peddapalli","Rajanna Sircilla","Ranga Reddy","Sangareddy","Siddipet","Suryapet","Vikarabad","Wanaparthy","Warangal Rural","Warangal Urban","Yadadri Bhuvanagiri"];
+                                var Tripura = ["Dhalai","Gomati","Khowai","North Tripura","Sepahijala","South Tripura","Unakoti","West Tripura"];
+                                var UttarPradesh = ["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kasganj","Kaushambi","Kheri","Kushinagar","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampur","Saharanpur","Sambhal","Sant Kabir Nagar","Shahjahanpur","Shamli","Shravasti","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"];
+                                var Uttarakhand  = ["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pauri","Pithoragarh","Rudraprayag","Tehri","Udham Singh Nagar","Uttarkashi"];
+                                var WestBengal = ["Alipurduar","Bankura","Birbhum","Cooch Behar","Dakshin Dinajpur","Darjeeling","Hooghly","Howrah","Jalpaiguri","Jhargram","Kalimpong","Kolkata","Malda","Murshidabad","Nadia","North 24 Parganas","Paschim Bardhaman","Paschim Medinipur","Purba Bardhaman","Purba Medinipur","Purulia","South 24 Parganas","Uttar Dinajpur"];
+                                var AndamanNicobar = ["Nicobar","North Middle Andaman","South Andaman"];
+                                var Chandigarh = ["Chandigarh"];
+                                var DadraHaveli = ["Dadra Nagar Haveli"];
+                                var DamanDiu = ["Daman","Diu"];
+                                var Delhi = ["Central Delhi","East Delhi","New Delhi","North Delhi","North East Delhi","North West Delhi","Shahdara","South Delhi","South East Delhi","South West Delhi","West Delhi"];
+                                var Lakshadweep = ["Lakshadweep"];
+                                var Puducherry = ["Karaikal","Mahe","Puducherry","Yanam"];
+
+
+                                var optionsList2;
+                                var htmlString = "";
+
+                                switch ($('#inputState').val()) {
+                                    case "Andhra Pradesh":
+                                        optionsList2 = AndhraPradesh;
+                                        break;
+                                    case "Arunachal Pradesh":
+                                        optionsList2 = ArunachalPradesh;
+                                        break;
+                                    case "Assam":
+                                        optionsList2 = Assam;
+                                        break;
+                                    case "Bihar":
+                                        optionsList2 = Bihar;
+                                        break;
+                                    case "Chhattisgarh":
+                                        optionsList2 = Chhattisgarh;
+                                        break;
+                                    case "Goa":
+                                        optionsList2 = Goa;
+                                        break;
+                                    case  "Gujarat":
+                                        optionsList2 = Gujarat;
+                                        break;
+                                    case "Haryana":
+                                        optionsList2 = Haryana;
+                                        break;
+                                    case "Himachal Pradesh":
+                                        optionsList2 = HimachalPradesh;
+                                        break;
+                                    case "Jammu and Kashmir":
+                                        optionsList2 = JammuKashmir;
+                                        break;
+                                    case "Jharkhand":
+                                        optionsList2 = Jharkhand;
+                                        break;
+                                    case  "Karnataka":
+                                        optionsList2 = Karnataka;
+                                        break;
+                                    case "Kerala":
+                                        optionsList2 = Kerala;
+                                        break;
+                                    case  "Madhya Pradesh":
+                                        optionsList2 = MadhyaPradesh;
+                                        break;
+                                    case "Maharashtra":
+                                        optionsList2 = Maharashtra;
+                                        break;
+                                    case  "Manipur":
+                                        optionsList2 = Manipur;
+                                        break;
+                                    case "Meghalaya":
+                                        optionsList2 = Meghalaya ;
+                                        break;
+                                    case  "Mizoram":
+                                        optionsList2 = Mizoram;
+                                        break;
+                                    case "Nagaland":
+                                        optionsList2 = Nagaland;
+                                        break;
+                                    case  "Orissa":
+                                        optionsList2 = Orissa;
+                                        break;
+                                    case "Punjab":
+                                        optionsList2 = Punjab;
+                                        break;
+                                    case  "Rajasthan":
+                                        optionsList2 = Rajasthan;
+                                        break;
+                                    case "Sikkim":
+                                        optionsList2 = Sikkim;
+                                        break;
+                                    case  "Tamil Nadu":
+                                        optionsList2 = TamilNadu;
+                                        break;
+                                    case  "Telangana":
+                                        optionsList2 = Telangana;
+                                        break;
+                                    case "Tripura":
+                                        optionsList2 = Tripura ;
+                                        break;
+                                    case  "Uttaranchal":
+                                        optionsList2 = Uttaranchal;
+                                        break;
+                                    case  "Uttar Pradesh":
+                                        optionsList2 = UttarPradesh;
+                                        break;
+                                    case "West Bengal":
+                                        optionsList2 = WestBengal;
+                                        break;
+                                    case  "Andaman and Nicobar Islands":
+                                        optionsList2 = AndamanNicobar;
+                                        break;
+                                    case "Chandigarh":
+                                        optionsList2 = Chandigarh;
+                                        break;
+                                    case  "Dadar and Nagar Haveli":
+                                        optionsList2 = DadraHaveli;
+                                        break;
+                                    case "Daman and Diu":
+                                        optionsList2 = DamanDiu;
+                                        break;
+                                    case  "Delhi":
+                                        optionsList2 = Delhi;
+                                        break;
+                                    case "Lakshadeep":
+                                        optionsList2 = Lakshadeep ;
+                                        break;
+                                    case  "Pondicherry":
+                                        optionsList2 = Pondicherry;
+                                        break;
+                                }
+
+                                function myFunction6() {
+                                    for(var i = 0; i < optionsList2.length; i++){
+                                        htmlString = htmlString+"<option value='"+ optionsList2[i] +"'>"+ optionsList2[i] +"</option>";
+                                    }
+                                    $("#inputDistrict").html(htmlString);
+                                };
+                                myFunction6();
                             }
                         }
                     });
+                }
+                else{
+                    var mapHeight = window.innerHeight * 0.65
+                    var mapWidth = window.innerWidth * 0.55
+                    var opts = {
+                        theme: 'maximized',
+                        region: 'IN',
+                        domain:'IN',
+                        //- displayMode: 'texts',
+                        legend: 'none',
+                        colorAxis: {colors: ['#BDBDBD', '#f1f1f1']},
+                        resolution: 'provinces',
+                        //- backgroundColor: 'transparent',
+                        //- datalessRegionColor: '#D3D3D3',
+                        //- enableRegionInteractivity: 'true',
+                        defaultColor: '#D3D3D3',
+                        width: mapWidth,
+                        height: mapHeight,
+                        chartArea: {left:10, top:20, width: '100%', height: '100%'}               
+                    };
+                    var hostlink = 'http://192.168.1.2:5000'
+                    var stateinput = document.getElementById("InputState")
+                    var links = {
+                        'IN-UP':'Uttar Pradesh',
+                        'IN-MH':'Maharashtra',
+                        'IN-BR':'Bihar',
+                        'IN-WB':'West Bengal',
+                        'IN-MP':'Madhya Pradesh',
+                        'IN-TN':'Tamil Nadu',
+                        'IN-RJ':'Rajasthan',
+                        'IN-KA':'Karnataka',
+                        'IN-GJ':'Gujarat',
+                        'IN-AP':'Andhra Pradesh',
+                        'IN-OR':'Orissa',
+                        'IN-TG':'Telangana',
+                        'IN-KL':'Kerala',
+                        'IN-JH':'Jharkhand',
+                        'IN-AS':'Assam',
+                        'IN-PB':'Punjab',
+                        'IN-CT':'Chhattisgarh',
+                        'IN-HR':'Haryana',
+                        'IN-JK':'Jammu and Kashmir',
+                        'IN-UT':'Uttarakhand',
+                        'IN-HP':'Himachal Pradesh',
+                        'IN-TR':'Tripura',
+                        'IN-ML':'Meghalaya',
+                        'IN-MN':'Manipur',
+                        'IN-NL':'Nagaland',
+                        'IN-GA':'Goa',
+                        'IN-AR':'Arunachal Pradesh',
+                        'IN-MZ':'Mizoram',
+                        'IN-SK':'Sikkim',
+                        'IN-DL':'Delhi',
+                        'IN-PY':'Puducherry',
+                        'IN-CH':'Chandigarh',
+                        'IN-AN':'Andaman and Nicobar Islands',
+                        'IN-DN':'Dadra and Nagar Haveli',
+                        'IN-DD':'Daman and Diu',
+                        'IN-LD':'Lakshadweep',
+                    };
+                    var geochart = new google.visualization.GeoChart(
+                        document.getElementById('visualization'));
+                    geochart.draw(data, opts);
+                    google.visualization.events.addListener(geochart, 'select', function() {
+                        var sel = geochart.getSelection();
+                        if (sel.length > 0) {
+                            var code = data.getValue(sel[0].row, 0);
+                            var link = links[code];
+                            if (link) {
+                                $("#inputState").val(link)
+                                var AndhraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
+                                var ArunachalPradesh = ["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kra Daadi","Kurung Kumey","Lohit","Longding","Lower Dibang Valley","Lower Subansiri","Namsai","Papum Pare","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang","Itanagar"];
+                                var Assam = ["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup Metropolitan","Kamrup (Rural)","Karbi Anglong","Karimganj","Kokrajhar","Lakhimpur","Majuli","Morigaon","Nagaon","Nalbari","Dima Hasao","Sivasagar","Sonitpur","South Salmara Mankachar","Tinsukia","Udalguri","West Karbi Anglong"];
+                                var Bihar = ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa","Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"];
+                                var Chhattisgarh = ["Balod","Baloda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada","Dhamtari","Durg","Gariaband","Janjgir Champa","Jashpur","Kabirdham","Kanker","Kondagaon","Korba","Koriya","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur","Surguja"];
+                                var Goa = ["North Goa","South Goa"];
+                                var Gujarat = ["Ahmedabad","Amreli","Anand","Aravalli","Banaskantha","Bharuch","Bhavnagar","Botad","Chhota Udaipur","Dahod","Dang","Devbhoomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kheda","Kutch","Mahisagar","Mehsana","Morbi","Narmada","Navsari","Panchmahal","Patan","Porbandar","Rajkot","Sabarkantha","Surat","Surendranagar","Tapi","Vadodara","Valsad"];
+                                var Haryana = ["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Fatehabad","Gurugram","Hisar","Jhajjar","Jind","Kaithal","Karnal","Kurukshetra","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"];
+                                var HimachalPradesh = ["Bilaspur","Chamba","Hamirpur","Kangra","Kinnaur","Kullu","Lahaul Spiti","Mandi","Shimla","Sirmaur","Solan","Una"];
+                                var JammuKashmir = ["Anantnag","Bandipora","Baramulla","Budgam","Doda","Ganderbal","Jammu","Kargil","Kathua","Kishtwar","Kulgam","Kupwara","Leh","Poonch","Pulwama","Rajouri","Ramban","Reasi","Samba","Shopian","Srinagar","Udhampur"];
+                                var Jharkhand = ["Bokaro","Chatra","Deoghar","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribagh","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu","Ramgarh","Ranchi","Sahebganj","Seraikela Kharsawan","Simdega","West Singhbhum"];
+                                var Karnataka = ["Bagalkot","Bangalore Rural","Bangalore Urban","Belgaum","Bellary","Bidar","Vijayapura","Chamarajanagar","Chikkaballapur","Chikkamagaluru","Chitradurga","Dakshina Kannada","Davanagere","Dharwad","Gadag","Gulbarga","Hassan","Haveri","Kodagu","Kolar","Koppal","Mandya","Mysore","Raichur","Ramanagara","Shimoga","Tumkur","Udupi","Uttara Kannada","Yadgir"];
+                                var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
+                                var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
+                                "Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"];
+                                var Maharashtra = ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim","Yavatmal"];
+                                var Manipur = ["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","Kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"];
+                                var Meghalaya = ["East Garo Hills","East Jaintia Hills","East Khasi Hills","North Garo Hills","Ri Bhoi","South Garo Hills","South West Garo Hills","South West Khasi Hills","West Garo Hills","West Jaintia Hills","West Khasi Hills"];
+                                var Mizoram = ["Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip","Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"];
+                                var Nagaland = ["Dimapur","Kiphire","Kohima","Longleng","Mokokchung","Mon","Peren","Phek","Tuensang","Wokha","Zunheboto"];
+                                var Odisha = ["Angul","Balangir","Balasore","Bargarh","Bhadrak","Boudh","Cuttack","Debagarh","Dhenkanal","Gajapati","Ganjam","Jagatsinghpur","Jajpur","Jharsuguda","Kalahandi","Kandhamal","Kendrapara","Kendujhar","Khordha","Koraput","Malkangiri","Mayurbhanj","Nabarangpur","Nayagarh","Nuapada","Puri","Rayagada","Sambalpur","Subarnapur","Sundergarh"];
+                                var Punjab = ["Amritsar","Barnala","Bathinda","Faridkot","Fatehgarh Sahib","Fazilka","Firozpur","Gurdaspur","Hoshiarpur","Jalandhar","Kapurthala","Ludhiana","Mansa","Moga","Mohali","Muktsar","Pathankot","Patiala","Rupnagar","Sangrur","Shaheed Bhagat Singh Nagar","Tarn Taran"];
+                                var Rajasthan = ["Ajmer","Alwar","Banswara","Baran","Barmer","Bharatpur","Bhilwara","Bikaner","Bundi","Chittorgarh","Churu","Dausa","Dholpur","Dungarpur","Ganganagar","Hanumangarh","Jaipur","Jaisalmer","Jalore","Jhalawar","Jhunjhunu","Jodhpur","Karauli","Kota","Nagaur","Pali","Pratapgarh","Rajsamand","Sawai Madhopur","Sikar","Sirohi","Tonk","Udaipur"];
+                                var Sikkim = ["East Sikkim","North Sikkim","South Sikkim","West Sikkim"];
+                                var TamilNadu = ["Ariyalur","Chennai","Coimbatore","Cuddalore","Dharmapuri","Dindigul","Erode","Kanchipuram","Kanyakumari","Karur","Krishnagiri","Madurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","Salem","Sivaganga","Thanjavur","Theni","Thoothukudi","Tiruchirappalli","Tirunelveli","Tiruppur","Tiruvallur","Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"];
+                                var Telangana = ["Adilabad","Bhadradri Kothagudem","Hyderabad","Jagtial","Jangaon","Jayashankar","Jogulamba","Kamareddy","Karimnagar","Khammam","Komaram Bheem","Mahabubabad","Mahbubnagar","Mancherial","Medak","Medchal","Nagarkurnool","Nalgonda","Nirmal","Nizamabad","Peddapalli","Rajanna Sircilla","Ranga Reddy","Sangareddy","Siddipet","Suryapet","Vikarabad","Wanaparthy","Warangal Rural","Warangal Urban","Yadadri Bhuvanagiri"];
+                                var Tripura = ["Dhalai","Gomati","Khowai","North Tripura","Sepahijala","South Tripura","Unakoti","West Tripura"];
+                                var UttarPradesh = ["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kasganj","Kaushambi","Kheri","Kushinagar","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampur","Saharanpur","Sambhal","Sant Kabir Nagar","Shahjahanpur","Shamli","Shravasti","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"];
+                                var Uttarakhand  = ["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pauri","Pithoragarh","Rudraprayag","Tehri","Udham Singh Nagar","Uttarkashi"];
+                                var WestBengal = ["Alipurduar","Bankura","Birbhum","Cooch Behar","Dakshin Dinajpur","Darjeeling","Hooghly","Howrah","Jalpaiguri","Jhargram","Kalimpong","Kolkata","Malda","Murshidabad","Nadia","North 24 Parganas","Paschim Bardhaman","Paschim Medinipur","Purba Bardhaman","Purba Medinipur","Purulia","South 24 Parganas","Uttar Dinajpur"];
+                                var AndamanNicobar = ["Nicobar","North Middle Andaman","South Andaman"];
+                                var Chandigarh = ["Chandigarh"];
+                                var DadraHaveli = ["Dadra Nagar Haveli"];
+                                var DamanDiu = ["Daman","Diu"];
+                                var Delhi = ["Central Delhi","East Delhi","New Delhi","North Delhi","North East Delhi","North West Delhi","Shahdara","South Delhi","South East Delhi","South West Delhi","West Delhi"];
+                                var Lakshadweep = ["Lakshadweep"];
+                                var Puducherry = ["Karaikal","Mahe","Puducherry","Yanam"];
+
+
+                                var optionsList2;
+                                var htmlString = "";
+
+                                switch ($('#inputState').val()) {
+                                    case "Andhra Pradesh":
+                                        optionsList2 = AndhraPradesh;
+                                        break;
+                                    case "Arunachal Pradesh":
+                                        optionsList2 = ArunachalPradesh;
+                                        break;
+                                    case "Assam":
+                                        optionsList2 = Assam;
+                                        break;
+                                    case "Bihar":
+                                        optionsList2 = Bihar;
+                                        break;
+                                    case "Chhattisgarh":
+                                        optionsList2 = Chhattisgarh;
+                                        break;
+                                    case "Goa":
+                                        optionsList2 = Goa;
+                                        break;
+                                    case  "Gujarat":
+                                        optionsList2 = Gujarat;
+                                        break;
+                                    case "Haryana":
+                                        optionsList2 = Haryana;
+                                        break;
+                                    case "Himachal Pradesh":
+                                        optionsList2 = HimachalPradesh;
+                                        break;
+                                    case "Jammu and Kashmir":
+                                        optionsList2 = JammuKashmir;
+                                        break;
+                                    case "Jharkhand":
+                                        optionsList2 = Jharkhand;
+                                        break;
+                                    case  "Karnataka":
+                                        optionsList2 = Karnataka;
+                                        break;
+                                    case "Kerala":
+                                        optionsList2 = Kerala;
+                                        break;
+                                    case  "Madhya Pradesh":
+                                        optionsList2 = MadhyaPradesh;
+                                        break;
+                                    case "Maharashtra":
+                                        optionsList2 = Maharashtra;
+                                        break;
+                                    case  "Manipur":
+                                        optionsList2 = Manipur;
+                                        break;
+                                    case "Meghalaya":
+                                        optionsList2 = Meghalaya ;
+                                        break;
+                                    case  "Mizoram":
+                                        optionsList2 = Mizoram;
+                                        break;
+                                    case "Nagaland":
+                                        optionsList2 = Nagaland;
+                                        break;
+                                    case  "Orissa":
+                                        optionsList2 = Orissa;
+                                        break;
+                                    case "Punjab":
+                                        optionsList2 = Punjab;
+                                        break;
+                                    case  "Rajasthan":
+                                        optionsList2 = Rajasthan;
+                                        break;
+                                    case "Sikkim":
+                                        optionsList2 = Sikkim;
+                                        break;
+                                    case  "Tamil Nadu":
+                                        optionsList2 = TamilNadu;
+                                        break;
+                                    case  "Telangana":
+                                        optionsList2 = Telangana;
+                                        break;
+                                    case "Tripura":
+                                        optionsList2 = Tripura ;
+                                        break;
+                                    case  "Uttaranchal":
+                                        optionsList2 = Uttaranchal;
+                                        break;
+                                    case  "Uttar Pradesh":
+                                        optionsList2 = UttarPradesh;
+                                        break;
+                                    case "West Bengal":
+                                        optionsList2 = WestBengal;
+                                        break;
+                                    case  "Andaman and Nicobar Islands":
+                                        optionsList2 = AndamanNicobar;
+                                        break;
+                                    case "Chandigarh":
+                                        optionsList2 = Chandigarh;
+                                        break;
+                                    case  "Dadar and Nagar Haveli":
+                                        optionsList2 = DadraHaveli;
+                                        break;
+                                    case "Daman and Diu":
+                                        optionsList2 = DamanDiu;
+                                        break;
+                                    case  "Delhi":
+                                        optionsList2 = Delhi;
+                                        break;
+                                    case "Lakshadeep":
+                                        optionsList2 = Lakshadeep ;
+                                        break;
+                                    case  "Pondicherry":
+                                        optionsList2 = Pondicherry;
+                                        break;
+                                }
+
+                                function myFunction6() {
+                                    for(var i = 0; i < optionsList2.length; i++){
+                                        htmlString = htmlString+"<option value='"+ optionsList2[i] +"'>"+ optionsList2[i] +"</option>";
+                                    }
+                                    $("#inputDistrict").html(htmlString);
+                                };
+                                myFunction6();
+                            }
+                        }
+                    });                
                 }
             };
 
@@ -451,7 +1258,7 @@ block content
                 document.getElementById("prevBtn").style.display = "inline";
             }
             if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Submit";
+                document.getElementById("nextBtn").innerHTML = "Pay";
             } else {
                 document.getElementById("nextBtn").innerHTML = "Next";
             }
@@ -471,7 +1278,10 @@ block content
             // if you have reached the end of the form... :
             if (currentTab >= x.length) {
                 //...the form gets submitted:
-                document.getElementById("regForm").submit();
+                //- document.getElementById("regForm").submit();
+                rzp1.open();
+                e.preventDefault();
+
                 return false;
             }
             // Otherwise, display the correct tab:
@@ -483,11 +1293,34 @@ block content
             var x, y, i, valid = true;
             x = document.getElementsByClassName("tab");
             y = x[currentTab].getElementsByTagName("input");
+            z = x[currentTab].getElementsByTagName("select");
+            for (i in userList){
+                if (document.getElementById('emailinput').value == userList[i].email){
+                    document.getElementById('emailinput').className += " invalid";
+                    document.getElementById('wronginput1').classList.add('wronginput1')
+                    valid = false;
+                }
+            }
+            for (i in userList){
+                if (document.getElementById('numberinput').value == userList[i].number){
+                    document.getElementById('numberinput').className += " invalid";
+                    document.getElementById('wronginput2').classList.add('wronginput2')
+                    valid = false;
+                }
+            }
             // A loop that checks every input field in the current tab:
             for (i = 0; i < y.length; i++) {
                 if (y[i].value == "") {
                     // add an "invalid" class to the field:
                     y[i].className += " invalid";
+                    // and set the current valid status to false:
+                    valid = false;
+                }
+            }
+            for (i = 0; i < z.length; i++) {
+                if (z[i].value == ""  || z[i].value == 'SelectState' || z[i].value == 'SelectCity' || z[i].value == 'SelectCommittee') {
+                    // add an "invalid" class to the field:
+                    z[i].className += " invalid";
                     // and set the current valid status to false:
                     valid = false;
                 }
@@ -527,7 +1360,6 @@ block content
             $(document).ready(function () {
                 $(window).scroll(function(){
                     var ScrollTop = parseInt($(window).scrollTop());
-                    console.log(ScrollTop);
                     if (ScrollTop < 900) {
                         document.getElementById("navswitch1").classList.add("navswitch1")
                         document.getElementById("navswitch3").classList.add("navswitch1")
@@ -561,7 +1393,7 @@ block content
                 });
             });       
 
-            var AndraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
+            var AndhraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
             var ArunachalPradesh = ["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kra Daadi","Kurung Kumey","Lohit","Longding","Lower Dibang Valley","Lower Subansiri","Namsai","Papum Pare","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang","Itanagar"];
             var Assam = ["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup Metropolitan","Kamrup (Rural)","Karbi Anglong","Karimganj","Kokrajhar","Lakhimpur","Majuli","Morigaon","Nagaon","Nalbari","Dima Hasao","Sivasagar","Sonitpur","South Salmara Mankachar","Tinsukia","Udalguri","West Karbi Anglong"];
             var Bihar = ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa","Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"];
@@ -606,8 +1438,8 @@ block content
                 var htmlString = "";
 
                 switch (StateSelected) {
-                    case "Andra Pradesh":
-                        optionsList = AndraPradesh;
+                    case "Andhra Pradesh":
+                        optionsList = AndhraPradesh;
                         break;
                     case "Arunachal Pradesh":
                         optionsList = ArunachalPradesh;
@@ -728,7 +1560,7 @@ block content
 
             //- document.getElementsByTagName("path")[274].setAttribute("d", "M 228.8517 221.6028 L 227.0785 226.0902 L 229.6115 226.882 L 227.9437 227.3274 L 226.748 229.4016 L 227.8924 231.3534 L 227.3615 235.4727 L 225.3347 236.8228 L 228.6836 238.0685 L 227.6977 238.9498 L 227.9219 242.1265 L 230 243 L 233 243 L 236 242 L 237 241 L 239 242 L 242 241 L 243 240 L 245 240 L 247 237 L 249 236 L 250 235 L 251 234 L 252 235 L 254 236 L 255 236 L 255 235 L 253 234 L 253 233 L 254 232 L 257 233 L 259 232 L 259 230 L 262 229 L 265 228 L 269 226 L 270 224 L 273 223 L 273.0912 221.8975 L 266.9311 223.516 L 261.6049 223.904 L 260.8422 220.0879 L 258.559 220.0493 L 257.5969 216.623 L 250.8109 213.7429 L 250.8613 206.8659 L 249.2847 205.7737 L 246.5437 206.8508 L 244.4438 205.7332 L 243.8188 207.2585 L 240.5783 204.2418 L 235.6196 202.6704 L 235.5474 207.2114 L 234.3194 207.7067 L 234.0326 209.5323 L 231.2697 208.8083 L 230.2735 211.5566 L 232.0865 213.4783 L 228.0577 217.4506 L 228.8479 221.5868 Z Z");
             window.addEventListener("DOMContentLoaded", function(event) {
-                var AndraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
+                var AndhraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
                 var ArunachalPradesh = ["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kra Daadi","Kurung Kumey","Lohit","Longding","Lower Dibang Valley","Lower Subansiri","Namsai","Papum Pare","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang","Itanagar"];
                 var Assam = ["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup Metropolitan","Kamrup (Rural)","Karbi Anglong","Karimganj","Kokrajhar","Lakhimpur","Majuli","Morigaon","Nagaon","Nalbari","Dima Hasao","Sivasagar","Sonitpur","South Salmara Mankachar","Tinsukia","Udalguri","West Karbi Anglong"];
                 var Bihar = ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa","Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"];
@@ -769,8 +1601,8 @@ block content
                 var aaa = $("#inputState").val()
 
                 switch (aaa) {
-                    case "Andra Pradesh":
-                        optionsList = AndraPradesh;
+                    case "Andhra Pradesh":
+                        optionsList = AndhraPradesh;
                         break;
                     case "Arunachal Pradesh":
                         optionsList = ArunachalPradesh;

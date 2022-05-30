@@ -3,49 +3,51 @@ var Schema = mongoose.Schema;
 var passportLocalMongoose = require("passport-local-mongoose");
 
 var UserSchema = new Schema({
-	username: String,
-	password: String,
+    username: String,
+    password: String,
 
-	userType: String,
+    userType: String,
 
-	name: {
-		type: String,
-		default: "",
-	},
-	committee: {
-		type: String,
-		default: "",
-	},
-	committeeCode: {
-		type: String,
-		default: "",
-	},
-	allotment: {
-		type: String,
-		default: "",
-	},
-	email: {
-		type: String,
-		default: "",
-	},
-	number: {
-		type: String,
-		default: "",
-	},
-	password1: {
-		type: String,
-		default: "",
-	},
+    state: String,
+    city: String,
 
-	paymentID: String,
+    name: {
+        type: String,
+        default: "",
+    },
+    committee: {
+        type: String,
+        default: "",
+    },
+    allotment: {
+        type: String,
+        default: "",
+    },
+    email: {
+        type: String,
+        default: "",
+    },
+    number: {
+        type: String,
+        default: "",
+    },
+    password1: {
+        type: String,
+        default: "",
+    },
 
-	time: {
-		type: Date,
-	},
+    paymentID: String,
+    orderID: String,
+    signatureID: String,
+    paymentTime: Date,
+
+    time: {
+        type: Date,
+    },
 });
 
 UserSchema.plugin(passportLocalMongoose, {
-	usernameQueryFields: ["number", "username"],
+    usernameQueryFields: ["number", "email"],
 });
 
 module.exports = mongoose.model("User", UserSchema);

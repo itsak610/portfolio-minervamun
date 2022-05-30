@@ -2,132 +2,445 @@ extends layout
 
 block content
 
-  #wrapper
-    #skip-navigation
-    .layer.layer-hero.ko.first-layer.tall
-      img(src='https://www.pitblado.com/wp-content/uploads/2020/10/where-to-next-background_crop-scaled.jpg', alt='Minerva MUN, 360 Main Street, Winnipeg, MB R3C 4H6')
-      .tinter(style='opacity: 0.2')
-      .inner
-        h1.huge
-          span.mask
-            span.text.text1 ERROR
-    .layer.layer-statement.first-layer
-      .inner
-        .text
-          h3
-            span.mask
-              span.text.text1
-                | We are pleased to connect with you 
-                strong
-                  | in
-                  span.aCOpRe &#x2011;
-                  | person
-                | , by 
-                strong phone
-                | , by 
-                strong email
-                | &nbsp;or 
-                strong 24/7
-                |  on our website. We look forward to learning how we can help you.
-    section.layer.wo.cf.layer-contact
-      .inner.cf
-        .left
-          h2 Where to find us
-          .findus.cf
-            .findus-inner.cf
-              #interlakeAddress.address.findus-right
-                h4 Bhopal Office
-                p
-                  | Minerva MUN
-                  br
-                  |  89 Paras Majestic&nbsp;E-8 Trilanga
-                  br
-                  |  Bhopal,&nbsp;MP &nbsp;&nbsp;&nbsp;
-                  br
-                  |  India
-                p
-                  a(aria-label='phone number 204.956.0560', href='tel:+91 98263 55502') T&nbsp;&nbsp;+91 98263 55502
-                  br
-                  |  
-                  a(aria-label='email secretariat@minervamun.com', href='MAILTO:secretariat@minervamun.com')
-                    | E&nbsp;&nbsp;
-                    span secretariat@minervamun.com
-            .findus-inner.please-park.cf  
-          .findus-inner.cf
-            nav#contact-social_links
-              h3 Connect with us
-              ul
-                li
-                  a(href='https://twitter.com/minerva_modelun') Twitter
-                li
-                  a(href='https://www.linkedin.com/company/minerva_modelun') LinkedIn
-                li
-                  a(href='https://www.instagram.com/minerva_modelun') Instagram
-                li
-                  a(href='https://www.facebook.com/minerva_modelun') Facebook
-        .right
-          .form.content
-            #wpcf7-f676-o1.wpcf7(role='form', lang='en-US', dir='ltr')
-              .screen-reader-response
-                p(role='status', aria-live='polite', aria-atomic='true')
-                ul
-              form.wpcf7-form.init(action='', method='post', class='mailchimp-ext-0.5.42', novalidate='novalidate', data-status='init')
-                div(style='display: none;')
-                  input(type='hidden', name='_wpcf7', value='676')
-                  input(type='hidden', name='_wpcf7_version', value='5.4.2')
-                  input(type='hidden', name='_wpcf7_locale', value='en_US')
-                  input(type='hidden', name='_wpcf7_unit_tag', value='wpcf7-f676-o1')
-                  input(type='hidden', name='_wpcf7_container_post', value='0')
-                  input(type='hidden', name='_wpcf7_posted_data_hash', value='')
-                  input(type='hidden', name='_wpcf7_recaptcha_response', value='')
-                h2 Contact Us
-                p
-                  label  First Name
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.first-name
-                    input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required(type='text', name='first-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='First Name')
-                p
-                  label  Last Name
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.last-name
-                    input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required(type='text', name='last-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Last Name')
-                p
-                  label  Email
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.your-email
-                    input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Email')
-                p
-                  label  Your Message
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.your-message
-                    textarea.wpcf7-form-control.wpcf7-textarea(name='your-message', cols='40', rows='6', aria-invalid='false', placeholder='Your Message...')
-                p
-                  span#wpcf7-60fc393206bb0-wrapper.wpcf7-form-control-wrap.email-address-wrap
-                    label.hp-message(for='wpcf7-60fc393206bb0-field') Please leave this field empty.
-                    input#wpcf7-60fc393206bb0-field.wpcf7-form-control.wpcf7-text(type='text', name='email-address', value='', size='40', tabindex='-1', autocomplete='new-password')
-                p
-                  label  Subscribe to our Newsletter?
-                  br
-                  |  
-                  span.wpcf7-form-control-wrap.opt-in
-                    span.wpcf7-form-control.wpcf7-checkbox
-                      span.wpcf7-list-item.first.last
-                        input(type='checkbox', name='opt-in[]', value='Subscribe to our Newsletter?')
-                        span.wpcf7-list-item-label Subscribe to our Newsletter?
-                p
-                  | This contact form is protected by reCAPTCHA and the Google 
-                  a(href='https://policies.google.com/privacy') Privacy Policy
-                  |  and 
-                  a(href='https://policies.google.com/terms') Terms of Service
-                  |  apply.
-                p
-                  input.wpcf7-form-control.wpcf7-submit(type='submit', value='Submit')
-                .wpcf7-response-output(aria-hidden='true')
-                p(style='display: none !important')
-                  span.wpcf7-form-control-wrap.referer-page
-                    input.wpcf7-form-control.wpcf7-text.referer-page(type='hidden', name='referer-page', value='http://Direct%20Visit', data-value='http://Direct%20Visit', aria-invalid='false')
+    style.
+        section.errsec{
+            height:60vh;
+        }
+        .errorpage{
+            display:flex;
+            justify-content:center;
+            margin-top:20vh;
+        }
+        /* Error Page */
+        .errorpage .clip .shadow
+        {
+            height: 180px;  /*Contrall*/
+        }
+        .errorpage .clip:nth-of-type(2) .shadow
+        {
+            width: 130px;   /*Contrall play with javascript*/ 
+        }
+        .errorpage .clip:nth-of-type(1) .shadow, .errorpage .clip:nth-of-type(3) .shadow
+        {
+            width: 250px; /*Contrall*/
+        }
+        .errorpage .digit
+        {
+            width: 150px;   /*Contrall*/
+            height: 150px;  /*Contrall*/
+            line-height: 150px; /*Contrall*/
+            font-size: 120px;
+            font-weight: bold;
+        }
+        .errorpage h2   /*Contrall*/
+        {
+            font-size: 3em;
+            text-align:center;
+        }
+        .errorpage .msg /*Contrall*/
+        {
+            top: -190px;
+            left: 30%;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 32px;
+        }
+        .errorpage span.triangle    /*Contrall*/
+        {
+            top: 70%;
+            right: 0%;
+            border-left: 20px solid #535353;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+        }
+
+
+        .errorpage .container-error-404
+        {
+        margin-top: 10%;
+            position: relative;
+            height: 250px;
+            padding-top: 40px;
+        }
+        .errorpage .container-error-404 .clip
+        {
+            display: inline-block;
+            transform: skew(-45deg);
+        }
+        .errorpage .clip .shadow
+        {
+
+            overflow: hidden;
+        }
+        .errorpage .clip:nth-of-type(2) .shadow
+        {
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 20px 0px 20px -15px rgba(150, 150, 150,0.8), 20px 0px 20px -15px rgba(150, 150, 150,0.8);
+        }
+
+        .errorpage .clip:nth-of-type(3) .shadow:after, .errorpage .clip:nth-of-type(1) .shadow:after
+        {
+            content: "";
+            position: absolute;
+            right: -8px;
+            bottom: 0px;
+            z-index: 9999;
+            height: 100%;
+            width: 10px;
+            background: linear-gradient(90deg, transparent, rgba(173,173,173, 0.8), transparent);
+            border-radius: 50%;
+        }
+        .errorpage .clip:nth-of-type(3) .shadow:after
+        {
+            left: -8px;
+        }
+        .errorpage .digit
+        {
+            text-align:center;
+            position: relative;
+            top: 8%;
+            color: white;
+            background: #000;
+            border-radius: 50%;
+            display: inline-block;
+            transform: skew(45deg);
+        }
+        .errorpage .clip:nth-of-type(2) .digit
+        {
+            left: -10%;
+        }
+        .errorpage .clip:nth-of-type(1) .digit
+        {
+            right: -40%;
+        }.errorpage .clip:nth-of-type(3) .digit
+        {
+            left: 0;
+        }    
+        .errorpage h2
+        {
+            color: #000;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+        .errorpage .msg
+        {
+            position: relative;
+            z-index: 9999;
+            display: block;
+            background: #535353;
+            color: #A2A2A2;
+            border-radius: 50%;
+            font-style: italic;
+        }
+        .errorpage .triangle
+        {
+            position: absolute;
+            z-index: 999;
+            transform: rotate(45deg);
+            content: "";
+            width: 0; 
+            height: 0; 
+        }
+        .tempflex{
+            display:flex;
+            justify-content:center;
+        }
+        button.goback{
+            font-size:1.3em;
+            background-color:#000;
+            color:#fff;
+            padding:20px;
+            border-radius:10px;
+            width:30%;
+            cursor:pointer;
+        }
+        button.goback:hover{
+            background-color: rgb(63, 61, 61);
+            color: rgb(206, 202, 202);
+        }
+
+        /* Error Page */
+        @media(max-width: 767px)
+        {
+            button.goback{
+                font-size:1em;
+                margin-top:30px;
+                width:40%;
+            }
+            .errorpage .clip:nth-of-type(1) .digit{
+                right: -20%;
+            }
+            .errorpage .clip:nth-of-type(2) .digit{
+                left:0;
+            }
+            /* Error Page */
+                .errorpage .clip .shadow
+                {
+                    height: 100px;  /*Contrall*/
+                }
+                .errorpage .clip:nth-of-type(2) .shadow
+                {
+                    width: 80px;   /*Contrall play with javascript*/ 
+                }
+                .errorpage .clip:nth-of-type(1) .shadow, .errorpage .clip:nth-of-type(3) .shadow
+                {
+                    width: 100px; /*Contrall*/
+                }
+                .errorpage .digit
+                {
+                    width: 80px;   /*Contrall*/
+                    height: 80px;  /*Contrall*/
+                    line-height: 80px; /*Contrall*/
+                    font-size: 52px;
+                }
+                .errorpage h2   /*Contrall*/
+                {
+                    font-size: 24px;
+                }
+                .errorpage .msg /*Contrall*/
+                {
+                    top: -110px;
+                    left: 15%;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 18px;
+                }
+                .errorpage span.triangle    /*Contrall*/
+                {
+                    top: 70%;
+                    right: -3%;
+                    border-left: 10px solid #535353;
+                    border-top: 8px solid transparent;
+                    border-bottom: 8px solid transparent;
+                }
+        .errorpage .container-error-404
+        {
+            height: 150px;
+        }
+            /* Error Page */
+        }
+
+        /*--------------------------------------------Framework --------------------------------*/
+
+        .overlay { position: relative; z-index: 20; } /*done*/
+            .ground-color { background: white; }  /*done*/
+            .item-bg-color { background: #EAEAEA } /*done*/
+
+            /* Padding Section*/
+                .padding-top { padding-top: 10px; } /*done*/
+                .padding-bottom { padding-bottom: 10px; }   /*done*/
+                .padding-vertical { padding-top: 10px; padding-bottom: 10px; }
+                .padding-horizontal { padding-left: 10px; padding-right: 10px; }
+                .padding-all { padding: 10px; }   /*done*/
+
+                .no-padding-left { padding-left: 0px; }    /*done*/
+                .no-padding-right { padding-right: 0px; }   /*done*/
+                .no-vertical-padding { padding-top: 0px; padding-bottom: 0px; }
+                .no-horizontal-padding { padding-left: 0px; padding-right: 0px; }
+                .no-padding { padding: 0px; }   /*done*/
+            /* Padding Section*/
+
+            /* Margin section */
+                .margin-top { margin-top: 10px; }   /*done*/
+                .margin-bottom { margin-bottom: 10px; } /*done*/
+                .margin-right { margin-right: 10px; } /*done*/
+                .margin-left { margin-left: 10px; } /*done*/
+                .margin-horizontal { margin-left: 10px; margin-right: 10px; } /*done*/
+                .margin-vertical { margin-top: 10px; margin-bottom: 10px; } /*done*/
+                .margin-all { margin: 10px; }   /*done*/
+                .no-margin { margin: 0px; }   /*done*/
+
+                .no-vertical-margin { margin-top: 0px; margin-bottom: 0px; }
+                .no-horizontal-margin { margin-left: 0px; margin-right: 0px; }
+
+                .inside-col-shrink { margin: 0px 20px; }    /*done - For the inside sections that has also Title section*/ 
+            /* Margin section */
+
+            hr
+            { margin: 0px; padding: 0px; border-top: 1px dashed #999; }
+        /*--------------------------------------------FrameWork------------------------*/
+
+    section.errsec
+        .errorpage
+            .container-floud
+                .col-xs-12.ground-color.text-center
+                    .container-error-404
+                        .clip
+                            .shadow
+                                span.digit.thirdDigit
+                        .clip
+                            .shadow
+                                span.digit.secondDigit
+                        .clip
+                            .shadow
+                                span.digit.firstDigit
+                h2.h1 Page Not Found!
+                .tempflex
+                    button.goback(onclick='history.back()') Go Back
     include footer
+
+    script.
+        $(document).ready(function () {
+            var ScrollTop = parseInt($(window).scrollTop());
+            if (ScrollTop > 800 && ScrollTop < 3200) {
+                document.getElementById("navswitch1").classList.remove("navswitch1")
+                document.getElementById("navswitch3").classList.remove("navswitch1")
+                document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+            }
+            else{
+                document.getElementById("navswitch1").classList.add("navswitch1")
+                document.getElementById("navswitch3").classList.add("navswitch1")
+                document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+            };
+
+            $(window).scroll(function(){
+                var ScrollTop = parseInt($(window).scrollTop());
+                if (ScrollTop > 800 && ScrollTop < 3200) {
+                    document.getElementById("navswitch1").classList.remove("navswitch1")
+                    document.getElementById("navswitch3").classList.remove("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                }
+                else{
+                    document.getElementById("navswitch1").classList.add("navswitch1")
+                    document.getElementById("navswitch3").classList.add("navswitch1")
+                    document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                    document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                    document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                    document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                    document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                };
+                if (ScrollTop > 1000) {
+                    document.getElementById('masthead').classList.add('navshift')
+                }
+                else{
+                    document.getElementById('masthead').classList.remove('navshift')
+                }
+            });
+        });
+
+            $(function() {
+                $('#masthead').hover(function() {
+                    var ScrollTop = parseInt($(window).scrollTop());
+                    if (ScrollTop < 850) {
+                        document.getElementById("navswitch1").classList.remove("navswitch1")
+                        document.getElementById("navswitch3").classList.remove("navswitch1")
+                        document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                        document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                        document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                        document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                        document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                    }
+                }, function() {
+                    var ScrollTop = parseInt($(window).scrollTop());
+                    if (ScrollTop < 850) {
+                        document.getElementById("navswitch1").classList.add("navswitch1")
+                        document.getElementById("navswitch3").classList.add("navswitch1")
+                        document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                        document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                        document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                        document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                        document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                    }
+                });
+            });
+
+
+            setTimeout(function (){
+                function randomNum()
+                {
+                    "use strict";
+                    return Math.floor(Math.random() * 9)+1;
+                }
+                    var loop1,loop2,loop3,time=30, i=0, number, selector3 = document.querySelector('.thirdDigit'), selector2 = document.querySelector('.secondDigit'),
+                        selector1 = document.querySelector('.firstDigit');
+                    loop3 = setInterval(function()
+                    {
+                    "use strict";
+                        if(i > 40)
+                        {
+                            clearInterval(loop3);
+                            selector3.textContent = 4;
+                        }else
+                        {
+                            selector3.textContent = randomNum();
+                            i++;
+                        }
+                    }, time);
+                    loop2 = setInterval(function()
+                    {
+                    "use strict";
+                        if(i > 80)
+                        {
+                            clearInterval(loop2);
+                            selector2.textContent = 0;
+                        }else
+                        {
+                            selector2.textContent = randomNum();
+                            i++;
+                        }
+                    }, time);
+                    loop1 = setInterval(function()
+                    {
+                    "use strict";
+                        if(i > 100)
+                        {
+                            clearInterval(loop1);
+                            selector1.textContent = 4;
+                        }else
+                        {
+                            selector1.textContent = randomNum();
+                            i++;
+                        }
+                    }, time);
+            }, 600);

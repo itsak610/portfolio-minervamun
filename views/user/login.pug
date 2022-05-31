@@ -24,6 +24,32 @@ block content
         h1.title{
             text-align:center;
         }
+        .half{
+            width:25%;
+        }
+        form input[type=submit]{
+            background: #000;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 5px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            margin-bottom: 0;
+            margin-top: 0.5em;
+            align-items: center;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .registerform input[type=submit]:hover {
+            background-color: rgb(63, 61, 61);
+            color: rgb(206, 202, 202);
+        }
+        @media (min-width:1000px) and (max-width:1300px) {
+            .half{
+                width:30%;
+            }
+        }
         @media (min-width:750px) and (max-width:1000px) {
             h1.title{
                 font-size:2.4em;
@@ -48,7 +74,37 @@ block content
             form .form-group{
                 margin-bottom:0;
             }
+            .half{
+                width:40%;
+            }
         }
+        @media (max-width:750px) {
+            h1.title{
+                font-size:2.4em;
+            }
+            .registerform input, .registerform select, .registerform textarea{
+                height:40px;
+                font-size:1em;
+            }
+            button#nextBtn, button#prevBtn{
+                font-size:1.2em;
+            }
+            .step{
+                height:12px;
+                width:12px;
+            }
+            .step:nth-child(1){
+                margin-left:-2%
+            }
+            p.registerpage{
+                font-size:0.8em;
+            }
+            form .form-group{
+                margin-bottom:0;
+            }
+            .half{
+                width:40%;
+            }        }
     .container
         form#regForm.registerform(method='post' action='/login')
             .loginform
@@ -62,7 +118,7 @@ block content
                         label Password:
                         input(type='password', name='password' required)
 
-                        input(type='submit', value='Save Changes')
+                        input(type='submit', value='Login')
                         p.registerpage
                             | Not registered yet ? 
                             a.register(href='/register') Register

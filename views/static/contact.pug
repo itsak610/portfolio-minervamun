@@ -29,13 +29,14 @@ block content
             margin-top:17vh
         }
         .leftside p{
-            font-size: 2vw;
+            font-size: 2.5vw;
         }
         .leftside b{
             text-decoration: underline;
         }
-
-
+        .s8 .leftside{
+            margin-top:45vh;
+        }
         .s8 .titlediv{
             display:flex;
             flex-flow:row;
@@ -65,7 +66,7 @@ block content
         .s9 b{
             color:#000;
             text-decoration:none;
-            font-weight:bolder;
+            font-weight:500;
         }
         .pdiv1{
             display:flex;
@@ -140,7 +141,7 @@ block content
         .s11 .leftside h1{
             font-size:1.7em;
             margin-top:-30px;
-            font-weight:400;
+            font-weight:500;
             letter-spacing:0.07em;
             text-decoration:none;
         }
@@ -148,7 +149,7 @@ block content
             height:max-content;
         }
         section.s12{
-            height:100vh;
+            height:max-content;
         }
         .headdiv1{
             display:flex;
@@ -211,6 +212,7 @@ block content
             width:100%
         }
         .contactdiv5 form input, select, textarea{
+            max-width:100%;
             display: block;
             width: 100%;
             font-size: 1em;
@@ -227,6 +229,11 @@ block content
             font-family: 'suisse';
             margin-top: 2em;
         }
+
+        .contactdiv5 textarea{
+            height: 30vh;
+        }
+
         @media (min-width:1000px) and (max-width:1300px) {
             .textpart h1{
                 font-size:1.6em;
@@ -252,15 +259,21 @@ block content
                 margin-top:-50px;
             }
             .titlediv{
-                margin-top:20vh;
+                margin-top:5vh;
                 flex-flow:column;
+            }
+            .s8 .titlediv{
+                flex-flow:column;
+            }
+            .s8 .leftside{
+                margin-top:45vh;
             }
             .leftside{
                 margin-left:20px;
             }
             .leftside p{
-                font-size:1.6vh;
-                line-height:2.8vh
+                font-size:2.4vh;
+                line-height:3.2vh
             }
             .textpart h1{
                 font-size:1.3em;
@@ -283,6 +296,22 @@ block content
             .imagetab1:nth-child(2), .imagetab1:nth-child(3){
                 margin-top:0;
             }
+            .contactdiv1{
+                flex-flow:column;
+                align-items:center;
+            }
+            .contactdiv2, .contactdiv5{
+                width:70%;
+            }
+            .contactdiv3 a{
+                margin-top: 20px
+            }
+            .s9 .leftside{
+                margin-top:5vh;
+            }
+            .headdiv1{
+                margin-top:5vh;
+            }
         }
 
     section.s8
@@ -302,7 +331,7 @@ block content
                         b in&#8211;person
                         | , by 
                         b phone
-                        |  , by
+                        |  , by 
                         b email
                         |  or 
                         b 24/7 

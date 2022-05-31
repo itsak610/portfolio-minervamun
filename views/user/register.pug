@@ -153,9 +153,9 @@ block content
             #visualization{
                 right:0;
             }
-            .tab.tab1{
-                display:flex !important;
-                flex-flow:column-reverse;
+            rect{
+                overflow:hidden;
+
             }
             button#nextBtn,
             button#prevBtn,
@@ -165,7 +165,7 @@ block content
             h1.title{
                 z-index:3;
             }
-            .halfagain.half{
+            .half{
                 width:100%;
                 padding-left:40px;
                 padding-right:40px;
@@ -180,7 +180,13 @@ block content
             .visual{
                 margin-top:-10vh;
                 margin-bottom:-10vh;
-                transform: scale(1.7)
+                transform: scale(1.7);
+                width: 58vw;
+
+            }
+            .step{
+                height:8px;
+                width:8px;
             }
             #visualization path {
                 stroke-width:0.2;
@@ -191,6 +197,10 @@ block content
             footer{
                 z-index:3;
                 position:relative
+            }
+            #inputStateForm, #inputDistrictForm{
+                padding-left:40px !important;
+                padding-right:40px !important;
             }
         }
     .container
@@ -205,7 +215,7 @@ block content
             #mapmap
                 .tab.tab1
                     .left2
-                        .form-group
+                        .form-group#inputStateForm
                             label(for='state') State
                             select#inputState.form-control.mapstate(type='text' name='state' placeholder='eg. Gujarat' maxlength='45' required='required' oninput="this.className = ''")
                                 option(value='') Select State
@@ -246,7 +256,7 @@ block content
                                 option(value='Lakshadeep') Lakshadeep
                                 option(value='Pondicherry') Pondicherry
                             p.registerpage Click on any state on the map
-                        .form-group
+                        .form-group#inputStateForm
                             label(for='city') City
                             select#inputDistrict.form-control(type='text' name='city' placeholder='eg. Bhopal' maxlength='45' required='required' oninput="this.className = ''")
                                 option(value='SelectCity') Select City

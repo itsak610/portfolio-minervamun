@@ -39,6 +39,45 @@ var options = {
     receipt: "order_rcptid_11",
 };
 
+var stateList = {
+    UP: "Uttar Pradesh",
+    MH: "Maharashtra",
+    BR: "Bihar",
+    WB: "West Bengal",
+    MP: "Madhya Pradesh",
+    TN: "Tamil Nadu",
+    RJ: "Rajasthan",
+    KA: "Karnataka",
+    GJ: "Gujarat",
+    AP: "Andhra Pradesh",
+    OR: "Orissa",
+    TG: "Telangana",
+    KL: "Kerala",
+    JH: "Jharkhand",
+    AS: "Assam",
+    PB: "Punjab",
+    CT: "Chhattisgarh",
+    HR: "Haryana",
+    JK: "Jammu and Kashmir",
+    UT: "Uttarakhand",
+    HP: "Himachal Pradesh",
+    TR: "Tripura",
+    ML: "Meghalaya",
+    MN: "Manipur",
+    NL: "Nagaland",
+    GA: "Goa",
+    AR: "Arunachal Pradesh",
+    MZ: "Mizoram",
+    SK: "Sikkim",
+    DL: "Delhi",
+    PY: "Puducherry",
+    CH: "Chandigarh",
+    AN: "Andaman and Nicobar Islands",
+    DN: "Dadra and Nagar Haveli",
+    DD: "Daman and Diu",
+    LD: "Lakshadweep",
+};
+
 // ----------------------------------------------------------------------------------------------------------------------------------------- //
 
 // ----------------------------------------------------------- Automatic Mailer -----------------------------------------------------------  //
@@ -488,6 +527,32 @@ router.get("/admin/committees", (req, res, next) => {
                         title: "Committees",
                     });
                 });
+        }
+    } else {
+        res.redirect("/login");
+    }
+});
+
+router.get("/admin/committees/:statecode", (req, res, next) => {
+    if (req.user) {
+        if (req.user.userType == "user") {
+            res.redirect("/dashboard");
+        } else {
+            for (i in stateList) {
+                if (req.params.statecode == i) {
+                    var query3 = {
+                        CommitteeState: stateList[i],
+                    };
+                    Committee.find()
+                        .find(query3)
+                        .sort("CommitteeState")
+                        .exec(function(err, committees) {
+                            return res.render("admin-view-committees", {
+                                committees: committees,
+                            });
+                        });
+                }
+            }
         }
     } else {
         res.redirect("/login");

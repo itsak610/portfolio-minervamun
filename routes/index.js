@@ -221,12 +221,16 @@ router.get("/register", (req, res, next) => {
             Committee.find().exec(function(err, committees) {
                 Allotment.find().exec(function(err, allotments) {
                     instance.orders.create(options, function(err, order) {
-                        return res.render("register", {
-                            committees: committees,
-                            allotments: allotments,
-                            orderID: order.id,
-                            userList: users,
-                        });
+                        if (err) {
+                            res.redirect("/register");
+                        } else {
+                            return res.render("register", {
+                                committees: committees,
+                                allotments: allotments,
+                                orderID: order.id,
+                                userList: users,
+                            });
+                        }
                     });
                 });
             });

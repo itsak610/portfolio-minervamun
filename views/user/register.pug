@@ -105,7 +105,7 @@ block content
             margin-left:0;
         }
 
-        #wronginput1, #wronginput2{
+        #wronginput1, #wronginput2, .textreveal2{
             display:none;
             color:red;
             font-size:0.75em;
@@ -120,8 +120,35 @@ block content
         #signatureIDinput{
             visibility:hidden;
         }
+        label.allotlabel{
+            width:150px;
+            padding-left:20px;
+            padding-right:20px;
+        }
+        .allotdiv{
+            display:flex;
+            flex-flow:row;
+            justify-content:flex-start;
+        }
+
+        .tab.halftemp2{
+            width:70%;
+        }
+        input#cvalue{
+            visibility:hidden;
+        }
+        .textreveal1{
+            display:block
+        }
 
         @media (min-width:750px) and (max-width:1000px) {
+            label.allotlabel{
+                width:120px;
+                padding-left:10px;
+                padding-right:10px;
+                font-size:0.8em;
+            }
+
             h1.title{
                 font-size:2.4em;
             }
@@ -147,6 +174,12 @@ block content
             }
         }
         @media (max-width:750px) {
+            label.allotlabel{
+                width:100px;
+                padding-left:10px;
+                padding-right:10px;
+                font-size:0.6em;
+            }
             h1.title{
                 font-size:1.5em;
             }
@@ -245,6 +278,7 @@ block content
                                 option(value='Tamil Nadu') Tamil Nadu
                                 option(value='Telangana') Telangana
                                 option(value='Tripura') Tripura
+                                option(value='Uttarakhand') Uttarakhand
                                 option(value='Uttaranchal') Uttaranchal
                                 option(value='Uttar Pradesh') Uttar Pradesh
                                 option(value='West Bengal') West Bengal
@@ -266,9 +300,13 @@ block content
                 .form-group
                     label(for='committee') Committee
                     select#commitvalue(type='text' name='committee' placeholder='eg. Lok Sabha' maxlength='45' required='required' oninput="this.className = ''")
+                        option(value='') Select Committee
+                    p#allotmenttext.textreveal2 There are no allotments left for this committee
+            .tab.halftemp2
                 .form-group
-                    label(for='allotment') Allotment
-                    select#cvalue(type='text' name='allotment' placeholder='eg. India' maxlength='45' required='required' oninput="this.className = ''")
+                    label#labelallot(for='allotment') Allotment
+                        .allotdiv2
+                    input#cvalue(type='text' name='allotment' value="" required='required')
 
             .tab.half
                 .form-group
@@ -303,6 +341,7 @@ block content
                 span.step
                 span.step
                 span.step
+                span.step
             p.registerpage
                 | Already registered ? 
                 a.register(href='/login') Login
@@ -318,7 +357,6 @@ block content
         script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
         script(src="https://checkout.razorpay.com/v1/checkout.js")
         script.
-
             var tempname = document.getElementById('nameinput').value;
             var tempemail = document.getElementById('emailinput').value;
             var tempnumber = document.getElementById('numberinput').value;
@@ -357,7 +395,7 @@ block content
                     "address": "89 Paras Majestic E-8 Trilanga Bhopal MP"
                 },
                 "theme": {
-                    "color": "#000000"
+                    "color": "#434343"
                 }
             };
             var rzp1 = new Razorpay(options);
@@ -376,12 +414,23 @@ block content
             paymentInput.style.backgroundColor = 'white'
             paymentInput.setAttribute("disabled", true);
             var userDateEntry = document.getElementById("commitvalue");
+            var userEntry = document.getElementById("cvalue");
             var stateEntry = document.getElementById("inputState")
             var cityEntry = document.getElementById("inputDistrict")
             var committees = !{JSON.stringify(committees)};
             var allotments = !{JSON.stringify(allotments)};
             var userList = !{JSON.stringify(userList)};
-            var userEntry = document.getElementById("cvalue");
+            $("input:checkbox").on('click', function() {
+                var $box = $(this);
+                if ($box.is(":checked")) {
+                    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                    $(group).prop("checked", false);
+                    $box.prop("checked", true);
+                } else {
+                    $box.prop("checked", false);
+                }
+            });
+
             var timesClicked1 = 0;
             var timesClicked2 = 0;
             document.getElementById('emailinput').addEventListener('change',
@@ -392,8 +441,9 @@ block content
                 function () {
                     document.getElementById('wronginput2').classList.remove('wronginput2');
                 });
-            cityEntry.addEventListener('change',
+            stateEntry.addEventListener('change',
                 function () {
+                    var num = 0
                     if(cityEntry.value != ""){
                         userDateEntry.classList.remove("invalid");
                         userEntry.classList.remove("invalid");
@@ -407,6 +457,17 @@ block content
                             first = e.firstElementChild;
                         }
                     }
+                    timesClicked2++;
+                    if (timesClicked2>1){
+                        var e = document.querySelector(".allotdiv2");
+                        if (e.childElementCount > 0){
+                            var first = e.firstElementChild;
+                            while (first) {
+                                first.remove();
+                                first = e.firstElementChild;
+                            }
+                        }
+                    }                    
                     for (i in committees){
                         var nmnm = stateEntry.value;
                         var bmbm = cityEntry.value;
@@ -416,34 +477,43 @@ block content
                             element1.innerHTML = committees[i].CommitteeName
                             var bnbn = document.getElementById('commitvalue')
                             bnbn.appendChild(element1)
-                            timesClicked2++;
-                            if (timesClicked2>1){
-                                var e = document.querySelector("#cvalue");
-                                var first = e.firstElementChild;
-                                while (first) {
-                                    first.remove();
-                                    first = e.firstElementChild;
-                                }
-                            }
                             for (i in allotments){
                                 var nmnm = userDateEntry.value;
                                 if (allotments[i].ComName == nmnm && allotments[i].ComState == stateEntry.value && allotments[i].ComCity == cityEntry.value){
                                     if (allotments[i].Allotted == ""){
-                                        var element1 = document.createElement("option");
-                                        element1.value = allotments[i].Portfolio
+                                        if(num == 0 || num%5 == 0){
+                                            var element3 = document.createElement("div");
+                                            element3.setAttribute('class','allotdiv');
+                                            document.getElementsByClassName('allotdiv2')[document.getElementsByClassName('allotdiv2').length-1].appendChild(element3)
+                                        }   
+                                        var element1 = document.createElement("label");
+                                        element1.setAttribute('class','allotlabel');
                                         element1.innerHTML = allotments[i].Portfolio
-                                        var bnbn = document.getElementById('cvalue')
-                                        bnbn.appendChild(element1)
+                                        document.getElementsByClassName('allotdiv')[document.getElementsByClassName('allotdiv').length-1].appendChild(element1)
+                                        var element2 = document.createElement("input");
+                                        element2.setAttribute('class','radio');
+                                        element2.setAttribute('type','checkbox');
+                                        element2.setAttribute('value',allotments[i].Portfolio);
+                                        element2.setAttribute('name','fooby[1][]');
+                                        document.getElementsByClassName('allotlabel')[document.getElementsByClassName('allotlabel').length-1].appendChild(element2)
+                                        $("input:checkbox").on('click', function() {
+                                            var $box = $(this);
+                                            if ($box.is(":checked")) {
+                                                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                                                $(group).prop("checked", false);
+                                                $box.prop("checked", true);
+                                                document.getElementById('cvalue').innerHTML = document.querySelector('.radio:checked').value
+                                                document.getElementById('cvalue').setAttribute('value',(document.querySelector('.radio:checked').value));
+                                                console.log(document.getElementById('cvalue').value)
+                                            } else {
+                                                $box.prop("checked", false);
+                                                document.getElementById('cvalue').setAttribute('value','');
+                                                document.getElementById('cvalue').innerHTML = ""
+                                            }
+                                        });
+                                        num++
                                     }
-                                    else{
-                                        var element1 = document.createElement("option");
-                                        element1.value = allotments[i].Portfolio
-                                        element1.innerHTML = allotments[i].Portfolio + ' (full)'
-                                        element1.style.backgroundColor = 'lightgrey'
-                                        element1.setAttribute("disabled", true);
-                                        var bnbn = document.getElementById('cvalue')
-                                        bnbn.appendChild(element1)
-                                    }
+                                    else{}
                                 }
                                 else{}
                             }
@@ -456,10 +526,109 @@ block content
                         var bnbn = document.getElementById('commitvalue')
                         bnbn.appendChild(element1)
                     }
+                    else{
+                        userDateEntry.value = userDateEntry.children[1].value
+                        userDateEntry.value = userDateEntry.children[0].value
+                    }
+                    $('#inputDistrict').value = $('#inputDistrict').children[1].value
+                    $('#inputDistrict').value = $('#inputDistrict').children[0].value
+                })
+            cityEntry.addEventListener('change',
+                function () {
+                    var num = 0
+                    if(cityEntry.value != ""){
+                        userDateEntry.classList.remove("invalid");
+                        userEntry.classList.remove("invalid");
+                    }
+                    timesClicked1++;
+                    if (timesClicked1>1){
+                        var e = document.querySelector("#commitvalue");
+                        var first = e.firstElementChild;
+                        while (first) {
+                            first.remove();
+                            first = e.firstElementChild;
+                        }
+                    }
+                    timesClicked2++;
+                    if (timesClicked2>1){
+                        var e = document.querySelector(".allotdiv2");
+                        if (e.childElementCount > 0){
+                            var first = e.firstElementChild;
+                            while (first) {
+                                first.remove();
+                                first = e.firstElementChild;
+                            }
+                        }
+                    }
+                    for (i in committees){
+                        var nmnm = stateEntry.value;
+                        var bmbm = cityEntry.value;
+                        if (committees[i].CommitteeState == nmnm && committees[i].CommitteeCity == bmbm){
+                            var element1 = document.createElement("option");
+                            element1.value = committees[i].CommitteeName
+                            element1.innerHTML = committees[i].CommitteeName
+                            var bnbn = document.getElementById('commitvalue')
+                            bnbn.appendChild(element1)
+                            for (i in allotments){
+                                var nmnm = userDateEntry.value;
+                                if (allotments[i].ComName == nmnm && allotments[i].ComState == stateEntry.value && allotments[i].ComCity == cityEntry.value){
+                                    if (allotments[i].Allotted == ""){
+                                        if(num == 0 || num%5 == 0){
+                                            var element3 = document.createElement("div");
+                                            element3.setAttribute('class','allotdiv');
+                                            document.getElementsByClassName('allotdiv2')[document.getElementsByClassName('allotdiv2').length-1].appendChild(element3)
+                                        }   
+                                        var element1 = document.createElement("label");
+                                        element1.setAttribute('class','allotlabel');
+                                        element1.innerHTML = allotments[i].Portfolio
+                                        document.getElementsByClassName('allotdiv')[document.getElementsByClassName('allotdiv').length-1].appendChild(element1)
+                                        var element2 = document.createElement("input");
+                                        element2.setAttribute('class','radio');
+                                        element2.setAttribute('type','checkbox');
+                                        element2.setAttribute('value',allotments[i].Portfolio);
+                                        element2.setAttribute('name','fooby[1][]');
+                                        document.getElementsByClassName('allotlabel')[document.getElementsByClassName('allotlabel').length-1].appendChild(element2)
+                                        $("input:checkbox").on('click', function() {
+                                            var $box = $(this);
+                                            if ($box.is(":checked")) {
+                                                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                                                $(group).prop("checked", false);
+                                                $box.prop("checked", true);
+                                                document.getElementById('cvalue').innerHTML = document.querySelector('.radio:checked').value
+                                                document.getElementById('cvalue').setAttribute('value',(document.querySelector('.radio:checked').value));
+                                                console.log(document.getElementById('cvalue').value)
+                                            } else {
+                                                document.getElementById('cvalue').setAttribute('value','');
+                                                document.getElementById('cvalue').innerHTML = ""
+                                                $box.prop("checked", false);
+                                            }
+                                        });
+                                        num++
+                                    }
+                                    else{}
+                                }
+                                else{}
+                            }
+                        }
+                    }
+                    if (userDateEntry.childElementCount == 0){
+                        var element1 = document.createElement("option");
+                        element1.value = ""
+                        element1.innerHTML = "No Committees Available"
+                        var bnbn = document.getElementById('commitvalue')
+                        bnbn.appendChild(element1)
+                    }
+                    else{
+                        userDateEntry.value = userDateEntry.children[1].value
+                        userDateEntry.value = userDateEntry.children[0].value
+                    }
                 }
             );
             userDateEntry.addEventListener('change', 
                 function () { 
+                    var num = 0
+                    document.getElementById('allotmenttext').classList.remove('textreveal1')
+                    userDateEntry.classList.remove("invalid");
                     if(userDateEntry.value != ""){
                         userDateEntry.classList.remove("invalid");
                         userEntry.classList.remove("invalid");
@@ -467,34 +636,54 @@ block content
                     if(userEntry.value != ""){
                         userEntry.classList.remove("invalid");
                     }
-                    timesClicked2++;
                     if (timesClicked2>1){
-                        var e = document.querySelector("#cvalue");
-                        var first = e.firstElementChild;
-                        while (first) {
-                            first.remove();
-                            first = e.firstElementChild;
+                        var e = document.querySelector(".allotdiv2");
+                        if (e.childElementCount > 0){
+                            var first = e.firstElementChild;
+                            while (first) {
+                                first.remove();
+                                first = e.firstElementChild;
+                            }
                         }
-                    }
+                    }         
+                    timesClicked2++           
                     for (i in allotments){
                         var nmnm = userDateEntry.value;
                         if (allotments[i].ComName == nmnm && allotments[i].ComState == stateEntry.value && allotments[i].ComCity == cityEntry.value){
                             if (allotments[i].Allotted == ""){
-                                var element1 = document.createElement("option");
-                                element1.value = allotments[i].Portfolio
+                                if(num == 0 || num%5 == 0){
+                                    var element3 = document.createElement("div");
+                                    element3.setAttribute('class','allotdiv');
+                                    document.getElementsByClassName('allotdiv2')[document.getElementsByClassName('allotdiv2').length-1].appendChild(element3)
+                                }   
+                                var element1 = document.createElement("label");
+                                element1.setAttribute('class','allotlabel');
                                 element1.innerHTML = allotments[i].Portfolio
-                                var bnbn = document.getElementById('cvalue')
-                                bnbn.appendChild(element1)
+                                document.getElementsByClassName('allotdiv')[document.getElementsByClassName('allotdiv').length-1].appendChild(element1)
+                                var element2 = document.createElement("input");
+                                element2.setAttribute('class','radio');
+                                element2.setAttribute('type','checkbox');
+                                element2.setAttribute('value',allotments[i].Portfolio);
+                                element2.setAttribute('name','fooby[1][]');
+                                document.getElementsByClassName('allotlabel')[document.getElementsByClassName('allotlabel').length-1].appendChild(element2)
+                                $("input:checkbox").on('click', function() {
+                                    var $box = $(this);
+                                    if ($box.is(":checked")) {
+                                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                                        $(group).prop("checked", false);
+                                        $box.prop("checked", true);
+                                        document.getElementById('cvalue').innerHTML = document.querySelector('.radio:checked').value
+                                        document.getElementById('cvalue').setAttribute('value',(document.querySelector('.radio:checked').value));
+                                        console.log(document.getElementById('cvalue').value)
+                                    } else {
+                                        $box.prop("checked", false);
+                                        document.getElementById('cvalue').setAttribute('value','');
+                                        document.getElementById('cvalue').innerHTML = ""
+                                    }
+                                });
+                                num++
                             }
-                            else{
-                                var element1 = document.createElement("option");
-                                element1.value = allotments[i].Portfolio
-                                element1.innerHTML = allotments[i].Portfolio + ' (full)'
-                                element1.style.backgroundColor = 'lightgrey'
-                                element1.setAttribute("disabled", true);
-                                var bnbn = document.getElementById('cvalue')
-                                bnbn.appendChild(element1)
-                            }
+                            else{}
                         }
                         else{}
                     }
@@ -510,6 +699,10 @@ block content
                         userEntry.classList.remove("invalid");
                     }
                 })
+
+
+
+
             google.load('visualization', '1', {'packages': ['geochart']});
             google.setOnLoadCallback(drawVisualization);
 
@@ -1278,6 +1471,7 @@ block content
 
             function nextPrev(n) {
             // This function will figure out which tab to display
+
             var x = document.getElementsByClassName("tab");
             // Exit the function if any field in the current tab is invalid:
             if (n == 1 && !validateForm()) return false;
@@ -1300,6 +1494,7 @@ block content
 
             function validateForm() {
             // This function deals with validation of the form fields
+
             var x, y, i, valid = true;
             x = document.getElementsByClassName("tab");
             y = x[currentTab].getElementsByTagName("input");
@@ -1334,6 +1529,13 @@ block content
                     // and set the current valid status to false:
                     valid = false;
                 }
+            }
+            if (currentTab == 1){
+                if ($('.allotdiv2')[0].childElementCount == 0){
+                    document.getElementById('commitvalue').className += ' invalid'
+                    valid = false;
+                    document.getElementById('allotmenttext').classList.add('textreveal1')
+                }            
             }
             // If the valid status is true, mark the step as finished and valid:
             if (valid) {
@@ -1736,3 +1938,93 @@ block content
                     });
                 }
             });
+            stateEntry.addEventListener('change',
+                function () {
+                    var num = 0
+                    if(cityEntry.value != ""){
+                        userDateEntry.classList.remove("invalid");
+                        userEntry.classList.remove("invalid");
+                    }
+                    timesClicked1++;
+                    if (timesClicked1>1){
+                        var e = document.querySelector("#commitvalue");
+                        var first = e.firstElementChild;
+                        while (first) {
+                            first.remove();
+                            first = e.firstElementChild;
+                        }
+                    }
+                    timesClicked2++;
+                    if (timesClicked2>1){
+                        var e = document.querySelector(".allotdiv2");
+                        if (e.childElementCount > 0){
+                            var first = e.firstElementChild;
+                            while (first) {
+                                first.remove();
+                                first = e.firstElementChild;
+                            }
+                        }
+                    }                    
+                    for (i in committees){
+                        var nmnm = stateEntry.value;
+                        var bmbm = cityEntry.value;
+                        if (committees[i].CommitteeState == nmnm && committees[i].CommitteeCity == bmbm){
+                            var element1 = document.createElement("option");
+                            element1.value = committees[i].CommitteeName
+                            element1.innerHTML = committees[i].CommitteeName
+                            var bnbn = document.getElementById('commitvalue')
+                            bnbn.appendChild(element1)
+                            for (i in allotments){
+                                var nmnm = userDateEntry.value;
+                                if (allotments[i].ComName == nmnm && allotments[i].ComState == stateEntry.value && allotments[i].ComCity == cityEntry.value){
+                                    if (allotments[i].Allotted == ""){
+                                        if(num == 0 || num%5 == 0){
+                                            var element3 = document.createElement("div");
+                                            element3.setAttribute('class','allotdiv');
+                                            document.getElementsByClassName('allotdiv2')[document.getElementsByClassName('allotdiv2').length-1].appendChild(element3)
+                                        }   
+                                        var element1 = document.createElement("label");
+                                        element1.setAttribute('class','allotlabel');
+                                        element1.innerHTML = allotments[i].Portfolio
+                                        document.getElementsByClassName('allotdiv')[document.getElementsByClassName('allotdiv').length-1].appendChild(element1)
+                                        var element2 = document.createElement("input");
+                                        element2.setAttribute('class','radio');
+                                        element2.setAttribute('type','checkbox');
+                                        element2.setAttribute('value',allotments[i].Portfolio);
+                                        element2.setAttribute('name','fooby[1][]');
+                                        document.getElementsByClassName('allotlabel')[document.getElementsByClassName('allotlabel').length-1].appendChild(element2)
+                                        $("input:checkbox").on('click', function() {
+                                            var $box = $(this);
+                                            if ($box.is(":checked")) {
+                                                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                                                $(group).prop("checked", false);
+                                                $box.prop("checked", true);
+                                                document.getElementById('cvalue').innerHTML = document.querySelector('.radio:checked').value
+                                                document.getElementById('cvalue').setAttribute('value',(document.querySelector('.radio:checked').value));
+                                                console.log(document.getElementById('cvalue').value)
+                                            } else {
+                                                $box.prop("checked", false);
+                                                document.getElementById('cvalue').setAttribute('value','');
+                                                document.getElementById('cvalue').innerHTML = ""
+                                            }
+                                        });
+                                        num++
+                                    }
+                                    else{}
+                                }
+                                else{}
+                            }
+                        }
+                    }
+                    if (userDateEntry.childElementCount == 0){
+                        var element1 = document.createElement("option");
+                        element1.value = ""
+                        element1.innerHTML = "No Committees Available"
+                        var bnbn = document.getElementById('commitvalue')
+                        bnbn.appendChild(element1)
+                    }
+                    else{
+                        userDateEntry.value = userDateEntry.children[1].value
+                        userDateEntry.value = userDateEntry.children[0].value
+                    }
+                })

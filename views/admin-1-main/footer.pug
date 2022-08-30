@@ -77,12 +77,10 @@ footer#main
             .subform
                 h2
                     | Subscribe to our newsletter!
-                if suberror
-                    p.error= suberror
-                form.footerform(method='post', action='/subscribe').subscribe
-                    input(type='text', name='email', placeholder='Email Adress' required)
-                    input#urllink(type='text', name='urllink' required)
-                    input(type='submit', value='Subscribe')
+                p.error3 Email successfully subscribed.
+                form#subform1.footerform(method='post', action='/subscribe').subscribe
+                    input(type='text', name='subemail', placeholder='Email Adress' required)
+                    button#subbut(type='button', onclick='subbutton1()') Subscribe
             br
             br
             .subformp
@@ -109,12 +107,10 @@ footer#main
                 .subform
                     h2
                         | Subscribe to our newsletter!
-                    if suberror
-                        p.error= suberror
-                    form.footerform(method='post', action='/subscribe').subscribe
-                        input(type='text', name='email', placeholder='Email Adress' required)
-                        input#urllink(type='text', name='urllink' required)
-                        input(type='submit', value='Subscribe')
+                    p.error3 Email successfully subscribed.
+                    form#subform2.footerform(method='post', action='/subscribe').subscribe
+                        input(type='text', name='subemail', placeholder='Email Adress' required)
+                        button#subbut(type='button', onclick='subbutton2()') Subscribe
         .supercolumn5
             .column5.left5
                 .details2
@@ -160,7 +156,6 @@ footer#main
         p © Copyright 2021 Minerva MUN ® All Rights Reserved.
 
     script.
-        document.getElementById("urllink").setAttribute('value',window.location.pathname)
         var ScrollLimit = (parseInt(document.getElementsByTagName('section')[1].getBoundingClientRect().top));
         function navfunction() {
             document.getElementsByClassName('js-toggle-menu')[0].classList.toggle('open');
@@ -282,19 +277,19 @@ footer#main
                             document.getElementsByClassName("active")[0].classList.add("navswitch3color")
                         }
                         else{
-                            document.getElementById("navswitch1").classList.add("navswitch1")
-                            document.getElementById("navswitch3").classList.add("navswitch1")
-                            document.getElementsByClassName("menu-item")[0].classList.add("navham")
-                            document.getElementsByClassName("menu-item")[1].classList.add("navham")
-                            document.getElementsByClassName("menu-item")[2].classList.add("navham")
-                            document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
-                            document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
-                            document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
-                            document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
-                            document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
-                            document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
-                            document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
-                            document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                            document.getElementById("navswitch1").classList.remove("navswitch1")
+                            document.getElementById("navswitch3").classList.remove("navswitch1")
+                            document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                            document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                            document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                            document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                            document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                            document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
                         };
                     });
                 });
@@ -320,19 +315,19 @@ footer#main
                         var ScrollTop = parseInt($(window).scrollTop());
                         if (ScrollTop < ScrollLimit){
                             if ( $('.mobile-nav').hasClass('hidden')){
-                                document.getElementById("navswitch1").classList.add("navswitch1")
-                                document.getElementById("navswitch3").classList.add("navswitch1")
-                                document.getElementsByClassName("menu-item")[0].classList.add("navham")
-                                document.getElementsByClassName("menu-item")[1].classList.add("navham")
-                                document.getElementsByClassName("menu-item")[2].classList.add("navham")
-                                document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
-                                document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
-                                document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
-                                document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
-                                document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
-                                document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
-                                document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
-                                document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                                document.getElementById("navswitch1").classList.remove("navswitch1")
+                                document.getElementById("navswitch3").classList.remove("navswitch1")
+                                document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                                document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                                document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                                document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                                document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                                document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
                             }
                         }
                     });
@@ -342,4 +337,44 @@ footer#main
 
         var x = window.matchMedia("(max-width: 1112px)")
         mediaQ1(x) // Call listener function at run time
-        x.addListener(mediaQ1)   
+        x.addListener(mediaQ1) 
+
+        function subbutton1() {
+
+            var form = $("#subform1");
+
+            $.ajax({
+                type: "POST",
+                url: '/subscribe',
+                data: form.serializeArray(),
+                success: function()
+                {
+                    document.getElementsByClassName('error3')[0].classList.add('error3after')
+                    setTimeout(() => {
+                        document.getElementsByClassName('error3')[0].classList.remove('error3after')
+                    }, "30000")
+                    console.log(!{resulttext})
+                }
+            });
+
+        };
+
+        function subbutton2() {
+
+            var form = $("#subform2");
+
+            $.ajax({
+                type: "POST",
+                url: '/subscribe',
+                data: form.serializeArray(), // serializes the form's elements.
+                success: function()
+                {
+                    document.getElementsByClassName('error3')[1].classList.add('error3after')
+                    setTimeout(() => {
+                        document.getElementsByClassName('error3')[1].classList.remove('error3after')
+                    }, "30000")
+                    console.log(!{resulttext})
+                }
+            });
+
+        };

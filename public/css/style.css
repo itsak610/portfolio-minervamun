@@ -81,7 +81,7 @@ section {
 
 section.s1 {
     height: 90vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url("../wp-content/themes/theme_mob_1.2/img/UNO.jpg");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.65)), url("../wp-content/themes/theme_mob_1.2/img/UNO2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     /* background-attachment: fixed; */
@@ -95,10 +95,9 @@ section.s2 {
 
 section.s4 {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../wp-content/themes/theme_mob_1.2/img/TEAM.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("../wp-content/themes/theme_mob_1.2/img/TEAM2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     backdrop-filter: blur(30px);
     background-color: #000;
 }
@@ -253,6 +252,17 @@ p.error2 {
     text-align: left;
     font-weight: 500;
     color: rgb(255, 0, 0);
+}
+
+p.error3 {
+    display: none;
+    text-align: center;
+    font-weight: 500;
+    color: rgb(192, 192, 192);
+}
+
+p.error3after {
+    display: block !important;
 }
 
 footer,
@@ -445,6 +455,25 @@ form input[type=submit] {
 }
 
 form input[type=submit]:hover {
+    background-color: rgb(63, 61, 61);
+    color: rgb(206, 202, 202);
+}
+
+button#subbut {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, lightgrey, #fff);
+    border: none;
+    color: #000;
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 3em;
+    align-items: center
+}
+
+button#subbut:hover {
     background-color: rgb(63, 61, 61);
     color: rgb(206, 202, 202);
 }
@@ -1278,7 +1307,7 @@ footer h2 {
         flex-flow: row;
     }
     footer h2 {
-        font-size: 13px !important;
+        font-size: 1.1em !important;
     }
     footer p {
         font-size: 12px;
@@ -1296,7 +1325,7 @@ input[type=checkbox] {
     font-size: 1em;
     border: none;
     height: 30px;
-    padding: 0;
+    padding: 10px;
     border-radius: 5px;
     box-shadow: none;
     box-sizing: border-box;
@@ -1603,8 +1632,8 @@ header.navshift {
 .right5 form input,
 select,
 textarea {
-    height: 25px;
-    font-size: 0.5em;
+    height: 35px;
+    font-size: 0.8em;
 }
 
 .details1 ul li {

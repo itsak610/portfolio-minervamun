@@ -217,24 +217,26 @@ router.get("/register", (req, res, next) => {
     if (req.user) {
         return res.redirect("/user/dashboard");
     } else {
-        User.find().exec(function(err, users) {
-            Committee.find().exec(function(err, committees) {
-                Allotment.find().exec(function(err, allotments) {
-                    instance.orders.create(options, function(err, order) {
-                        if (err) {
-                            res.redirect("/register");
-                        } else {
-                            return res.render("register", {
-                                committees: committees,
-                                allotments: allotments,
-                                orderID: order.id,
-                                userList: users,
-                            });
-                        }
+        User.find()
+            .select("email number")
+            .exec(function(err, users) {
+                Committee.find().exec(function(err, committees) {
+                    Allotment.find().exec(function(err, allotments) {
+                        instance.orders.create(options, function(err, order) {
+                            if (err) {
+                                res.redirect("/register");
+                            } else {
+                                return res.render("register", {
+                                    committees: committees,
+                                    allotments: allotments,
+                                    orderID: order.id,
+                                    userList: users,
+                                });
+                            }
+                        });
                     });
                 });
             });
-        });
     }
 });
 
@@ -359,31 +361,24 @@ router.post("/register", (req, res) => {
 // ----------------------------------------------------------------------------- //
 
 router.post("/subscribe", (req, res) => {
-    var templink = req.body.urllink.replace("/", "");
     User.findOne({
-            email: req.body.email,
+            email: req.body.subemail,
         },
 
         function(err, user) {
             if (!user) {
-                Subscriber.addSubscriber(req.body.email, (err) => {
+                Subscriber.addSubscriber(req.body.subemail, (err) => {
                     if (err) {
-                        return res.render(templink, {
-                            suberror: "The email is already subscribed",
-                        });
+                        console.log(err);
+                    } else {
+                        var resulttext = "Email Subscribed Successfully.";
+                        res.send(resulttext);
                     }
-                    return res.render(templink, {
-                        suberror: "Email subscribed successfully.",
-                    });
                 });
             } else {
-                return res.render(templink, {
-                    suberror: "The email is already subscribed.",
-                });
+                var resulttext = "Email Already Subscribed.";
+                res.send(resulttext);
             }
-            return res.render(templink, {
-                suberror: "Email subscribed successfully.",
-            });
         }
     );
 });
@@ -794,7 +789,7 @@ router.post("/admin/add-allotment", (req, res, next) => {
         CommitteeCity: req.body.ComCity,
     }).exec(function(err, committee) {
         Allotment.addAllotment(
-            req.body.Portfolio,
+            req.body.Portfolio + "01",
             committee[0].CommitteeName,
             committee[0].CommitteeCode,
             committee[0].CommitteeState,
@@ -806,11 +801,22 @@ router.post("/admin/add-allotment", (req, res, next) => {
                         error: "No such Committee found",
                         title: "Add Allotment",
                     });
+                } else {
+                    Allotment.addAllotment(
+                        req.body.Portfolio + "02",
+                        committee[0].CommitteeName,
+                        committee[0].CommitteeCode,
+                        committee[0].CommitteeState,
+                        committee[0].CommitteeCity,
+                        "",
+                        (err) => {
+                            return res.render("admin-add-allotment", {
+                                error: "Allotment created successfully.",
+                                title: "Add Allotment",
+                            });
+                        }
+                    );
                 }
-                return res.render("admin-add-allotment", {
-                    error: "Allotment created successfully.",
-                    title: "Add Allotment",
-                });
             }
         );
     });

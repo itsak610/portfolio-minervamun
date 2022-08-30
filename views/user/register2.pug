@@ -1,0 +1,771 @@
+extends layout 
+
+block content
+
+    script(type='text/javascript', src='https://www.google.com/jsapi')
+
+    style.
+        #visualization{
+            margin: 0 auto;
+            float:right;
+            right:10vw;
+            top:0;
+            position:absolute;
+            transform: scale(1.6);
+        }
+        rect{
+            float:right;
+            right:0;
+            top:0;
+            position:absolute;
+        }
+        #visualization path:nth-child(264),
+        #visualization path:nth-child(265),
+        #visualization path:nth-child(266),
+        #visualization path:nth-child(267),
+        #visualization path:nth-child(268),
+        #visualization path:nth-child(269),
+        #visualization path:nth-child(270),
+        #visualization path:nth-child(271),
+        #visualization path:nth-child(272),
+        #visualization path:nth-child(273),
+        #visualization path:nth-child(274),
+        #visualization path:nth-child(275),
+        #visualization path:nth-child(276),
+        #visualization path:nth-child(277),
+        #visualization path:nth-child(278),
+        #visualization path:nth-child(279),
+        #visualization path:nth-child(280),
+        #visualization path:nth-child(281),
+        #visualization path:nth-child(282),
+        #visualization path:nth-child(283),
+        #visualization path:nth-child(284),
+        #visualization path:nth-child(285),
+        #visualization path:nth-child(286),
+        #visualization path:nth-child(287),
+        #visualization path:nth-child(288),
+        #visualization path:nth-child(289),
+        #visualization path:nth-child(290),
+        #visualization path:nth-child(291),
+        #visualization path:nth-child(292),
+        #visualization path:nth-child(293),
+        #visualization path:nth-child(294),
+        #visualization path:nth-child(295),
+        #visualization path:nth-child(296),
+        #visualization path:nth-child(297),
+        #visualization path:nth-child(298),
+        #visualization path:nth-child(299),
+        #visualization path:nth-child(300),
+        #visualization path:nth-child(301),
+        #visualization path:nth-child(302),
+        #visualization path:nth-child(303),
+        #visualization path:nth-child(304),
+        #visualization path:nth-child(305),
+        #visualization path:nth-child(306),
+        #visualization path:nth-child(307),
+        #visualization path:nth-child(308),
+        #visualization path:nth-child(309),
+        #visualization path:nth-child(310),
+        #visualization path:nth-child(311),
+        #visualization path:nth-child(312),
+        #visualization path:nth-child(313),
+        #visualization path:nth-child(314),
+        #visualization path:nth-child(315),
+        #visualization path:nth-child(316),
+        #visualization path:nth-child(317),
+        #visualization path:nth-child(318),
+        #visualization path:nth-child(319){
+            display:block !important;    
+        } 
+        #visualization path {
+            stroke-width:0.5;
+            display:none;
+            stroke:#000000;
+        };
+        #visualization path:hover {
+            display:none;
+        }
+        .form-group{
+            z-index:2;
+        }
+        h1.title{
+            z-index:2;
+        }
+        button#nextBtn,
+        button#prevBtn,
+        span.step,
+        p.registerpage{
+            z-index:3;
+        }
+        .halfagain.halftemp.half{
+            width:35%;
+            padding-bottom:30px;
+            display:flex !important;
+            justify-content:center;
+            margin-left:0;
+        }
+
+        .half{
+            width:65%;
+        }
+
+        #wronginput1, #wronginput2, .textreveal2{
+            display:none;
+            color:red;
+            font-size:0.75em;
+            font-weight:bold;
+        }
+
+        .wronginput1, .wronginput2{
+            display:block !important;
+        }
+        #paymentIDinput,
+        #orderIDinput,
+        #signatureIDinput{
+            visibility:hidden;
+        }
+        label.allotlabel{
+            width:150px;
+            padding-left:20px;
+            padding-right:20px;
+        }
+        .allotdiv{
+            display:flex;
+            flex-flow:row;
+            justify-content:flex-start;
+        }
+
+        .tab.halftemp2{
+            width:70%;
+        }
+        input#cvalue{
+            visibility:hidden;
+        }
+        .textreveal1{
+            display:block
+        }
+
+
+
+        .left2 {
+            width:65%
+        }
+
+        .allotlabel #text{
+            position:absolute;
+        }
+
+        @media (min-width:750px) and (max-width:1000px) {
+
+
+            .registerform input, .registerform select, .registerform textarea{
+                width:100%;
+            }
+
+            button#nextBtn, button#prevBtn{
+                width:100%;
+            }            
+
+            label.allotlabel{
+                width:120px;
+                padding-left:10px;
+                padding-right:10px;
+                font-size:0.8em;
+            }
+
+            h1.title{
+                font-size:2.4em;
+            }
+            .registerform input, .registerform select, .registerform textarea{
+                height:40px;
+                font-size:1em;
+            }
+            button#nextBtn, button#prevBtn{
+                font-size:1.2em;
+            }
+            .step{
+                height:12px;
+                width:12px;
+            }
+            .step:nth-child(1){
+                margin-left:-2%
+            }
+            p.registerpage{
+                font-size:0.8em;
+            }
+            form .form-group{
+                margin-bottom:0;
+            }
+        }
+        @media (max-width:750px) {
+            label.allotlabel{
+                width:100px;
+                padding-left:10px;
+                padding-right:10px;
+                font-size:0.6em;
+            }
+            h1.title{
+                font-size:1.5em;
+            }
+            #visualization{
+                right:0;
+            }
+            rect{
+                overflow:hidden;
+
+            }
+            button#nextBtn,
+            button#prevBtn,
+            h1.title{
+                position: relative;
+            }
+            h1.title{
+                z-index:3;
+            }
+            .half{
+                width:100%;
+                padding-left:40px;
+                padding-right:40px;
+            }
+            button#nextBtn, button#prevBtn{
+                font-size:1.1em;
+                width:100%;
+            }
+            .halfagain.halftemp.half{
+                width:100%;
+            }        
+            .visual{
+                margin-top:-10vh;
+                margin-bottom:-10vh;
+                transform: scale(1.7);
+                width: 58vw;
+
+            }
+            .step{
+                height:8px;
+                width:8px;
+            }
+            #visualization path {
+                stroke-width:0.2;
+            }
+            text{
+                display:none;
+            }
+            footer{
+                z-index:3;
+                position:relative
+            }
+            #inputStateForm, #inputDistrictForm{
+                padding-left:40px !important;
+                padding-right:40px !important;
+            }
+        }
+    .container
+        form#regForm.registerform(method='post' action='/register')
+            h1.title 
+                | Registration
+            if error
+                if errorcode == 'green'
+                    p.error1= error
+                else
+                    p.error2= error
+            #mapmap
+                .tab.tab1
+                    .left2
+                        .form-group#inputStateForm
+                            label(for='city') City
+                            select#inputDistrict.form-control(type='text' name='city' placeholder='eg. Bhopal' maxlength='45' required='required' oninput="this.className = ''")
+                                option(value='SelectCity') Select City
+                                option(value='Bhopal') Bhopal
+                                option(value='Indore') Indore
+                                option(value='Mumbai') Mumbai
+                                option(value='Delhi') Delhi
+                    div.visual(align='right')
+                        #visualization
+            .tab.half
+                .form-group
+                    label(for='committee') Committee
+                    select#commitvalue(type='text' name='committee' placeholder='eg. Lok Sabha' maxlength='45' required='required' oninput="this.className = ''")
+                        option(value='') Select Committee
+                    p#allotmenttext.textreveal2 There are no allotments left for this committee
+            .tab.halftemp2
+                .form-group
+                    label#labelallot(for='allotment') Allotment
+                        .allotdiv2
+                    input#cvalue(type='text' name='allotment' value="" required='required')
+
+            .tab.half
+                .form-group
+                    label(for='name') Name
+                    input#nameinput(type='text' name='name' placeholder='eg. Mahatma Gandhi' maxlength='45' required='required' oninput="this.className = ''")
+                .form-group
+                    label(for='email') Email Address
+                    input#emailinput(type='text' name='email' placeholder='eg. example@example.com' maxlength='70' required='required' oninput="this.className = ''")
+                    p#wronginput1 The email is already registered.
+                .form-group
+                    label(for='number') Phone Number
+                    input#numberinput(type='number' name='number' placeholder='eg. 9876543210' maxlength='10' required='required' oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.className = '';")
+                    p#wronginput2 The number is already registered.
+                .form-group
+                    label(for='password') Password
+                    input(type='password' name='password' autocomplete='off' placeholder='eg. Example' required='required' oninput="this.className = ''")
+            .tab.half
+                .form-group
+                    label(for='payment') Registration Fees
+                    input#paymentinput(type='text' name='payment' value='1000 INR' maxlength='10' required='required' )
+                    input#paymentIDinput(type='text' value=' ' name='payment1')
+                    input#orderIDinput(type='text' value=' ' name='payment2')
+                    input#signatureIDinput(type='text' value=' ' name='payment3')
+
+
+            div.halfagain.half(style='overflow:auto;')
+                div(style='float:left;width:100%')
+                    button#nextBtn(type='button', onclick='nextPrev(1)') Next
+                    button#prevBtn(type='button', onclick='nextPrev(-1)') Previous
+            div.halfagain.halftemp.half(style='margin-top:40px;')
+                span.step
+                span.step
+                span.step
+                span.step
+                span.step
+            p.registerpage
+                | Already registered ? 
+                a.register(href='/login') Login
+
+        .layer.layer-statement.first-layer
+            .inner
+                .text
+        include footer
+        script(src="https://code.jquery.com/jquery-3.6.0.js", integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=", crossorigin="anonymous")
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
+        script(src="https://checkout.razorpay.com/v1/checkout.js")
+        script.
+            var tempname = document.getElementById('nameinput').value;
+            var tempemail = document.getElementById('emailinput').value;
+            var tempnumber = document.getElementById('numberinput').value;
+            var options = {
+                "key": "rzp_test_dj59UYKq5LugNS", // Enter the Key ID generated from the Dashboard
+                "amount": "1000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "currency": "INR",
+                "name": "Minerva MUN",
+                "description": "Minerva MUN",
+                "image": "https://minervamun.com/wp-content/themes/theme_mob_1.2/img/MINERVA.png",
+                "order_id":!{JSON.stringify(orderID)}, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "handler": function (response){
+                    document.getElementById('paymentIDinput').value = response.razorpay_payment_id
+                    document.getElementById('orderIDinput').value = response.razorpay_order_id
+                    document.getElementById('signatureIDinput').value = response.razorpay_signature
+                    var settings = {
+                        "url": "/api/payment/verify",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json"
+                        },
+                        "data": JSON.stringify({response}),
+                    }
+                    $.ajax(settings).done(function (response) {
+                        console.log(data);
+                    });
+                    document.getElementById("regForm").submit();
+                },
+                "prefill": {
+                    "name": tempname,
+                    "email": tempemail,
+                    "contact": tempnumber
+                },
+                "notes": {
+                    "address": "89 Paras Majestic E-8 Trilanga Bhopal MP"
+                },
+                "theme": {
+                    "color": "#434343"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.on('payment.failed', function (response){
+                window.location.href = "http://www.w3schools.com";
+                alert(response.error.code);
+                alert(response.error.description);
+                alert(response.error.source);
+                alert(response.error.step);
+                alert(response.error.reason);
+                alert(response.error.metadata.order_id);
+                alert(response.error.metadata.payment_id);
+            });
+
+            var paymentInput = document.getElementById("paymentinput");
+            paymentInput.style.backgroundColor = 'white'
+            paymentInput.setAttribute("disabled", true);
+            var userDateEntry = document.getElementById("commitvalue");
+            var userEntry = document.getElementById("cvalue");
+            var cityEntry = document.getElementById("inputDistrict")
+            var committees = !{JSON.stringify(committees)};
+            var allotments = !{JSON.stringify(allotments)};
+            var userList = !{JSON.stringify(userList)};
+            $("input:checkbox").on('click', function() {
+                var $box = $(this);
+                if ($box.is(":checked")) {
+                    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                    $(group).prop("checked", false);
+                    $box.prop("checked", true);
+                } else {
+                    $box.prop("checked", false);
+                }
+            });
+
+            var timesClicked1 = 0;
+            var timesClicked2 = 0;
+            document.getElementById('emailinput').addEventListener('change',
+                function () {
+                    document.getElementById('wronginput1').classList.remove('wronginput1');
+                });
+            document.getElementById('numberinput').addEventListener('change',
+                function () {
+                    document.getElementById('wronginput2').classList.remove('wronginput2');
+                });
+            cityEntry.addEventListener('change',
+                function () {
+                    var num = 0
+                    if(cityEntry.value != ""){
+                        userDateEntry.classList.remove("invalid");
+                        userEntry.classList.remove("invalid");
+                    }
+                    timesClicked1++;
+                    if (timesClicked1>1){
+                        var e = document.querySelector("#commitvalue");
+                        var first = e.firstElementChild;
+                        while (first) {
+                            first.remove();
+                            first = e.firstElementChild;
+                        }
+                    }
+                    timesClicked2++;
+                    if (timesClicked2>1){
+                        var e = document.querySelector(".allotdiv2");
+                        if (e.childElementCount > 0){
+                            var first = e.firstElementChild;
+                            while (first) {
+                                first.remove();
+                                first = e.firstElementChild;
+                            }
+                        }
+                    }
+                    for (i in committees){
+                        var bmbm = cityEntry.value;
+                        if (committees[i].CommitteeCity == bmbm){
+                            var element1 = document.createElement("option");
+                            element1.value = committees[i].CommitteeName
+                            element1.innerHTML = committees[i].CommitteeName
+                            var bnbn = document.getElementById('commitvalue')
+                            bnbn.appendChild(element1)
+                            for (i in allotments){
+                                var nmnm = userDateEntry.value;
+                                if (allotments[i].ComName == nmnm && allotments[i].ComCity == cityEntry.value){
+                                    console.log(i)
+                                    if (allotments[i].Allotted == ""){
+                                        if(num == 0 || num%5 == 0){
+                                            var element3 = document.createElement("div");
+                                            element3.setAttribute('class','allotdiv');
+                                            document.getElementsByClassName('allotdiv2')[document.getElementsByClassName('allotdiv2').length-1].appendChild(element3)
+                                        }   
+                                        var element1 = document.createElement("label");
+                                        element1.setAttribute('class','allotlabel');
+                                        element1.innerHTML = allotments[i].Portfolio.substring(0, allotments[i].Portfolio.length - 2)
+                                        document.getElementsByClassName('allotdiv')[document.getElementsByClassName('allotdiv').length-1].appendChild(element1)
+                                        var element2 = document.createElement("input");
+                                        element2.setAttribute('class','radio');
+                                        element2.setAttribute('type','checkbox');
+                                        element2.setAttribute('value',allotments[i].Portfolio.substring(0, allotments[i].Portfolio.length - 2) + '01');
+                                        element2.setAttribute('name','fooby[1][]');
+                                        element2.innerHTML = '1'
+                                        document.getElementsByClassName('allotlabel')[document.getElementsByClassName('allotlabel').length-1].appendChild(element2)
+                                        var element4 = document.createElement("input");
+                                        element4.setAttribute('class','radio');
+                                        element4.setAttribute('type','checkbox');
+                                        element4.setAttribute('value',allotments[i].Portfolio.substring(0, allotments[i].Portfolio.length - 2) + '02');
+                                        element4.setAttribute('name','fooby[1][]');
+                                        element4.innerHTML = '2'
+                                        document.getElementsByClassName('allotlabel')[document.getElementsByClassName('allotlabel').length-1].appendChild(element4)
+                                        $("input:checkbox").on('click', function() {
+                                            var $box = $(this);
+                                            if ($box.is(":checked")) {
+                                                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                                                $(group).prop("checked", false);
+                                                $box.prop("checked", true);
+                                                document.getElementById('cvalue').innerHTML = document.querySelector('.radio:checked').value
+                                                document.getElementById('cvalue').setAttribute('value',(document.querySelector('.radio:checked').value));
+                                                console.log(document.getElementById('cvalue').value)
+                                            } else {
+                                                document.getElementById('cvalue').setAttribute('value','');
+                                                document.getElementById('cvalue').innerHTML = ""
+                                                $box.prop("checked", false);
+                                            }
+                                        });
+                                        num++
+                                    }
+                                    else{}
+                                }
+                                else{}
+                            }
+                        }
+                    }
+                    if (userDateEntry.childElementCount == 0){
+                        var element1 = document.createElement("option");
+                        element1.value = ""
+                        element1.innerHTML = "No Committees Available"
+                        var bnbn = document.getElementById('commitvalue')
+                        bnbn.appendChild(element1)
+                    }
+                    else{
+                        userDateEntry.value = userDateEntry.children[1].value
+                        userDateEntry.value = userDateEntry.children[0].value
+                    }
+                }
+            );
+            userDateEntry.addEventListener('change', 
+                function () { 
+                    var num = 0
+                    document.getElementById('allotmenttext').classList.remove('textreveal1')
+                    userDateEntry.classList.remove("invalid");
+                    if(userDateEntry.value != ""){
+                        userDateEntry.classList.remove("invalid");
+                        userEntry.classList.remove("invalid");
+                    }
+                    if(userEntry.value != ""){
+                        userEntry.classList.remove("invalid");
+                    }
+                    if (timesClicked2>1){
+                        var e = document.querySelector(".allotdiv2");
+                        if (e.childElementCount > 0){
+                            var first = e.firstElementChild;
+                            while (first) {
+                                first.remove();
+                                first = e.firstElementChild;
+                            }
+                        }
+                    }         
+                    timesClicked2++           
+                    for (i in allotments){
+                        var nmnm = userDateEntry.value;
+                        if (allotments[i].ComName == nmnm && allotments[i].ComCity == cityEntry.value && i%2 == 0){
+                            if (allotments[i].Allotted == ""){
+                                if(num == 0 || num%5 == 0){
+                                    var element3 = document.createElement("div");
+                                    element3.setAttribute('class','allotdiv');
+                                    document.getElementsByClassName('allotdiv2')[document.getElementsByClassName('allotdiv2').length-1].appendChild(element3)
+                                }   
+                                var element1 = document.createElement("label");
+                                element1.setAttribute('class','allotlabel');
+                                element1.innerHTML = allotments[i].Portfolio.substring(0, allotments[i].Portfolio.length - 2)
+                                document.getElementsByClassName('allotdiv')[document.getElementsByClassName('allotdiv').length-1].appendChild(element1)
+                                var element2 = document.createElement("input");
+                                element2.setAttribute('class','radio');
+                                element2.setAttribute('type','checkbox');
+                                element2.setAttribute('value',allotments[i].Portfolio.substring(0, allotments[i].Portfolio.length - 2) + '01');
+                                element2.setAttribute('name','fooby[1][]');
+                                element2.innerHTML = '1'
+                                document.getElementsByClassName('allotlabel')[document.getElementsByClassName('allotlabel').length-1].appendChild(element2)
+                                var element4 = document.createElement("input");
+                                element4.setAttribute('class','radio');
+                                element4.setAttribute('type','checkbox');
+                                element4.setAttribute('value',allotments[i].Portfolio.substring(0, allotments[i].Portfolio.length - 2) + '02');
+                                element4.setAttribute('name','fooby[1][]');
+                                element4.innerHTML = '2'
+                                document.getElementsByClassName('allotlabel')[document.getElementsByClassName('allotlabel').length-1].appendChild(element4)
+                                $("input:checkbox").on('click', function() {
+                                    var $box = $(this);
+                                    if ($box.is(":checked")) {
+                                        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                                        $(group).prop("checked", false);
+                                        $box.prop("checked", true);
+                                        document.getElementById('cvalue').innerHTML = document.querySelector('.radio:checked').value
+                                        document.getElementById('cvalue').setAttribute('value',(document.querySelector('.radio:checked').value));
+                                        console.log(document.getElementById('cvalue').value)
+                                    } else {
+                                        $box.prop("checked", false);
+                                        document.getElementById('cvalue').setAttribute('value','');
+                                        document.getElementById('cvalue').innerHTML = ""
+                                    }
+                                });
+                                num++
+                            }
+                            else{}
+                        }
+                        else{}
+                    }
+                }
+            );
+            userEntry.addEventListener('change', 
+                function () {
+                    if(userDateEntry.value != ""){
+                        userDateEntry.classList.remove("invalid");
+                        userEntry.classList.remove("invalid");
+                    }
+                    if(userEntry.value != ""){
+                        userEntry.classList.remove("invalid");
+                    }
+                })
+
+
+
+
+            var currentTab = 0; // Current tab is set to be the first tab (0)
+            showTab(currentTab); // Display the current tab
+
+            function showTab(n) {
+            // This function will display the specified tab of the form ...
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+            // ... and fix the Previous/Next buttons:
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Pay";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+            // ... and run a function that displays the correct step indicator:
+            fixStepIndicator(n)
+            }
+
+            function nextPrev(n) {
+            // This function will figure out which tab to display
+
+            var x = document.getElementsByClassName("tab");
+            // Exit the function if any field in the current tab is invalid:
+            if (n == 1 && !validateForm()) return false;
+            // Hide the current tab:
+            x[currentTab].style.display = "none";
+            // Increase or decrease the current tab by 1:
+            currentTab = currentTab + n;
+            // if you have reached the end of the form... :
+            if (currentTab >= x.length) {
+                //...the form gets submitted:
+                //- document.getElementById("regForm").submit();
+                rzp1.open();
+                e.preventDefault();
+
+                return false;
+            }
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
+            }
+
+            function validateForm() {
+            // This function deals with validation of the form fields
+
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab].getElementsByTagName("input");
+            z = x[currentTab].getElementsByTagName("select");
+            for (i in userList){
+                if (document.getElementById('emailinput').value == userList[i].email){
+                    document.getElementById('emailinput').className += " invalid";
+                    document.getElementById('wronginput1').classList.add('wronginput1')
+                    valid = false;
+                }
+            }
+            for (i in userList){
+                if (document.getElementById('numberinput').value == userList[i].number){
+                    document.getElementById('numberinput').className += " invalid";
+                    document.getElementById('wronginput2').classList.add('wronginput2')
+                    valid = false;
+                }
+            }
+            // A loop that checks every input field in the current tab:
+            for (i = 0; i < y.length; i++) {
+                if (y[i].value == "") {
+                    // add an "invalid" class to the field:
+                    y[i].className += " invalid";
+                    // and set the current valid status to false:
+                    valid = false;
+                }
+            }
+            for (i = 0; i < z.length; i++) {
+                if (z[i].value == ""  || z[i].value == 'SelectState' || z[i].value == 'SelectCity' || z[i].value == 'SelectCommittee') {
+                    // add an "invalid" class to the field:
+                    z[i].className += " invalid";
+                    // and set the current valid status to false:
+                    valid = false;
+                }
+            }
+            if (currentTab == 1){
+                if ($('.allotdiv2')[0].childElementCount == 0){
+                    document.getElementById('commitvalue').className += ' invalid'
+                    valid = false;
+                    document.getElementById('allotmenttext').classList.add('textreveal1')
+                }            
+            }
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+            }
+
+            function fixStepIndicator(n) {
+            // This function removes the "active" class of all steps...
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            //... and adds the "active" class to the current step:
+            x[n].className += " active";
+            }
+            document.getElementById("registernav").classList.toggle("active");
+
+            document.getElementById("navswitch1").classList.add("navswitch1")
+            document.getElementById("navswitch3").classList.add("navswitch1")
+            document.getElementsByClassName("menu-item")[0].classList.add("navham")
+            document.getElementsByClassName("menu-item")[1].classList.add("navham")
+            document.getElementsByClassName("menu-item")[2].classList.add("navham")
+            document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+            document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+            document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+            document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+            document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+            document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+            document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+            document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+
+            $(document).ready(function () {
+                $(window).scroll(function(){
+                    var ScrollTop = parseInt($(window).scrollTop());
+                    if (ScrollTop < 900) {
+                        document.getElementById("navswitch1").classList.add("navswitch1")
+                        document.getElementById("navswitch3").classList.add("navswitch1")
+                        document.getElementsByClassName("menu-item")[0].classList.add("navham")
+                        document.getElementsByClassName("menu-item")[1].classList.add("navham")
+                        document.getElementsByClassName("menu-item")[2].classList.add("navham")
+                        document.getElementsByClassName("navswitch2")[0].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[1].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[2].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[3].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[4].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[5].classList.add("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[6].classList.add("navswitch2color")
+                        document.getElementsByClassName("active")[0].classList.add("navswitch3color")
+                    }
+                    else{
+                        document.getElementById("navswitch1").classList.remove("navswitch1")
+                        document.getElementById("navswitch3").classList.remove("navswitch1")
+                        document.getElementsByClassName("menu-item")[0].classList.remove("navham")
+                        document.getElementsByClassName("menu-item")[1].classList.remove("navham")
+                        document.getElementsByClassName("menu-item")[2].classList.remove("navham")
+                        document.getElementsByClassName("navswitch2")[0].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[1].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[2].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[3].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[4].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[5].classList.remove("navswitch2color")
+                        document.getElementsByClassName("navswitch2")[6].classList.remove("navswitch2color")
+                        document.getElementsByClassName("active")[0].classList.remove("navswitch3color")
+                    }
+                });
+            });       

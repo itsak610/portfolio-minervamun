@@ -65,6 +65,11 @@ block content
         }
         .leftside p{
             font-size: 2vw;
+            font-weight: 300;
+            width:50%;
+        }
+        .leftside b{
+            font-weight: 500;
         }
 
         .titlediv{
@@ -284,14 +289,29 @@ block content
         }
         @media (min-width:750px) and (max-width:1000px) {
             h1.title{
-                font-size:2vw;
+                font-size:3vw;
             }
             h2.title{
-                font-size:4.5vw;
+                font-size:5.2vw;
+                line-height:8vw;
             }
             .title a{
-                font-size:1.3vw;
+                font-size:1.7vw;
                 padding:18px;
+                padding-left:30px;
+                padding-right:30px;
+            }
+            .leftside p{
+                font-size:3.1vw;
+            }
+            section.s4{
+                height:55vh;
+            }
+            .s4 .leftside{
+                margin-top:32vh;
+            }
+            footer img{
+                height: 42px !important;
             }
             .imgs{
                 flex-flow:column;
@@ -327,6 +347,12 @@ block content
 
         }
         @media (max-width:750px) {
+            .carousel{
+                width:65%;
+            }
+            .nav-left, .nav-right{
+
+            }
             section.s2{
                 height:max-content;
                 padding-bottom:80px;
@@ -335,7 +361,7 @@ block content
                 height:50vh;
             }
             section.s6{
-                height:100vh;
+                height:max-content;
             }
             .pages li{
                 padding:5px;
@@ -368,6 +394,7 @@ block content
             }
             .leftside p{
                 font-size:3vw;
+                line-height:3.8vw;
             }
 
             .textdiv{
@@ -385,8 +412,10 @@ block content
                 margin-top:10px;
             }
             .title a{
-                font-size:3.8vw;
+                font-size:3vw;
                 padding:18px;
+                padding-left:30px;
+                padding-right:30px;
             }
             .s5 h3{
                 font-size:1.5em;
@@ -422,13 +451,22 @@ block content
             }
             .textpart p{
                 font-size:1em;
+                line-height:1.4em;
                 width:60%;
                 margin:0 auto;
             }
             .helpdiv h7{
                 font-size:2em;
             }
-
+            .carousel{
+                height:35vh;
+            }
+            .helpdiv p{
+                line-height:1.3em;
+            }
+            .cb1{
+                padding:10px;
+            }
         }
 
     div
@@ -452,12 +490,10 @@ block content
                                     b
                                         | Relationships
                                     | ; treat
-                                    br
                                     | people with 
                                     b
                                         | Respect
                                     | ; and achieve exceptional 
-                                    br
                                     b
                                         | Results
                                     | .

@@ -5,6 +5,8 @@ block content
         .leftside{
             float:left;
             text-align:left;
+            display: flex;
+            flex-flow:row;
             margin-left:150px;
         }
         .s1 .leftside{
@@ -75,6 +77,7 @@ block content
         .titlediv{
             display:flex;
             flex-flow:column;
+            width:60vw;
         }
 
         .tempdiv1{
@@ -474,110 +477,45 @@ block content
             .container
                 .leftside
                     .titlediv
-                        h1.title Welcome to Minerva!
-                        h2.title We build students
-                        h2.title that lead the world.
+                        h1.title Welcome to Mobid!
+                        h2.title New to GSU?
+                        h2.title Find your way here.
                         h3.title
-                            a(href='/register') Join Us
+                            a(href='javascript:document.getElementsByClassName("stepcontainer")[0].scrollIntoView()') How it works
         section.s2
             .container
-                .tempdiv1
-                    .tempdiv2
-                        .leftside
-                            .titlediv
-                                p 
-                                    | We build successful 
-                                    b
-                                        | Relationships
-                                    | ; treat
-                                    | people with 
-                                    b
-                                        | Respect
-                                    | ; and achieve exceptional 
-                                    b
-                                        | Results
-                                    | .
-                    .tempdiv3
-                        h4 Our Values
-                        .textdiv
-                            .textpart
-                                h5 Relationships
-                                p We focus on creating long lasting and strong relationships with our clients/students. We work hard to clearly understand our clients'/students' every need.
-                            .textpart
-                                h5 Respect
-                                p We respect our clients/students. We listen, engage, and care deeply.
-                            .textpart
-                                h5 Results
-                                p No matter how much we have to cover, we work tirelessly to achieve results that matter to you.
+                .stepcontainer
+                    .steps1
+                        .steptext
+                            h1.title Step 1
+                            h2.title This is step 1.
+                        .stepimg
+                            img(src='/img/iphone.png')
+                    .steps2
+                        .steptext
+                            h1.title Step 2
+                            h2.title This is step 2.
+                        .stepimg
+                            img(src='/img/iphone.png')
+                    .steps1
+                        .steptext
+                            h1.title Step 3
+                            h2.title This is step 3.
+                        .stepimg
+                            img(src='/img/iphone.png')
+                    .steps2
+                        .steptext
+                            h1.title Step 4
+                            h2.title This is step 4.
+                        .stepimg
+                            img(src='/img/iphone.png')
+                    .steps1
+                        .steptext
+                            h1.title Step 5
+                            h2.title This is step 5.
+                        .stepimg
+                            img(src='/img/iphone.png')
 
-        section.s4
-            .container
-                .leftside
-                    .titlediv
-                        h1 Minerva MUN is proud of our team during
-                        h1 this unprecedented time.
-        section.s5
-            .container
-                .arrowcontainer
-                    h3 Recent Experience
-                    .arrowsupercontainer
-                        p.nav-left &#8592; Previous
-                        p.nav-right Next &#8594;
-                .carousel
-                    .carousel-content
-                        .slide.slide-1
-                            .tempdiv5
-                                p.t1 Minerva MUN chapter 1 conducted with over 300 participants from all over the country and debate their hearts out into a debate for the future of India.
-                                p.t2 Success
-                        .slide.slide-2
-                            .tempdiv5
-                                p.t1 Minerva MUN completes one year on 1st August 2021 after having an affect in over 20,000 people from all over the world and teaching them lessons for the future.
-                                p.t2 Success
-                        .slide.slide-3
-                            .tempdiv5
-                                p.t1 Minerva MUN conducts chapter 2 in April with the presence of 3 Former Governors and 3 Former Chief of Armed Forces into a massive event for the public good.
-                                p.t2 Success
-                        .slide.slide-4
-                            .tempdiv5
-                                p.t1 Minerva gets back into the game after 2 months of inactivity due to team's academic commitments.
-                                p.t2 Success
-        section.s6
-            .container
-                h6 Need Help?
-                .s6div
-                    .helpdiv
-                        h7 
-                            | Find your best fit out of 
-                            b
-                                | 40 
-                            | top-notch team members.
-                        p Proudly based in Bhopal, our advocates seek to continually improve their skills and approach to deliver education services suited for today.
-                        .contactbutton(onclick="location.href='/contact'")
-                            .cb1 &#8594;
-                            .cb2 Contact Us
-                    .helpimgdiv
-                        img(src='/wp-content/uploads/2020/10/3aekav28.jpg')
-        section.s7
-            .container
-                .h8container
-                    h8 Honoured to be recognized by:
-                .imgs
-                    .imgs1
-                        .imgs2
-                            img(src='/recog/1.png')
-                        .imgs2
-                            img(src='/recog/2.png')
-                        .imgs2
-                            img(src='/recog/3.png')
-                        .imgs2
-                            img(src='/recog/4.png')
-                    .imgs3
-                        .imgs2
-                            img(src='/recog/5.png')
-                        .imgs2
-                            img(src='/recog/6.png')
-                        .imgs2
-                            img(src='/recog/7.png')
 
     script.
         document.getElementById("homenav").classList.toggle("active");
@@ -765,3 +703,30 @@ block content
             });
         });
     include footer
+    script.
+        navigator.geolocation.getCurrentPosition(
+            // Success function
+            showPosition, 
+            // Error function
+            null, 
+            // Options. See MDN for details.
+            {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+            });
+
+        function showPosition(position) {
+            console.log(position.coords.latitude)
+            $.ajax({
+            type: "POST",
+            url: "/postcords",
+            data : {'latitude':position.coords.latitude, 'longitude':position.coords.longitude},
+            statusCode: {
+                404: function () { console.log("Page not found"); },
+                500: function () { console.log("internal server error"); }
+            },
+            success: function (data) {
+                console.log(data); 
+            } });
+        }

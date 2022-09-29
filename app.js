@@ -11,12 +11,11 @@ var app = express();
 
 //Make new databse
 mongoose.connect(
-	"mongodb+srv://minerva:minerva@cluster0.dkj9o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-	{
-		useNewUrlParser: true,
-		useFindAndModify: false,
-		useUnifiedTopology: true,
-	}
+    "mongodb+srv://itsak:hipeople@cluster0.rac7asr.mongodb.net/?retryWrites=true&w=majority", {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    }
 );
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
@@ -29,13 +28,12 @@ app.set("trust proxy", 1);
 
 //Setting up sessions+cookies
 var sessionConfig = {
-	secret: "AroraJi",
-	resave: false,
-	saveUninitialized: false,
-	store: MongoStore.create({
-		mongoUrl:
-			"mongodb+srv://minerva:minerva@cluster0.dkj9o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-	}),
+    secret: "AroraJi",
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+        mongoUrl: "mongodb+srv://itsak:hipeople@cluster0.rac7asr.mongodb.net/?retryWrites=true&w=majority",
+    }),
 };
 app.use(session(sessionConfig));
 app.use(passport.initialize());
@@ -47,8 +45,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
-	res.locals.currentUser = req.user;
-	next();
+    res.locals.currentUser = req.user;
+    next();
 });
 
 //Setting up body-parser
@@ -64,11 +62,11 @@ app.use(express.static(__dirname + "/public"));
 //Setting view engine
 app.set("view engine", "pug");
 app.set("views", [
-	__dirname + "/views/admin-1-main",
-	__dirname + "/views/admin-2-entries",
-	__dirname + "/views/admin-3-allotment",
-	__dirname + "/views/static",
-	__dirname + "/views/user",
+    __dirname + "/views/admin-1-main",
+    __dirname + "/views/admin-2-entries",
+    __dirname + "/views/admin-3-allotment",
+    __dirname + "/views/static",
+    __dirname + "/views/user",
 ]);
 
 //Setting routes
@@ -77,19 +75,19 @@ app.use("/", routes);
 
 //404
 app.use((res, req, next) => {
-	var err = new Error("File not found!");
-	err.status = 404;
-	next(err);
+    var err = new Error("File not found!");
+    err.status = 404;
+    next(err);
 });
 
 //Error Handler
 app.use((err, req, res, next) => {
-	res.status(err.status || 500);
-	return res.render("error", {
-		title: "Error",
-		message: err.message,
-		error: {},
-	});
+    res.status(err.status || 500);
+    return res.render("error", {
+        title: "Error",
+        message: err.message,
+        error: {},
+    });
 });
 
 // Listening

@@ -60,6 +60,10 @@ header>* {
     -webkit-box-sizing: border-box
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -70,7 +74,7 @@ body {
     height: 100%;
     min-height: 100%;
     color: #000;
-    background: #fff;
+    background: #090c9b;
     cursor: default;
     overflow-x: scroll
 }
@@ -81,16 +85,19 @@ section {
 
 section.s1 {
     height: 90vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.65)), url("../wp-content/themes/theme_mob_1.2/img/UNO2.jpg");
+    background: linear-gradient(rgb(9, 12, 155, 0.6), rgb(9, 12, 155, 0.6), rgb(9, 12, 155, 0.6), rgb(9, 12, 155, 0.6), rgb(9, 12, 155, 1)), url("../img/checkrates.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     /* background-attachment: fixed; */
     backdrop-filter: blur(30px);
-    background-color: #000;
 }
 
 section.s2 {
-    height: 110vh;
+    height: max-content;
+    width: 90%;
+    margin-left: 5vw;
+    border: 1px black solid;
+    border-radius: 40px;
 }
 
 section.s4 {
@@ -115,18 +122,20 @@ section.s7 {
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
-    height: 0
+    width: 6px
 }
 
 ::-webkit-scrollbar-track {
-    background: #DEDEDE
+    background: black;
+    border-left: 2.5px solid #090c9b;
+    border-right: 2.5px solid #090c9b
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #000000, #010101);
+    background: white;
+    border-left: 1px solid #090c9b;
+    border-right: 1px solid #090c9b;
     border-radius: 30px;
-    opacity: .8
 }
 
 .temp-body {
@@ -1855,4 +1864,42 @@ button#prevBtn:hover {
 
 .mobile-nav a:hover {
     border-bottom: 1px #000 solid;
+}
+
+.stepcontainer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.steps1 {
+    display: flex;
+    flex-flow: row;
+    padding: 100px;
+    margin-top: 10vh;
+}
+
+.steps2 {
+    display: flex;
+    flex-flow: row-reverse;
+    padding: 100px;
+    margin-top: 10vh;
+}
+
+.steps2 h1,
+.steps2 h2 {
+    text-align: right;
+}
+
+.steps2 h2.title {
+    padding-right: 0;
+}
+
+.steptext {
+    width: 77%;
+}
+
+.stepimg img {
+    width: 200px;
+    height: auto;
 }

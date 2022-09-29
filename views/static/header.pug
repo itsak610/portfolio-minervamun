@@ -23,10 +23,6 @@ header#masthead
                         .column3.middle3
                             li
                                 a.navswitch2(href='/')#homenav Home
-                            li 
-                                a.navswitch2(href='/team')#teamnav Team
-                            li 
-                                a.navswitch2(href='/firm')#firmnav Firm
                             li
                                 a.navswitch2(href='/services')#servicesnav Services
                             li
@@ -46,10 +42,6 @@ header#masthead
                             .column3.middle3
                                 li
                                     a.navswitch2(href='/')#homenav Home
-                                li 
-                                    a.navswitch2(href='/team')#teamnav Team
-                                li 
-                                    a.navswitch2(href='/firm')#firmnav Firm
                                 li
                                     a.navswitch2(href='/services')#servicesnav Services
                                 li
@@ -68,30 +60,22 @@ header#masthead
                                 img#navswitch1(src='/wp-content/themes/theme_mob_1.2/img/MINERVA__1_-removebg-preview.png', alt='MINERVA')
                         .column3.middle3
                             li
-                                a.navswitch2(href='/')#homenav Home
-                            li 
-                                a.navswitch2(href='/team')#teamnav Team
-                            li 
-                                a.navswitch2(href='/firm')#firmnav Firm
+                                a.navswitch2(href='/home' cursor-class='arrow') Home
                             li
-                                a.navswitch2(href='/services')#servicesnav Services
+                                a.navswitch2(href='/services' cursor-class='arrow') Services
                             li
-                                a.navswitch2(href='/contact')#contactnav Contact
+                                a.navswitch2(href='/contact' cursor-class='arrow') Contact Us
                         .column3.right3
                             li
-                                a.navswitch2(href='/login')#loginnav Login
+                                a.navswitch2(href='/login' cursor-class='arrow') Sign In
                             li
-                                a.navswitch2(href='/register')#registernav Register
+                                a.navswitch2(href='/register' cursor-class='arrow') Try Free
         nav#nav.mobile-nav.hidden
             ul#hidenav2
                 if currentUser
                     if currentUser.username == 'admin'
                         li
                             a.navswitch2(href='/')#homenav Home
-                        li 
-                            a.navswitch2(href='/team')#teamnav Team
-                        li 
-                            a.navswitch2(href='/firm')#firmnav Firm
                         li
                             a.navswitch2(href='/services')#servicesnav Services
                         li
@@ -104,10 +88,6 @@ header#masthead
                         li
                             a.navswitch2(href='/')#homenav Home
                         li 
-                            a.navswitch2(href='/team')#teamnav Team
-                        li 
-                            a.navswitch2(href='/firm')#firmnav Firm
-                        li
                             a.navswitch2(href='/services')#servicesnav Services
                         li
                             a.navswitch2(href='/contact')#contactnav Contact
@@ -117,19 +97,15 @@ header#masthead
                             a.navswitch2(href='/logout') Logout
                 else
                     li
-                        a(href='/')#homenav Home
-                    li 
-                        a.navswitch2(href='/team')#teamnav Team
-                    li 
-                        a.navswitch2(href='/firm')#firmnav Firm
+                        a.navswitch2(href='/')#homenav Home
                     li
                         a.navswitch2(href='/services')#servicesnav Services
                     li
                         a.navswitch2(href='/contact')#contactnav Contact
                     li
-                        a.navswitch2(href='/login')#loginnav Login
+                        a.navswitch2(href='/login')#loginnav Sign In
                     li
-                        a.navswitch2(href='/register')#registernav Register
+                        a.navswitch2(href='/register')#registernav Try Free
     script.
         function hideit() {
             loader.style.display = 'none'
